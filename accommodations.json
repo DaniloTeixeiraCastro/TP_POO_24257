@@ -1,0 +1,272 @@
+[
+  {
+    "Name": "Quarto Duplo Vista Jardim 1",
+    "Location": "Vista Jardim",
+    "RoomNumber": 1,
+    "Capacity": 2,
+    "PricePerNight": 50,
+    "IsAvailable": true,
+    "Id": 0
+  },
+  {
+    "Name": "Quarto Duplo Vista Jardim 2",
+    "Location": "Vista Jardim",
+    "RoomNumber": 2,
+    "Capacity": 2,
+    "PricePerNight": 50,
+    "IsAvailable": true,
+    "Id": 0
+  },
+  {
+    "Name": "Quarto Duplo Vista Jardim 3",
+    "Location": "Vista Jardim",
+    "RoomNumber": 3,
+    "Capacity": 2,
+    "PricePerNight": 50,
+    "IsAvailable": true,
+    "Id": 0
+  },
+  {
+    "Name": "Quarto Duplo Vista Jardim 4",
+    "Location": "Vista Jardim",
+    "RoomNumber": 4,
+    "Capacity": 2,
+    "PricePerNight": 50,
+    "IsAvailable": true,
+    "Id": 0
+  },
+  {
+    "Name": "Quarto Duplo Vista Jardim 5",
+    "Location": "Vista Jardim",
+    "RoomNumber": 5,
+    "Capacity": 2,
+    "PricePerNight": 50,
+    "IsAvailable": true,
+    "Id": 0
+  },
+  {
+    "Name": "Quarto Duplo Vista Jardim 6",
+    "Location": "Vista Jardim",
+    "RoomNumber": 6,
+    "Capacity": 2,
+    "PricePerNight": 50,
+    "IsAvailable": true,
+    "Id": 0
+  },
+  {
+    "Name": "Quarto Duplo Vista Jardim 7",
+    "Location": "Vista Jardim",
+    "RoomNumber": 7,
+    "Capacity": 2,
+    "PricePerNight": 50,
+    "IsAvailable": true,
+    "Id": 0
+  },
+  {
+    "Name": "Quarto Duplo Vista Jardim 8",
+    "Location": "Vista Jardim",
+    "RoomNumber": 8,
+    "Capacity": 2,
+    "PricePerNight": 50,
+    "IsAvailable": true,
+    "Id": 0
+  },
+  {
+    "Name": "Quarto Duplo Vista Jardim 9",
+    "Location": "Vista Jardim",
+    "RoomNumber": 9,
+    "Capacity": 2,
+    "PricePerNight": 50,
+    "IsAvailable": true,
+    "Id": 0
+  },
+  {
+    "Name": "Quarto Duplo Vista Jardim 10",
+    "Location": "Vista Jardim",
+    "RoomNumber": 10,
+    "Capacity": 2,
+    "PricePerNight": 50,
+    "IsAvailable": true,
+    "Id": 0
+  },
+  {
+    "Name": "Quarto Duplo Vista Jardim 11",
+    "Location": "Vista Jardim",
+    "RoomNumber": 11,
+    "Capacity": 2,
+    "PricePerNight": 50,
+    "IsAvailable": true,
+    "Id": 0
+  },
+  {
+    "Name": "Quarto Duplo Vista Jardim 12",
+    "Location": "Vista Jardim",
+    "RoomNumber": 12,
+    "Capacity": 2,
+    "PricePerNight": 50,
+    "IsAvailable": true,
+    "Id": 0
+  },
+  {
+    "Name": "Quarto Duplo Vista Jardim 13",
+    "Location": "Vista Jardim",
+    "RoomNumber": 13,
+    "Capacity": 2,
+    "PricePerNight": 50,
+    "IsAvailable": true,
+    "Id": 0
+  },
+  {
+    "Name": "Quarto Duplo Vista Jardim 14",
+    "Location": "Vista Jardim",
+    "RoomNumber": 14,
+    "Capacity": 2,
+    "PricePerNight": 50,
+    "IsAvailable": true,
+    "Id": 0
+  },
+  {
+    "Name": "Quarto Duplo Vista Jardim 15",
+    "Location": "Vista Jardim",
+    "RoomNumber": 15,
+    "Capacity": 2,
+    "PricePerNight": 50,
+    "IsAvailable": true,
+    "Id": 0
+  },
+  {
+    "Name": "Quarto Duplo Vista Piscina 16",
+    "Location": "Vista Piscina",
+    "RoomNumber": 16,
+    "Capacity": 2,
+    "PricePerNight": 62.50,
+    "IsAvailable": true,
+    "Id": 0
+  },
+  {
+    "Name": "Quarto Duplo Vista Piscina 17",
+    "Location": "Vista Piscina",
+    "RoomNumber": 17,
+    "Capacity": 2,
+    "PricePerNight": 62.50,
+    "IsAvailable": true,
+    "Id": 0
+  },
+  {
+    "Name": "Quarto Duplo Vista Piscina 18",
+    "Location": "Vista Piscina",
+    "RoomNumber": 18,
+    "Capacity": 2,
+    "PricePerNight": 62.50,
+    "IsAvailable": true,
+    "Id": 0
+  },
+  {
+    "Name": "Quarto Duplo Vista Piscina 19",
+    "Location": "Vista Piscina",
+    "RoomNumber": 19,
+    "Capacity": 2,
+    "PricePerNight": 62.50,
+    "IsAvailable": true,
+    "Id": 0
+  },
+  {
+    "Name": "Quarto Duplo Vista Piscina 20",
+    "Location": "Vista Piscina",
+    "RoomNumber": 20,
+    "Capacity": 2,
+    "PricePerNight": 62.50,
+    "IsAvailable": true,
+    "Id": 0
+  },
+  {
+    "Name": "Quarto Duplo Vista Piscina 21",
+    "Location": "Vista Piscina",
+    "RoomNumber": 21,
+    "Capacity": 2,
+    "PricePerNight": 62.50,
+    "IsAvailable": true,
+    "Id": 0
+  },
+  {
+    "Name": "Quarto Duplo Vista Piscina 22",
+    "Location": "Vista Piscina",
+    "RoomNumber": 22,
+    "Capacity": 2,
+    "PricePerNight": 62.50,
+    "IsAvailable": true,
+    "Id": 0
+  },
+  {
+    "Name": "Quarto Duplo Vista Piscina 23",
+    "Location": "Vista Piscina",
+    "RoomNumber": 23,
+    "Capacity": 2,
+    "PricePerNight": 62.50,
+    "IsAvailable": true,
+    "Id": 0
+  },
+  {
+    "Name": "Quarto Duplo Vista Piscina 24",
+    "Location": "Vista Piscina",
+    "RoomNumber": 24,
+    "Capacity": 2,
+    "PricePerNight": 62.50,
+    "IsAvailable": true,
+    "Id": 0
+  },
+  {
+    "Name": "Quarto Duplo Vista Piscina 25",
+    "Location": "Vista Piscina",
+    "RoomNumber": 25,
+    "Capacity": 2,
+    "PricePerNight": 62.50,
+    "IsAvailable": true,
+    "Id": 0
+  },
+  {
+    "Name": "Quarto Triplo 26",
+    "Location": "Vista Jardim",
+    "RoomNumber": 26,
+    "Capacity": 3,
+    "PricePerNight": 75.0,
+    "IsAvailable": true,
+    "Id": 0
+  },
+  {
+    "Name": "Quarto Triplo 27",
+    "Location": "Vista Jardim",
+    "RoomNumber": 27,
+    "Capacity": 3,
+    "PricePerNight": 75.0,
+    "IsAvailable": true,
+    "Id": 0
+  },
+  {
+    "Name": "Quarto Triplo 28",
+    "Location": "Vista Jardim",
+    "RoomNumber": 28,
+    "Capacity": 3,
+    "PricePerNight": 75.0,
+    "IsAvailable": true,
+    "Id": 0
+  },
+  {
+    "Name": "Quarto Triplo 29",
+    "Location": "Vista Jardim",
+    "RoomNumber": 29,
+    "Capacity": 3,
+    "PricePerNight": 75.0,
+    "IsAvailable": true,
+    "Id": 0
+  },
+  {
+    "Name": "Quarto Triplo Vista Piscina 30",
+    "Location": "Vista Piscina",
+    "RoomNumber": 30,
+    "Capacity": 3,
+    "PricePerNight": 87.50,
+    "IsAvailable": true,
+    "Id": 0
+  }
+]
