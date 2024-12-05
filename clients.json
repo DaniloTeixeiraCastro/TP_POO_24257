@@ -1,0 +1,42 @@
+[
+  {
+    "Name": "Danilo Castro",
+    "Email": "danilocastro7@hotmail.com",
+    "Phone": "912231427",
+    "TIN": "259486639",
+    "BirthDate": "1994-12-03T00:00:00",
+    "Reservations": null,
+    "IsReserved": false,
+    "Id": 1
+  },
+  {
+    "Name": "Catia Martins",
+    "Email": "danilocastro@hotmail.com",
+    "Phone": "25948663",
+    "TIN": "528",
+    "BirthDate": "1994-12-03T00:00:00",
+    "Reservations": null,
+    "IsReserved": false,
+    "Id": 2
+  },
+  {
+    "Name": "Frederico Dias",
+    "Email": "fdias@polopique.pt",
+    "Phone": "91225487",
+    "TIN": "78542",
+    "BirthDate": "1995-12-03T20:14:43.238",
+    "Reservations": null,
+    "IsReserved": false,
+    "Id": 3
+  },
+  {
+    "Name": "Sergio Martins",
+    "Email": "sergio.martins@polopique.pt",
+    "Phone": "25480480",
+    "TIN": "5689",
+    "BirthDate": "1964-12-03T20:15:06.786",
+    "Reservations": null,
+    "IsReserved": false,
+    "Id": 4
+  }
+]

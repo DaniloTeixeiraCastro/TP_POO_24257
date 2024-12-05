@@ -1,0 +1,79 @@
+C:\TP_POO_25257\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist_Accommodation_System.Forms.FormAddEditClient.resources
+C:\TP_POO_25257\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist_Accommodation_System.MainWindow.resources
+C:\TP_POO_25257\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist_Accommodation_System.Properties.Resources.resources
+C:\TP_POO_25257\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist_Accommodation_System.UserControlAccommodation.resources
+C:\TP_POO_25257\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist_Accommodation_System.UserControlCheckin.resources
+C:\TP_POO_25257\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist_Accommodation_System.UserControlClient.resources
+C:\TP_POO_25257\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist_Accommodation_System.UserControls.UserControlPayments.resources
+C:\TP_POO_25257\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist_Accommodation_System.UserControlReservation.resources
+C:\TP_POO_25257\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist_Accommodation_System.UserControlReview.resources
+C:\TP_POO_25257\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist Accommodation System.csproj.GenerateResource.cache
+C:\TP_POO_25257\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist Accommodation System.GeneratedMSBuildEditorConfig.editorconfig
+C:\TP_POO_25257\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist Accommodation System.AssemblyInfoInputs.cache
+C:\TP_POO_25257\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist Accommodation System.AssemblyInfo.cs
+C:\TP_POO_25257\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist Accommodation System.csproj.CoreCompileInputs.cache
+C:\TP_POO_25257\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist Accommodation System.sourcelink.json
+C:\TP_POO_25257\Tourist Accommodation System\bin\Debug\net8.0-windows8.0\Tourist Accommodation System.exe
+C:\TP_POO_25257\Tourist Accommodation System\bin\Debug\net8.0-windows8.0\Tourist Accommodation System.deps.json
+C:\TP_POO_25257\Tourist Accommodation System\bin\Debug\net8.0-windows8.0\Tourist Accommodation System.runtimeconfig.json
+C:\TP_POO_25257\Tourist Accommodation System\bin\Debug\net8.0-windows8.0\Tourist Accommodation System.dll
+C:\TP_POO_25257\Tourist Accommodation System\bin\Debug\net8.0-windows8.0\Tourist Accommodation System.pdb
+C:\TP_POO_25257\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist Accommodation System.dll
+C:\TP_POO_25257\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\refint\Tourist Accommodation System.dll
+C:\TP_POO_25257\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist Accommodation System.pdb
+C:\TP_POO_25257\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist Accommodation System.genruntimeconfig.cache
+C:\TP_POO_25257\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\ref\Tourist Accommodation System.dll
+C:\TP_POO_25257\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist_Accommodation_System.Forms.ClientManagementForm.resources
+C:\Users\danil\Downloads\PROJETO\TP_POO_25457-main\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist Accommodation System.dll
+C:\Users\danil\Downloads\PROJETO\TP_POO_25457-main\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\refint\Tourist Accommodation System.dll
+C:\Users\danil\Downloads\PROJETO\TP_POO_25457-main\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist Accommodation System.pdb
+C:\Users\danil\Downloads\PROJETO\TP_POO_25457-main\Tourist Accommodation System\bin\Debug\net8.0-windows8.0\Tourist Accommodation System.exe
+C:\Users\danil\Downloads\PROJETO\TP_POO_25457-main\Tourist Accommodation System\bin\Debug\net8.0-windows8.0\Tourist Accommodation System.deps.json
+C:\Users\danil\Downloads\PROJETO\TP_POO_25457-main\Tourist Accommodation System\bin\Debug\net8.0-windows8.0\Tourist Accommodation System.runtimeconfig.json
+C:\Users\danil\Downloads\PROJETO\TP_POO_25457-main\Tourist Accommodation System\bin\Debug\net8.0-windows8.0\Tourist Accommodation System.dll
+C:\Users\danil\Downloads\PROJETO\TP_POO_25457-main\Tourist Accommodation System\bin\Debug\net8.0-windows8.0\Tourist Accommodation System.pdb
+C:\Users\danil\Downloads\PROJETO\TP_POO_25457-main\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist_Accommodation_System.Forms.ClientManagementForm.resources
+C:\Users\danil\Downloads\PROJETO\TP_POO_25457-main\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist_Accommodation_System.Forms.FormAddEditClient.resources
+C:\Users\danil\Downloads\PROJETO\TP_POO_25457-main\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist_Accommodation_System.MainWindow.resources
+C:\Users\danil\Downloads\PROJETO\TP_POO_25457-main\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist_Accommodation_System.Properties.Resources.resources
+C:\Users\danil\Downloads\PROJETO\TP_POO_25457-main\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist_Accommodation_System.UserControlAccommodation.resources
+C:\Users\danil\Downloads\PROJETO\TP_POO_25457-main\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist_Accommodation_System.UserControlCheckin.resources
+C:\Users\danil\Downloads\PROJETO\TP_POO_25457-main\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist_Accommodation_System.UserControlClient.resources
+C:\Users\danil\Downloads\PROJETO\TP_POO_25457-main\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist_Accommodation_System.UserControls.UserControlPayments.resources
+C:\Users\danil\Downloads\PROJETO\TP_POO_25457-main\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist_Accommodation_System.UserControlReservation.resources
+C:\Users\danil\Downloads\PROJETO\TP_POO_25457-main\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist_Accommodation_System.UserControlReview.resources
+C:\Users\danil\Downloads\PROJETO\TP_POO_25457-main\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist Accommodation System.csproj.GenerateResource.cache
+C:\Users\danil\Downloads\PROJETO\TP_POO_25457-main\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist Accommodation System.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\danil\Downloads\PROJETO\TP_POO_25457-main\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist Accommodation System.AssemblyInfoInputs.cache
+C:\Users\danil\Downloads\PROJETO\TP_POO_25457-main\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist Accommodation System.AssemblyInfo.cs
+C:\Users\danil\Downloads\PROJETO\TP_POO_25457-main\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist Accommodation System.csproj.CoreCompileInputs.cache
+C:\Users\danil\Downloads\PROJETO\TP_POO_25457-main\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist Accommodation System.genruntimeconfig.cache
+C:\Users\danil\Downloads\PROJETO\TP_POO_25457-main\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\ref\Tourist Accommodation System.dll
+C:\PROJETO\TP_POO_25457-main\Tourist Accommodation System\bin\Debug\net8.0-windows8.0\Tourist Accommodation System.exe
+C:\PROJETO\TP_POO_25457-main\Tourist Accommodation System\bin\Debug\net8.0-windows8.0\Tourist Accommodation System.deps.json
+C:\PROJETO\TP_POO_25457-main\Tourist Accommodation System\bin\Debug\net8.0-windows8.0\Tourist Accommodation System.runtimeconfig.json
+C:\PROJETO\TP_POO_25457-main\Tourist Accommodation System\bin\Debug\net8.0-windows8.0\Tourist Accommodation System.dll
+C:\PROJETO\TP_POO_25457-main\Tourist Accommodation System\bin\Debug\net8.0-windows8.0\Tourist Accommodation System.pdb
+C:\PROJETO\TP_POO_25457-main\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist_Accommodation_System.Forms.ClientManagementForm.resources
+C:\PROJETO\TP_POO_25457-main\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist_Accommodation_System.Forms.FormAddEditClient.resources
+C:\PROJETO\TP_POO_25457-main\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist_Accommodation_System.MainWindow.resources
+C:\PROJETO\TP_POO_25457-main\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist_Accommodation_System.Properties.Resources.resources
+C:\PROJETO\TP_POO_25457-main\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist_Accommodation_System.UserControlAccommodation.resources
+C:\PROJETO\TP_POO_25457-main\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist_Accommodation_System.UserControlCheckin.resources
+C:\PROJETO\TP_POO_25457-main\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist_Accommodation_System.UserControlClient.resources
+C:\PROJETO\TP_POO_25457-main\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist_Accommodation_System.UserControls.UserControlPayments.resources
+C:\PROJETO\TP_POO_25457-main\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist_Accommodation_System.UserControlReservation.resources
+C:\PROJETO\TP_POO_25457-main\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist_Accommodation_System.UserControlReview.resources
+C:\PROJETO\TP_POO_25457-main\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist Accommodation System.csproj.GenerateResource.cache
+C:\PROJETO\TP_POO_25457-main\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist Accommodation System.GeneratedMSBuildEditorConfig.editorconfig
+C:\PROJETO\TP_POO_25457-main\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist Accommodation System.AssemblyInfoInputs.cache
+C:\PROJETO\TP_POO_25457-main\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist Accommodation System.AssemblyInfo.cs
+C:\PROJETO\TP_POO_25457-main\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist Accommodation System.csproj.CoreCompileInputs.cache
+C:\PROJETO\TP_POO_25457-main\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist Accommodation System.dll
+C:\PROJETO\TP_POO_25457-main\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\refint\Tourist Accommodation System.dll
+C:\PROJETO\TP_POO_25457-main\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist Accommodation System.pdb
+C:\PROJETO\TP_POO_25457-main\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist Accommodation System.genruntimeconfig.cache
+C:\PROJETO\TP_POO_25457-main\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\ref\Tourist Accommodation System.dll
+C:\PROJETO\TP_POO_25457-main\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist_Accommodation_System.Forms.AccommodationManagementForm.resources
+C:\PROJETO\TP_POO_25457-main\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist_Accommodation_System.Forms.FormAddEditAccommodation.resources
+C:\PROJETO\TP_POO_25457-main\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist_Accommodation_System.Forms.AccommodationDetails.resources

@@ -1,0 +1,12 @@
+C:\TP_POO_25257\TourismUtilities\TourismUtilities\bin\Debug\net8.0\TourismUtilities.deps.json
+C:\TP_POO_25257\TourismUtilities\TourismUtilities\bin\Debug\net8.0\TourismUtilities.dll
+C:\TP_POO_25257\TourismUtilities\TourismUtilities\bin\Debug\net8.0\TourismUtilities.pdb
+C:\TP_POO_25257\TourismUtilities\TourismUtilities\obj\Debug\net8.0\TourismUtilities.GeneratedMSBuildEditorConfig.editorconfig
+C:\TP_POO_25257\TourismUtilities\TourismUtilities\obj\Debug\net8.0\TourismUtilities.AssemblyInfoInputs.cache
+C:\TP_POO_25257\TourismUtilities\TourismUtilities\obj\Debug\net8.0\TourismUtilities.AssemblyInfo.cs
+C:\TP_POO_25257\TourismUtilities\TourismUtilities\obj\Debug\net8.0\TourismUtilities.csproj.CoreCompileInputs.cache
+C:\TP_POO_25257\TourismUtilities\TourismUtilities\obj\Debug\net8.0\TourismUtilities.sourcelink.json
+C:\TP_POO_25257\TourismUtilities\TourismUtilities\obj\Debug\net8.0\TourismUtilities.dll
+C:\TP_POO_25257\TourismUtilities\TourismUtilities\obj\Debug\net8.0\refint\TourismUtilities.dll
+C:\TP_POO_25257\TourismUtilities\TourismUtilities\obj\Debug\net8.0\TourismUtilities.pdb
+C:\TP_POO_25257\TourismUtilities\TourismUtilities\obj\Debug\net8.0\ref\TourismUtilities.dll
