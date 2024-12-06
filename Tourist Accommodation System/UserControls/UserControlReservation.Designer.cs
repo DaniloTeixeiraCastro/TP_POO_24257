@@ -33,6 +33,7 @@
             button_editreservation = new Button();
             button_addreservation = new Button();
             button_back = new Button();
+            label_menu = new Label();
             SuspendLayout();
             // 
             // button_listreservation
@@ -85,10 +86,24 @@
             button_back.UseVisualStyleBackColor = true;
             button_back.Click += button_back_Click;
             // 
+            // label_menu
+            // 
+            label_menu.AutoSize = true;
+            label_menu.BackColor = SystemColors.ActiveCaptionText;
+            label_menu.Font = new Font("Segoe UI", 18F);
+            label_menu.ForeColor = SystemColors.ControlLightLight;
+            label_menu.Location = new Point(150, 17);
+            label_menu.Name = "label_menu";
+            label_menu.Size = new Size(296, 41);
+            label_menu.TabIndex = 9;
+            label_menu.Text = "RESERVATION MENU";
+            label_menu.Click += label_menu_Click;
+            // 
             // UserControlReservation
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(label_menu);
             Controls.Add(button_back);
             Controls.Add(button_listreservation);
             Controls.Add(button_removereservation);
@@ -97,6 +112,7 @@
             Name = "UserControlReservation";
             Size = new Size(650, 550);
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -106,5 +122,6 @@
         private Button button_editreservation;
         private Button button_addreservation;
         private Button button_back;
+        private Label label_menu;
     }
 }

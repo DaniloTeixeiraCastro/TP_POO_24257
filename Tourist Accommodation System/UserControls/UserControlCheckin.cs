@@ -6,6 +6,10 @@
         {
             InitializeComponent();
         }
+        private void label_menu_Click(object sender, EventArgs e)
+        {
+
+        }
 
         private void button_addcheckin_Click(object sender, EventArgs e)
         {
@@ -37,5 +41,6 @@
             MainWindow newMainForm = new MainWindow();
             newMainForm.Show();
         }
+
     }
 }

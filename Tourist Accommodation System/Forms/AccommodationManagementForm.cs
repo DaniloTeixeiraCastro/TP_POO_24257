@@ -62,7 +62,7 @@ namespace Tourist_Accommodation_System.Forms
                 editForm.ShowDialog();
 
                 // Após a edição, atualize o JSON
-                AccommodationService.UpdateAccommodation(selectedAccommodation);
+                AccommodationService.AddOrUpdateAccommodation(selectedAccommodation);
 
                 // Atualizar a ComboBox com os novos dados
                 LoadAccommodationsToComboBox();
@@ -107,7 +107,7 @@ namespace Tourist_Accommodation_System.Forms
             var accommodations = AccommodationService.GetAccommodations(); // Obter a lista de acomodações
             foreach (var accommodation in accommodations)
             {
-                comboBox_accommodation.Items.Add($"Room {accommodation.RoomNumber}: {accommodation.Name}, Location: {accommodation.Location}, Price: {accommodation.PricePerNight:C}");
+                comboBox_accommodation.Items.Add($"Room {accommodation.RoomNumber}: {accommodation.Name}, Price: {accommodation.PricePerNight:C}");
             }
 
             comboBox_accommodation.SelectedIndex = -1; // Nenhum item selecionado por padrão

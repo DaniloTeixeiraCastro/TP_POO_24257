@@ -16,6 +16,10 @@
             mainForm.MainPanel.Controls.Add(usercontrol); // Adiciona o novo controle ao painel
 
         }
+        private void label_menu_Click(object sender, EventArgs e)
+        {
+
+        }
 
         private void button_addreservation_Click(object sender, EventArgs e)
         {
@@ -47,5 +51,6 @@
             MainWindow newMainForm = new MainWindow();
             newMainForm.Show();
         }
+
     }
 }

@@ -33,17 +33,16 @@
             button_addclient = new Button();
             button_back = new Button();
             button_listclient = new Button();
-            listbox_clients = new ListBox();
             label1 = new Label();
             label_clientmenu = new Label();
+            listbox_clients = new ListBox();
             SuspendLayout();
             // 
             // button_removeclient
             // 
-            button_removeclient.Location = new Point(82, 143);
-            button_removeclient.Margin = new Padding(3, 2, 3, 2);
+            button_removeclient.Location = new Point(94, 191);
             button_removeclient.Name = "button_removeclient";
-            button_removeclient.Size = new Size(156, 60);
+            button_removeclient.Size = new Size(178, 80);
             button_removeclient.TabIndex = 7;
             button_removeclient.Text = "REMOVE CLIENT";
             button_removeclient.UseVisualStyleBackColor = true;
@@ -51,10 +50,9 @@
             // 
             // button_editclient
             // 
-            button_editclient.Location = new Point(313, 69);
-            button_editclient.Margin = new Padding(3, 2, 3, 2);
+            button_editclient.Location = new Point(358, 92);
             button_editclient.Name = "button_editclient";
-            button_editclient.Size = new Size(149, 60);
+            button_editclient.Size = new Size(170, 80);
             button_editclient.TabIndex = 6;
             button_editclient.Text = "EDIT CLIENT";
             button_editclient.UseVisualStyleBackColor = true;
@@ -62,10 +60,9 @@
             // 
             // button_addclient
             // 
-            button_addclient.Location = new Point(82, 69);
-            button_addclient.Margin = new Padding(3, 2, 3, 2);
+            button_addclient.Location = new Point(94, 92);
             button_addclient.Name = "button_addclient";
-            button_addclient.Size = new Size(156, 60);
+            button_addclient.Size = new Size(178, 80);
             button_addclient.TabIndex = 5;
             button_addclient.Text = "ADD CLIENT";
             button_addclient.UseVisualStyleBackColor = true;
@@ -74,10 +71,9 @@
             // button_back
             // 
             button_back.BackColor = Color.Transparent;
-            button_back.Location = new Point(417, 11);
-            button_back.Margin = new Padding(3, 2, 3, 2);
+            button_back.Location = new Point(477, 15);
             button_back.Name = "button_back";
-            button_back.Size = new Size(45, 33);
+            button_back.Size = new Size(51, 44);
             button_back.TabIndex = 9;
             button_back.Text = "<-";
             button_back.UseVisualStyleBackColor = false;
@@ -85,31 +81,19 @@
             // 
             // button_listclient
             // 
-            button_listclient.Location = new Point(313, 143);
-            button_listclient.Margin = new Padding(3, 2, 3, 2);
+            button_listclient.Location = new Point(358, 191);
             button_listclient.Name = "button_listclient";
-            button_listclient.Size = new Size(149, 60);
+            button_listclient.Size = new Size(170, 80);
             button_listclient.TabIndex = 10;
             button_listclient.Text = "LIST CLIENT";
             button_listclient.UseVisualStyleBackColor = true;
             button_listclient.Click += button_listclient_Click;
             // 
-            // listbox_clients
-            // 
-            listbox_clients.FormattingEnabled = true;
-            listbox_clients.ItemHeight = 15;
-            listbox_clients.Location = new Point(55, 242);
-            listbox_clients.Margin = new Padding(3, 2, 3, 2);
-            listbox_clients.Name = "listbox_clients";
-            listbox_clients.Size = new Size(469, 139);
-            listbox_clients.TabIndex = 11;
-            listbox_clients.SelectedIndexChanged += listbox_clients_SelectedIndexChanged_1;
-            // 
             // label1
             // 
             label1.Location = new Point(0, 0);
             label1.Name = "label1";
-            label1.Size = new Size(100, 23);
+            label1.Size = new Size(114, 31);
             label1.TabIndex = 0;
             // 
             // label_clientmenu
@@ -118,15 +102,24 @@
             label_clientmenu.BackColor = SystemColors.ActiveCaptionText;
             label_clientmenu.Font = new Font("Segoe UI", 18F);
             label_clientmenu.ForeColor = SystemColors.ButtonHighlight;
-            label_clientmenu.Location = new Point(191, 11);
+            label_clientmenu.Location = new Point(218, 15);
             label_clientmenu.Name = "label_clientmenu";
-            label_clientmenu.Size = new Size(164, 32);
+            label_clientmenu.Size = new Size(205, 41);
             label_clientmenu.TabIndex = 12;
             label_clientmenu.Text = "CLIENT MENU";
             // 
+            // listbox_clients
+            // 
+            listbox_clients.FormattingEnabled = true;
+            listbox_clients.Location = new Point(63, 323);
+            listbox_clients.Name = "listbox_clients";
+            listbox_clients.Size = new Size(535, 184);
+            listbox_clients.TabIndex = 11;
+            listbox_clients.SelectedIndexChanged += listbox_clients_SelectedIndexChanged_1;
+            // 
             // UserControlClient
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(label_clientmenu);
             Controls.Add(label1);
@@ -136,9 +129,8 @@
             Controls.Add(button_removeclient);
             Controls.Add(button_editclient);
             Controls.Add(button_addclient);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "UserControlClient";
-            Size = new Size(569, 412);
+            Size = new Size(650, 549);
             Load += UserControlClient_Load;
             ResumeLayout(false);
             PerformLayout();
@@ -150,8 +142,8 @@
         private Button button_addclient;
         private Button button_back;
         private Button button_listclient;
-        private ListBox listbox_clients;
         private Label label1;
         private Label label_clientmenu;
+        private ListBox listbox_clients;
     }
 }

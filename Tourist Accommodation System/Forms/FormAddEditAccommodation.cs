@@ -107,7 +107,7 @@ namespace Tourist_Accommodation_System.Forms
                 Location = location,
                 Capacity = capacity,
                 PricePerNight = pricePerNight,
-                IsAvailable = true // Ou ajuste conforme necessário
+                //IsAvailable = true // Ou ajuste conforme necessário
             };
 
             // Salva ou atualiza no serviço

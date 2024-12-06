@@ -4,6 +4,7 @@ namespace Tourist_Accommodation_System.Models
 {
     public class Client : Entity
     {
+        //propriedades da classe
         public string Name { get; set; } = string.Empty;
         public string Email { get; set; } = string.Empty;
         public string Phone { get; set; } = string.Empty;

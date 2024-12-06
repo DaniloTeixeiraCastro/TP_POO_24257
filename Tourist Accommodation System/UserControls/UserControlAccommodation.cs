@@ -42,7 +42,8 @@ namespace Tourist_Accommodation_System
 
         private void button_listaccommodation_Click(object sender, EventArgs e)
         {
-
+            AcommodationList accommodationListForm = new AcommodationList();
+            accommodationListForm.ShowDialog();
         }
 
         private void UserControlAccommodation_Load(object sender, EventArgs e)
@@ -54,7 +55,7 @@ namespace Tourist_Accommodation_System
         {
             // Fecha o formulário atual
             var mainForm = (MainWindow)this.ParentForm;
-            mainForm.Hide(); // Ou mainForm.Close() se quiser fechar permanentemente
+            mainForm.Hide(); // Ou mainForm.Close() 
 
             // Cria e abre uma nova instância da MainWindow
             MainWindow newMainForm = new MainWindow();

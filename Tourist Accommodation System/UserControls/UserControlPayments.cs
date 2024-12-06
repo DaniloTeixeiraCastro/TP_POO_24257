@@ -16,6 +16,10 @@ namespace Tourist_Accommodation_System.UserControls
         {
             InitializeComponent();
         }
+        private void label_menu_Click(object sender, EventArgs e)
+        {
+
+        }
 
         private void UserControlPayments_Load(object sender, EventArgs e)
         {
@@ -38,7 +42,7 @@ namespace Tourist_Accommodation_System.UserControls
         }
 
         private void button_back_Click(object sender, EventArgs e)
-        {  
+        {
             var mainForm = (MainWindow)this.ParentForm;
             mainForm.Hide();
 
@@ -46,5 +50,6 @@ namespace Tourist_Accommodation_System.UserControls
             newMainForm.Show();
 
         }
+
     }
 }

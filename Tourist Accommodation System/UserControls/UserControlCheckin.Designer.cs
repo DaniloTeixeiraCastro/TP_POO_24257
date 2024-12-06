@@ -33,6 +33,7 @@
             button_editcheckin = new Button();
             button_addcheckin = new Button();
             button_back = new Button();
+            label_menu = new Label();
             SuspendLayout();
             // 
             // button_listcheckin
@@ -85,10 +86,24 @@
             button_back.UseVisualStyleBackColor = true;
             button_back.Click += button_back_Click;
             // 
+            // label_menu
+            // 
+            label_menu.AutoSize = true;
+            label_menu.BackColor = SystemColors.ActiveCaptionText;
+            label_menu.Font = new Font("Segoe UI", 18F);
+            label_menu.ForeColor = SystemColors.Control;
+            label_menu.Location = new Point(170, 19);
+            label_menu.Name = "label_menu";
+            label_menu.Size = new Size(244, 41);
+            label_menu.TabIndex = 9;
+            label_menu.Text = "CHECK-IN MENU";
+            label_menu.Click += label_menu_Click;
+            // 
             // UserControlCheckin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(label_menu);
             Controls.Add(button_back);
             Controls.Add(button_listcheckin);
             Controls.Add(button_removecheckin);
@@ -97,6 +112,7 @@
             Name = "UserControlCheckin";
             Size = new Size(650, 550);
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -106,5 +122,6 @@
         private Button button_editcheckin;
         private Button button_addcheckin;
         private Button button_back;
+        private Label label_menu;
     }
 }

@@ -32,11 +32,12 @@
             button_editpayment = new Button();
             button_listpayment = new Button();
             button_back = new Button();
+            label_menu = new Label();
             SuspendLayout();
             // 
             // button_addpayment
             // 
-            button_addpayment.Location = new Point(150, 80);
+            button_addpayment.Location = new Point(150, 119);
             button_addpayment.Name = "button_addpayment";
             button_addpayment.Size = new Size(300, 80);
             button_addpayment.TabIndex = 0;
@@ -46,7 +47,7 @@
             // 
             // button_editpayment
             // 
-            button_editpayment.Location = new Point(150, 180);
+            button_editpayment.Location = new Point(150, 219);
             button_editpayment.Name = "button_editpayment";
             button_editpayment.Size = new Size(300, 80);
             button_editpayment.TabIndex = 1;
@@ -56,7 +57,7 @@
             // 
             // button_listpayment
             // 
-            button_listpayment.Location = new Point(150, 280);
+            button_listpayment.Location = new Point(150, 319);
             button_listpayment.Name = "button_listpayment";
             button_listpayment.Size = new Size(300, 80);
             button_listpayment.TabIndex = 2;
@@ -66,18 +67,32 @@
             // 
             // button_back
             // 
-            button_back.Location = new Point(501, 91);
+            button_back.Location = new Point(494, 21);
             button_back.Name = "button_back";
-            button_back.Size = new Size(94, 47);
+            button_back.Size = new Size(44, 41);
             button_back.TabIndex = 3;
             button_back.Text = "<-";
             button_back.UseVisualStyleBackColor = true;
             button_back.Click += button_back_Click;
             // 
+            // label_menu
+            // 
+            label_menu.AutoSize = true;
+            label_menu.BackColor = SystemColors.ActiveCaptionText;
+            label_menu.Font = new Font("Segoe UI", 18F);
+            label_menu.ForeColor = SystemColors.ButtonHighlight;
+            label_menu.Location = new Point(180, 21);
+            label_menu.Name = "label_menu";
+            label_menu.Size = new Size(240, 41);
+            label_menu.TabIndex = 4;
+            label_menu.Text = "PAYMENT MENU";
+            label_menu.Click += label_menu_Click;
+            // 
             // UserControlPayments
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(label_menu);
             Controls.Add(button_back);
             Controls.Add(button_listpayment);
             Controls.Add(button_editpayment);
@@ -86,6 +101,7 @@
             Size = new Size(650, 550);
             Load += UserControlPayments_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -94,5 +110,6 @@
         private Button button_editpayment;
         private Button button_listpayment;
         private Button button_back;
+        private Label label_menu;
     }
 }

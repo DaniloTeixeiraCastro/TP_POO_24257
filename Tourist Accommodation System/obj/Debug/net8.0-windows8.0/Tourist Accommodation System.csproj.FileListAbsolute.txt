@@ -78,3 +78,4 @@ C:\PROJETO\TP_POO_25457-main\Tourist Accommodation System\obj\Debug\net8.0-windo
 C:\PROJETO\TP_POO_25457-main\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist_Accommodation_System.Forms.FormAddEditAccommodation.resources
 C:\PROJETO\TP_POO_25457-main\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist_Accommodation_System.Forms.AccommodationDetails.resources
 C:\PROJETO\TP_POO_25457-main\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist Accommodation System.sourcelink.json
+C:\PROJETO\TP_POO_25457-main\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist_Accommodation_System.Forms.AcommodationList.resources
