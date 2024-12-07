@@ -6,7 +6,7 @@
     "RoomNumber": 1,
     "Capacity": 2,
     "PricePerNight": 50,
-    "Status": 0,
+    "Status": 1,
     "Id": 0
   },
   {
