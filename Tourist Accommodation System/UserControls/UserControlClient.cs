@@ -10,7 +10,6 @@ namespace Tourist_Accommodation_System
         public UserControlClient()
         {
             InitializeComponent();
-
         }
 
         #region

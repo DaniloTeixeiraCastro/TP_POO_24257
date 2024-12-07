@@ -47,7 +47,7 @@ namespace Tourist_Accommodation_System.Services
             );
             if (!string.IsNullOrEmpty(validation)) return validation;
 
-            // Verifica duplicação
+            // Verifica duplicação pelo número do quarto
             var existingAccommodation = accommodationList.FirstOrDefault(a => a.RoomNumber == accommodation.RoomNumber);
             if (existingAccommodation != null && existingAccommodation != accommodation)
             {
@@ -57,13 +57,22 @@ namespace Tourist_Accommodation_System.Services
             // Atualiza ou adiciona a acomodação
             if (existingAccommodation != null)
             {
+                // Atualiza apenas as propriedades modificadas da acomodação
                 UpdateAccommodationProperties(accommodation, existingAccommodation);
+
+                // Verifica se houve mudança no status
+                if (existingAccommodation.Status != accommodation.Status)
+                {
+                    existingAccommodation.Status = accommodation.Status;
+                }
             }
             else
             {
+                // Adiciona uma nova acomodação
                 accommodationList.Add(accommodation);
             }
 
+            // Salva a lista de acomodações no JSON
             SaveAccommodationsToJson();
             return "Acomodação salva com sucesso!";
         }
@@ -208,6 +217,7 @@ namespace Tourist_Accommodation_System.Services
 
             return accommodations;
         }
+
 
 
     }

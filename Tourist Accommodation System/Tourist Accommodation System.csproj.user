@@ -16,6 +16,9 @@
     <Compile Update="Forms\FormAddEditAccommodation.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\FormAddEditReservation.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>

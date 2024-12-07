@@ -1,11 +1,14 @@
-﻿namespace Tourist_Accommodation_System
+﻿using Tourist_Accommodation_System.Forms;
+
+namespace Tourist_Accommodation_System
 {
     public partial class UserControlReservation : UserControl
     {
-        private MainWindow mainForm;
+        private MainWindow? mainForm;
         public UserControlReservation()
         {
             InitializeComponent();
+
         }
 
         public void LoadUserControlClient()
@@ -23,11 +26,15 @@
 
         private void button_addreservation_Click(object sender, EventArgs e)
         {
+            // Abre o formulário no modo de adição (sem uma reserva existente)
+            var addReservationForm = new FormAddEditReservation();
+            addReservationForm.ShowDialog();
 
         }
 
         private void button_editreservation_Click(object sender, EventArgs e)
         {
+
 
         }
 

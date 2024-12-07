@@ -36,9 +36,9 @@
             // comboBox_accommodation
             // 
             comboBox_accommodation.FormattingEnabled = true;
-            comboBox_accommodation.Location = new Point(70, 76);
+            comboBox_accommodation.Location = new Point(94, 76);
             comboBox_accommodation.Name = "comboBox_accommodation";
-            comboBox_accommodation.Size = new Size(617, 28);
+            comboBox_accommodation.Size = new Size(642, 28);
             comboBox_accommodation.TabIndex = 0;
             comboBox_accommodation.SelectedIndexChanged += comboBox_accommodation_SelectedIndexChanged;
             // 

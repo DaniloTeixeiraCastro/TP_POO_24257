@@ -22,27 +22,42 @@ namespace Tourist_Accommodation_System.Forms
 
         private void button_remove_Click(object sender, EventArgs e)
         {
+            // Verificar se a ComboBox está inicializada
+            if (comboBox_accommodation == null)
             {
-                // Verificar se uma acomodação foi selecionada
-                if (comboBox_accommodation.SelectedIndex == -1)
-                {
-                    MessageBox.Show("Por favor, selecione uma acomodação para remover.");
-                    return;
-                }
-
-                // Obter o número do quarto da acomodação selecionada
-                var selectedText = comboBox_accommodation.SelectedItem.ToString();
-                int roomNumber = int.Parse(selectedText.Split(':')[0].Replace("Room", "").Trim());
-
-                // Remover a acomodação do serviço
-                string resultMessage = AccommodationService.RemoveAccommodation(roomNumber);
-
-                // Exibir mensagem de confirmação ou erro
-                MessageBox.Show(resultMessage);
-
-                // Atualizar a ComboBox com as acomodações restantes
-                LoadAccommodationsToComboBox();
+                MessageBox.Show("Erro: ComboBox de acomodações não está inicializada.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
+
+            // Verificar se uma acomodação foi selecionada
+            if (comboBox_accommodation.SelectedIndex == -1)
+            {
+                MessageBox.Show("Por favor, selecione uma acomodação para remover.");
+                return;
+            }
+
+            // Obter o número do quarto da acomodação selecionada
+            var selectedText = comboBox_accommodation.SelectedItem?.ToString();
+            if (string.IsNullOrEmpty(selectedText))
+            {
+                MessageBox.Show("Erro ao obter a acomodação selecionada.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!int.TryParse(selectedText, out int roomNumber))
+            {
+                MessageBox.Show("Erro: Não foi possível converter o número do quarto.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Remover a acomodação do serviço
+            string resultMessage = AccommodationService.RemoveAccommodation(roomNumber);
+
+            // Exibir mensagem de confirmação ou erro
+            MessageBox.Show(resultMessage);
+
+            // Atualizar a ComboBox com as acomodações restantes
+            LoadAccommodationsToComboBox();
         }
 
         private void button_edit_Click(object sender, EventArgs e)
@@ -73,7 +88,7 @@ namespace Tourist_Accommodation_System.Forms
 
         private void comboBox_accommodation_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            this.comboBox_accommodation = new System.Windows.Forms.ComboBox();
         }
 
         private void UpdateAccommodationList()

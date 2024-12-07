@@ -2,7 +2,6 @@
 {
     public partial class UserControlReview : UserControl
     {
-        private MainWindow mainForm;
         public UserControlReview()
         {
             InitializeComponent();
