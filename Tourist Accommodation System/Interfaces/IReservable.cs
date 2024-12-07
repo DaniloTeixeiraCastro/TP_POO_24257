@@ -8,12 +8,35 @@ namespace Tourist_Accommodation_System.Interfaces
 {
     public interface IReservable
     {
-        void Reserve(DateTime date); // Método que realiza uma reserva para uma data específica
-        void CancelReservation(); // Método que cancela a reserva
-        bool IsReserved { get; }
-        DateTime ReservationDate { get; set; }
+        /// <summary>
+        /// Realiza uma reserva para uma data específica.
+        /// </summary>
+        /// <param name="date">Data para a qual a reserva será feita.</param>
+        /// <returns>True se a reserva foi bem-sucedida, False caso contrário.</returns>
+        bool Reserve(DateTime date);
 
-        bool IsAvailable(DateTime date); // Método que verifica disponibilidade
+        /// <summary>
+        /// Cancela uma reserva existente.
+        /// </summary>
+        /// <returns>True se o cancelamento foi bem-sucedido, False caso contrário.</returns>
+        bool CancelReservation();
+
+        /// <summary>
+        /// Indica se a entidade está reservada.
+        /// </summary>
+        bool IsReserved { get; }
+
+        /// <summary>
+        /// Data da reserva atual, ou null se não houver reserva.
+        /// </summary>
+        DateTime? ReservationDate { get; set; }
+
+        /// <summary>
+        /// Verifica a disponibilidade para uma data específica.
+        /// </summary>
+        /// <param name="date">Data a ser verificada.</param>
+        /// <returns>True se disponível, False caso contrário.</returns>
+        bool IsAvailable(DateTime date);
     }
 
 

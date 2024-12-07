@@ -39,7 +39,7 @@
             // 
             // button_listaccommodation
             // 
-            button_listaccommodation.BackColor = SystemColors.ControlDarkDark;
+            button_listaccommodation.BackColor = SystemColors.ButtonHighlight;
             button_listaccommodation.Location = new Point(150, 369);
             button_listaccommodation.Name = "button_listaccommodation";
             button_listaccommodation.Size = new Size(300, 80);
@@ -90,12 +90,13 @@
             // 
             // button_filter
             // 
+            button_filter.BackColor = SystemColors.ButtonShadow;
             button_filter.Location = new Point(150, 465);
             button_filter.Name = "button_filter";
             button_filter.Size = new Size(300, 67);
             button_filter.TabIndex = 9;
             button_filter.Text = "FILTER";
-            button_filter.UseVisualStyleBackColor = true;
+            button_filter.UseVisualStyleBackColor = false;
             button_filter.Click += button_filter_Click;
             // 
             // label_accommodationmenu

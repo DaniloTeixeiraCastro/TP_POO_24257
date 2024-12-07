@@ -13,6 +13,7 @@ namespace Tourist_Accommodation_System.Forms
 {
     public partial class ClientManagementForm : Form
     {
+
         public ClientManagementForm()
         {
             InitializeComponent();
