@@ -88,7 +88,7 @@ namespace Tourist_Accommodation_System.Forms
 
         private void comboBox_accommodation_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.comboBox_accommodation = new System.Windows.Forms.ComboBox();
+
         }
 
         private void UpdateAccommodationList()

@@ -57,25 +57,49 @@ namespace Tourist_Accommodation_System.Forms
         /// </summary>
         private void LoadClientsAndAccommodations()
         {
-            // Carregar clientes
+            // Carregar os clientes na ComboBox
             var clients = ClientService.GetClients();
             comboBox_client.DataSource = clients;
             comboBox_client.DisplayMember = "Name";
             comboBox_client.ValueMember = "Id";
-            comboBox_client.SelectedIndex = -1;
+            comboBox_client.SelectedIndex = -1; // Nenhum cliente selecionado por padrão
 
-            // Carregar acomodações disponíveis
+            // Carregar as acomodações na ComboBox
             var accommodations = AccommodationService.GetAccommodations()
-                .Where(a => a.Status == AccommodationStatus.Available)
+                .Where(a => a.Status == AccommodationStatus.Available) // Apenas acomodações disponíveis
                 .ToList();
             comboBox_accommodation.DataSource = accommodations;
             comboBox_accommodation.DisplayMember = "Name";
             comboBox_accommodation.ValueMember = "RoomNumber";
-            comboBox_accommodation.SelectedIndex = -1;
+            comboBox_accommodation.SelectedIndex = -1; // Nenhuma acomodação selecionada por padrão
 
-            // Carregar status da reserva
-            comboBox_status.DataSource = Enum.GetValues(typeof(ReservationStatus));
-            comboBox_status.SelectedIndex = -1;
+            // **Carregar os valores do enum na ComboBox Status**
+            comboBox_status.DataSource = Enum.GetValues(typeof(AccommodationStatus));
+            comboBox_status.SelectedIndex = -1; // Nenhum status selecionado por padrão
+        }
+        private void UpdateAvailableAccommodations()
+        {
+            if (dateTimePicker_checkIn.Value.Date >= dateTimePicker_checkOut.Value.Date)
+            {
+                MessageBox.Show("A data de Check-Out deve ser posterior à de Check-In.", "Erro de Validação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Carrega as acomodações disponíveis para o intervalo selecionado
+            var availableAccommodations = AccommodationService.GetAccommodations()
+                .Where(a => ReservationService.ValidateAvailability(a, dateTimePicker_checkIn.Value, dateTimePicker_checkOut.Value))
+                .ToList();
+
+            if (!availableAccommodations.Any())
+            {
+                MessageBox.Show("Nenhuma acomodação está disponível para as datas selecionadas.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            // Atualiza a ComboBox de acomodações
+            comboBox_accommodation.DataSource = availableAccommodations;
+            comboBox_accommodation.DisplayMember = "Name";
+            comboBox_accommodation.ValueMember = "RoomNumber";
+            comboBox_accommodation.SelectedIndex = -1; // Nenhuma acomodação selecionada por padrão
         }
 
         /// <summary>
@@ -98,6 +122,7 @@ namespace Tourist_Accommodation_System.Forms
                 label_totalPrice.Text = "€ 0.00"; // Reseta se as condições não forem atendidas
             }
         }
+
 
         /// <summary>
         /// Configura o mínimo permitido para a data de Check-In.
@@ -161,6 +186,7 @@ namespace Tourist_Accommodation_System.Forms
         private void dateTimePicker_checkIn_ValueChanged(object sender, EventArgs e)
         {
             UpdateTotalPrice();
+            UpdateAvailableAccommodations();
 
         }
 
@@ -170,6 +196,7 @@ namespace Tourist_Accommodation_System.Forms
         private void dateTimePicker_checkOut_ValueChanged(object sender, EventArgs e)
         {
             UpdateTotalPrice();
+            UpdateAvailableAccommodations();
         }
 
         private void label_totalPrice_Click(object sender, EventArgs e)
@@ -229,5 +256,6 @@ namespace Tourist_Accommodation_System.Forms
 
             Close();
         }
+        
     }
 }

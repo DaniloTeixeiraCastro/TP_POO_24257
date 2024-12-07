@@ -68,7 +68,7 @@
             // label_accommodation
             // 
             label_accommodation.AutoSize = true;
-            label_accommodation.Location = new Point(110, 154);
+            label_accommodation.Location = new Point(110, 238);
             label_accommodation.Name = "label_accommodation";
             label_accommodation.Size = new Size(139, 20);
             label_accommodation.TabIndex = 2;
@@ -78,7 +78,7 @@
             // label_checkin
             // 
             label_checkin.AutoSize = true;
-            label_checkin.Location = new Point(110, 212);
+            label_checkin.Location = new Point(110, 134);
             label_checkin.Name = "label_checkin";
             label_checkin.Size = new Size(76, 20);
             label_checkin.TabIndex = 3;
@@ -88,7 +88,7 @@
             // label_price
             // 
             label_price.AutoSize = true;
-            label_price.Location = new Point(110, 330);
+            label_price.Location = new Point(114, 352);
             label_price.Name = "label_price";
             label_price.Size = new Size(47, 20);
             label_price.TabIndex = 4;
@@ -107,7 +107,7 @@
             // comboBox_accommodation
             // 
             comboBox_accommodation.FormattingEnabled = true;
-            comboBox_accommodation.Location = new Point(383, 154);
+            comboBox_accommodation.Location = new Point(383, 235);
             comboBox_accommodation.Name = "comboBox_accommodation";
             comboBox_accommodation.Size = new Size(315, 28);
             comboBox_accommodation.TabIndex = 6;
@@ -116,7 +116,7 @@
             // label_checkout
             // 
             label_checkout.AutoSize = true;
-            label_checkout.Location = new Point(110, 271);
+            label_checkout.Location = new Point(110, 188);
             label_checkout.Name = "label_checkout";
             label_checkout.Size = new Size(90, 20);
             label_checkout.TabIndex = 7;
@@ -125,7 +125,7 @@
             // 
             // dateTimePicker_checkIn
             // 
-            dateTimePicker_checkIn.Location = new Point(383, 212);
+            dateTimePicker_checkIn.Location = new Point(383, 129);
             dateTimePicker_checkIn.Name = "dateTimePicker_checkIn";
             dateTimePicker_checkIn.Size = new Size(315, 27);
             dateTimePicker_checkIn.TabIndex = 8;
@@ -133,7 +133,7 @@
             // 
             // dateTimePicker_checkOut
             // 
-            dateTimePicker_checkOut.Location = new Point(383, 271);
+            dateTimePicker_checkOut.Location = new Point(383, 188);
             dateTimePicker_checkOut.Name = "dateTimePicker_checkOut";
             dateTimePicker_checkOut.Size = new Size(315, 27);
             dateTimePicker_checkOut.TabIndex = 9;
@@ -152,7 +152,7 @@
             // label_totalPrice
             // 
             label_totalPrice.AutoSize = true;
-            label_totalPrice.Location = new Point(506, 330);
+            label_totalPrice.Location = new Point(510, 352);
             label_totalPrice.Name = "label_totalPrice";
             label_totalPrice.Size = new Size(17, 20);
             label_totalPrice.TabIndex = 11;
@@ -162,7 +162,7 @@
             // label_status
             // 
             label_status.AutoSize = true;
-            label_status.Location = new Point(114, 374);
+            label_status.Location = new Point(114, 294);
             label_status.Name = "label_status";
             label_status.Size = new Size(59, 20);
             label_status.TabIndex = 12;
@@ -172,7 +172,7 @@
             // comboBox_status
             // 
             comboBox_status.FormattingEnabled = true;
-            comboBox_status.Location = new Point(383, 371);
+            comboBox_status.Location = new Point(383, 294);
             comboBox_status.Name = "comboBox_status";
             comboBox_status.Size = new Size(315, 28);
             comboBox_status.TabIndex = 13;

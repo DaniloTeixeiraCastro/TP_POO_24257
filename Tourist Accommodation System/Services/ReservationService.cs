@@ -100,7 +100,7 @@ namespace Tourist_Accommodation_System.Services
         /// <summary>
         /// Valida se o alojamento está disponível nas datas fornecidas, exceto uma reserva existente (para edição).
         /// </summary>
-        private static bool ValidateAvailability(Accommodation accommodation, DateTime checkIn, DateTime checkOut, int? excludeReservationId = null)
+        public static bool ValidateAvailability(Accommodation accommodation, DateTime checkIn, DateTime checkOut, int? excludeReservationId = null)
         {
             return !reservationList.Any(r =>
                 r.Accommodation.RoomNumber == accommodation.RoomNumber &&
