@@ -21,21 +21,18 @@ namespace Tourist_Accommodation_System.Forms
         {
             InitializeComponent();
 
-            // Inicializa _currentReservation
-            _currentReservation = reservation ?? new Reservation();
-
             // Verifica se estamos no modo de edição
             _isEditMode = reservation != null;
 
-            // Configura o formulário para edição ou adição
             if (_isEditMode)
             {
+                _currentReservation = reservation ?? throw new ArgumentNullException(nameof(reservation), "Reservation cannot be null in edit mode.");
                 PopulateFields(); // Preenche os campos com os dados da reserva
             }
             else
             {
-                _currentReservation = new Reservation(); // Cria uma nova reserva para o modo de adição
-                LoadClientsAndAccommodations(); // Carrega clientes e acomodações disponíveis
+                _currentReservation = new Reservation(); // Cria uma nova reserva para adição
+                LoadClientsAndAccommodations(); // Carrega os dados básicos
             }
         }
         /// <summary>
@@ -45,11 +42,22 @@ namespace Tourist_Accommodation_System.Forms
         {
             if (_currentReservation == null) return;
 
+            // Configura as fontes de dados das ComboBoxes antes de selecionar os itens
+            LoadClientsAndAccommodations();
+
+            // Seleciona o cliente
             comboBox_client.SelectedValue = _currentReservation.Client.Id;
+
+            // Seleciona a acomodação
             comboBox_accommodation.SelectedValue = _currentReservation.Accommodation.RoomNumber;
+
+            // Configura as datas
             dateTimePicker_checkIn.Value = _currentReservation.CheckInDate;
             dateTimePicker_checkOut.Value = _currentReservation.CheckOutDate;
-            UpdateTotalPrice(); // Atualiza o preço total
+
+            // Configura o preço e o status
+            label_price.Text = _currentReservation.TotalPrice.ToString("C");
+            comboBox_status.SelectedItem = _currentReservation.Status.ToString();
         }
 
         /// <summary>
@@ -222,7 +230,7 @@ namespace Tourist_Accommodation_System.Forms
             var checkInDate = dateTimePicker_checkIn.Value.Date;
             var checkOutDate = dateTimePicker_checkOut.Value.Date;
 
-            if (checkOutDate <= checkInDate)
+            if (dateTimePicker_checkOut.Value <= dateTimePicker_checkIn.Value)
             {
                 MessageBox.Show("A data de Check-Out deve ser posterior à data de Check-In.", "Erro de Validação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;

@@ -11,14 +11,6 @@ namespace Tourist_Accommodation_System
 
         }
 
-        public void LoadUserControlClient()
-        {
-            UserControlClient usercontrol = new UserControlClient();
-            usercontrol.Dock = DockStyle.Fill;
-            mainForm.Controls.Clear();
-            mainForm.MainPanel.Controls.Add(usercontrol); // Adiciona o novo controle ao painel
-
-        }
         private void label_menu_Click(object sender, EventArgs e)
         {
 
@@ -34,30 +26,44 @@ namespace Tourist_Accommodation_System
 
         private void button_editreservation_Click(object sender, EventArgs e)
         {
-
-
+            // Abre o novo formulário ReservationManagementForm
+            ReservationManagementForm managementForm = new ReservationManagementForm();
+            managementForm.ShowDialog(); // Abre como janela modal
         }
 
         private void button_removereservation_Click(object sender, EventArgs e)
         {
-
+            // Abre o novo formulário ReservationManagementForm
+            ReservationManagementForm managementForm = new ReservationManagementForm();
+            managementForm.ShowDialog(); // Abre como janela modal
         }
 
         private void button_listreservation_Click(object sender, EventArgs e)
         {
+            var ReservationList = new ReservationList();
+            ReservationList.ShowDialog();
 
         }
 
         private void button_back_Click(object sender, EventArgs e)
         {
-            // Fecha o formulário atual
-            var mainForm = (MainWindow)this.ParentForm;
-            mainForm.Hide(); // Ou mainForm.Close() se quiser fechar permanentemente
-
-            // Cria e abre uma nova instância da MainWindow
-            MainWindow newMainForm = new MainWindow();
-            newMainForm.Show();
+            // Verifica se ParentForm não é nulo e se é uma instância de MainWindow
+            if (this.ParentForm is MainWindow mainForm)
+            {
+                mainForm.Hide(); // Ou mainForm.Close() para fechar permanentemente
+                                 // Cria e exibe novamente a MainWindow
+                MainWindow newMainForm = new ();
+                newMainForm.Show();
+            }
+            else
+            {
+                MessageBox.Show("Erro: Não foi possível retornar à janela principal.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
+        private void UserControlReservation_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

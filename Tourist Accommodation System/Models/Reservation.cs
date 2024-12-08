@@ -32,7 +32,7 @@
         /// <summary>
         /// Preço total da reserva (calculado automaticamente).
         /// </summary>
-        public decimal TotalPrice { get; private set; }
+        public decimal TotalPrice { get; set; }
 
         /// <summary>
         /// Estado atual da reserva.
@@ -75,7 +75,7 @@
         /// Calcula o preço total da estadia com base no número de noites e no preço por noite.
         /// </summary>
         /// <returns>O preço total da estadia.</returns>
-        private decimal CalculateTotalPrice()
+        public decimal CalculateTotalPrice()
         {
             // Calcula o número de noites
             int numberOfNights = (CheckOutDate - CheckInDate).Days;

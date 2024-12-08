@@ -13,28 +13,11 @@ namespace Tourist_Accommodation_System
         }
 
         #region
-        private void UpdateClientListBox()
-        {
-            // Limpa a ListBox
-            listbox_clients.Items.Clear();
-
-            // Preenche com os dados atualizados
-            var clients = ClientService.GetClients();
-            foreach (var client in clients)
-            {
-                listbox_clients.Items.Add($"ID: {client.Id}, Nome: {client.Name}, Email: {client.Email}");
-            }
-        }
 
         private void button_listclient_Click(object sender, EventArgs e)
         {
-            listbox_clients.Items.Clear();
-
-            var clients = ClientService.GetClients(); // Obtém a lista completa
-            foreach (var client in clients)
-            {
-                listbox_clients.Items.Add($"ID: {client.Id}, Nome: {client.Name}, Email: {client.Email}, TIN: {client.TIN}, Phone: {client.Phone}");
-            }
+            ClientList clientListForm = new ClientList();
+            clientListForm.ShowDialog();
         }
 
         #endregion
@@ -95,29 +78,6 @@ namespace Tourist_Accommodation_System
 
         }
         private void UserControlClient_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button_listClient_Click(object sender, EventArgs e)
-        {
-            {
-                // Limpa a ListBox antes de adicionar novos itens
-                listbox_clients.Items.Clear();
-
-                // Adiciona um cliente de exemplo (para testes)
-                listbox_clients.Items.Add("Exemplo de Cliente");
-
-                // Ou preenche com dados reais
-                var clients = ClientService.GetClients();
-                foreach (var client in clients)
-                {
-                    listbox_clients.Items.Add($"ID: {client.Id}, Nome: {client.Name}, Email: {client.Email}, TIN: {client.TIN}");
-                }
-            }
-        }
-
-        private void listbox_clients_SelectedIndexChanged_1(object sender, EventArgs e)
         {
 
         }

@@ -38,6 +38,9 @@ namespace Tourist_Accommodation_System.Services
                 return "O alojamento não está disponível para as datas selecionadas.";
             }
 
+            // Calcula o preço total da reserva
+            reservation.TotalPrice = reservation.CalculateTotalPrice();
+
             // Define um novo ID para a reserva
             reservation.Id = reservationList.Count > 0 ? reservationList.Max(r => r.Id) + 1 : 1;
 

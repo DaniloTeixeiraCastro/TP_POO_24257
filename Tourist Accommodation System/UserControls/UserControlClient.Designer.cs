@@ -35,12 +35,11 @@
             button_listclient = new Button();
             label1 = new Label();
             label_clientmenu = new Label();
-            listbox_clients = new ListBox();
             SuspendLayout();
             // 
             // button_removeclient
             // 
-            button_removeclient.Location = new Point(94, 191);
+            button_removeclient.Location = new Point(94, 285);
             button_removeclient.Name = "button_removeclient";
             button_removeclient.Size = new Size(178, 80);
             button_removeclient.TabIndex = 7;
@@ -50,7 +49,7 @@
             // 
             // button_editclient
             // 
-            button_editclient.Location = new Point(358, 92);
+            button_editclient.Location = new Point(358, 186);
             button_editclient.Name = "button_editclient";
             button_editclient.Size = new Size(170, 80);
             button_editclient.TabIndex = 6;
@@ -60,7 +59,7 @@
             // 
             // button_addclient
             // 
-            button_addclient.Location = new Point(94, 92);
+            button_addclient.Location = new Point(94, 186);
             button_addclient.Name = "button_addclient";
             button_addclient.Size = new Size(178, 80);
             button_addclient.TabIndex = 5;
@@ -81,7 +80,7 @@
             // 
             // button_listclient
             // 
-            button_listclient.Location = new Point(358, 191);
+            button_listclient.Location = new Point(358, 285);
             button_listclient.Name = "button_listclient";
             button_listclient.Size = new Size(170, 80);
             button_listclient.TabIndex = 10;
@@ -102,20 +101,11 @@
             label_clientmenu.BackColor = SystemColors.ActiveCaptionText;
             label_clientmenu.Font = new Font("Segoe UI", 18F);
             label_clientmenu.ForeColor = SystemColors.ButtonHighlight;
-            label_clientmenu.Location = new Point(218, 15);
+            label_clientmenu.Location = new Point(216, 18);
             label_clientmenu.Name = "label_clientmenu";
             label_clientmenu.Size = new Size(205, 41);
             label_clientmenu.TabIndex = 12;
             label_clientmenu.Text = "CLIENT MENU";
-            // 
-            // listbox_clients
-            // 
-            listbox_clients.FormattingEnabled = true;
-            listbox_clients.Location = new Point(63, 323);
-            listbox_clients.Name = "listbox_clients";
-            listbox_clients.Size = new Size(535, 184);
-            listbox_clients.TabIndex = 11;
-            listbox_clients.SelectedIndexChanged += listbox_clients_SelectedIndexChanged_1;
             // 
             // UserControlClient
             // 
@@ -123,7 +113,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(label_clientmenu);
             Controls.Add(label1);
-            Controls.Add(listbox_clients);
             Controls.Add(button_listclient);
             Controls.Add(button_back);
             Controls.Add(button_removeclient);
@@ -144,6 +133,5 @@
         private Button button_listclient;
         private Label label1;
         private Label label_clientmenu;
-        private ListBox listbox_clients;
     }
 }

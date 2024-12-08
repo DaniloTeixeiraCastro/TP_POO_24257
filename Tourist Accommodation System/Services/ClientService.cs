@@ -165,11 +165,6 @@ namespace Tourist_Accommodation_System.Services
         }
         #endregion
 
-
-
-
-
-
     }
 }
 

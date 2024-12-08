@@ -21,7 +21,32 @@
     },
     "CheckInDate": "2024-12-16T00:00:00",
     "CheckOutDate": "2024-12-23T00:00:00",
-    "TotalPrice": 350,
+    "TotalPrice": 0,
+    "Status": 0
+  },
+  {
+    "Id": 2,
+    "Client": {
+      "Name": "Jorge Pacheco",
+      "Email": "jorge@ipca.pt",
+      "Phone": "9125845698",
+      "TIN": "123123123",
+      "BirthDate": "1984-06-12T17:50:23.984",
+      "Id": 10
+    },
+    "Accommodation": {
+      "Name": "Quarto Triplo Vista Piscina 30",
+      "Location": "Vista Piscina",
+      "Type": 0,
+      "RoomNumber": 30,
+      "Capacity": 3,
+      "PricePerNight": 87.50,
+      "Status": 1,
+      "Id": 0
+    },
+    "CheckInDate": "2024-12-08T00:00:00+00:00",
+    "CheckOutDate": "2024-12-22T00:00:00",
+    "TotalPrice": 1225.00,
     "Status": 0
   }
 ]

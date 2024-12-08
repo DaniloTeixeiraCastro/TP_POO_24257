@@ -78,9 +78,9 @@
             // 
             // button_back
             // 
-            button_back.Location = new Point(501, 74);
+            button_back.Location = new Point(498, 17);
             button_back.Name = "button_back";
-            button_back.Size = new Size(94, 53);
+            button_back.Size = new Size(55, 41);
             button_back.TabIndex = 8;
             button_back.Text = "<-";
             button_back.UseVisualStyleBackColor = true;
@@ -111,6 +111,7 @@
             Controls.Add(button_addreservation);
             Name = "UserControlReservation";
             Size = new Size(650, 550);
+            Load += UserControlReservation_Load;
             ResumeLayout(false);
             PerformLayout();
         }

@@ -296,7 +296,7 @@
     "RoomNumber": 30,
     "Capacity": 3,
     "PricePerNight": 87.50,
-    "Status": 0,
+    "Status": 1,
     "Id": 0
   }
 ]
