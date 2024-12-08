@@ -83,3 +83,5 @@ C:\PROJETO\TP_POO_25457-main\Tourist Accommodation System\obj\Debug\net8.0-windo
 C:\PROJETO\TP_POO_25457-main\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist_Accommodation_System.Forms.ReservationManagementForm.resources
 C:\PROJETO\TP_POO_25457-main\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist_Accommodation_System.Forms.ReservationList.resources
 C:\PROJETO\TP_POO_25457-main\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist_Accommodation_System.Forms.ClientList.resources
+C:\PROJETO\TP_POO_25457-main\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist_Accommodation_System.Forms.FormAddEditReview.resources
+C:\PROJETO\TP_POO_25457-main\Tourist Accommodation System\obj\Debug\net8.0-windows8.0\Tourist_Accommodation_System.Forms.ReviewList.resources

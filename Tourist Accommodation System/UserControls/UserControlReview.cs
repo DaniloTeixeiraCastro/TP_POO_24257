@@ -1,4 +1,6 @@
-﻿namespace Tourist_Accommodation_System
+﻿using Tourist_Accommodation_System.Forms;
+
+namespace Tourist_Accommodation_System
 {
     public partial class UserControlReview : UserControl
     {
@@ -9,21 +11,28 @@
 
         private void button_addreview_Click(object sender, EventArgs e)
         {
-
+            FormAddEditReview addReviewForm = new FormAddEditReview();
+            addReviewForm.ShowDialog();
         }
 
         private void button_editreview_Click(object sender, EventArgs e)
         {
+            ReviewList addReviewForm = new ReviewList();
+            addReviewForm.ShowDialog();
 
         }
 
         private void button_removereview_Click(object sender, EventArgs e)
         {
+            ReviewList addReviewForm = new ReviewList();
+            addReviewForm.ShowDialog();
 
         }
 
         private void button_listreview_Click(object sender, EventArgs e)
         {
+            ReviewList addReviewForm = new ReviewList();
+            addReviewForm.ShowDialog();
 
         }
 

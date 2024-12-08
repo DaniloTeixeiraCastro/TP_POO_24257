@@ -1,0 +1,16 @@
+[
+  {
+    "ReviewId": 1,
+    "Client": {
+      "Name": "Frederico Diass",
+      "Email": "fdias@polopique.pt",
+      "Phone": "91225487",
+      "TIN": "78542",
+      "BirthDate": "1995-12-03T20:14:43.238",
+      "Id": 3
+    },
+    "Comment": "TOOOOOP",
+    "Rating": 4,
+    "IsAnonymous": false
+  }
+]
