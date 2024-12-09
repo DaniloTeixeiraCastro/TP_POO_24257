@@ -8,7 +8,7 @@ namespace Tourist_Accommodation_System.Services
 {
     public static class AccommodationService
     {
-        private static readonly string FilePath = @"C:\PROJETO\TP_POO_25457-main\accommodations.json";
+        private static readonly string FilePath = @"C:\PROJETO\TP_POO_25457-main\Data\accommodations.json";
         private static List<Accommodation> accommodationList = new List<Accommodation>();
 
         // Inicialização da classe estática

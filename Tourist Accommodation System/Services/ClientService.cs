@@ -10,7 +10,7 @@ namespace Tourist_Accommodation_System.Services
 {
     public static class ClientService
     {
-        private static readonly string FilePath = @"C:\TP_POO_25257\clients.json";
+        private static readonly string FilePath = @"C:\PROJETO\TP_POO_25457-main\Data\clients.json";
         private static List<Client> clientList = new List<Client>();
 
         public static bool IsAdult(DateTime birthDate)

@@ -10,7 +10,7 @@ namespace Tourist_Accommodation_System.Services
 {
     public static class ReservationService
     {
-        private static readonly string FilePath = @"C:\PROJETO\TP_POO_25457-main\reservations.json";
+        private static readonly string FilePath = @"C:\PROJETO\TP_POO_25457-main\Data\reservations.json";
         private static List<Reservation> reservationList = new List<Reservation>();
 
         // Construtor estático para carregar reservas do JSON, se existir

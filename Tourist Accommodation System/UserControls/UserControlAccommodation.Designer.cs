@@ -40,9 +40,9 @@
             // button_listaccommodation
             // 
             button_listaccommodation.BackColor = SystemColors.ButtonHighlight;
-            button_listaccommodation.Location = new Point(150, 369);
+            button_listaccommodation.Location = new Point(351, 279);
             button_listaccommodation.Name = "button_listaccommodation";
-            button_listaccommodation.Size = new Size(300, 80);
+            button_listaccommodation.Size = new Size(213, 80);
             button_listaccommodation.TabIndex = 7;
             button_listaccommodation.Text = "LIST ACCOMMODATION";
             button_listaccommodation.UseVisualStyleBackColor = false;
@@ -50,9 +50,9 @@
             // 
             // button_removeaccommodation
             // 
-            button_removeaccommodation.Location = new Point(150, 271);
+            button_removeaccommodation.Location = new Point(62, 279);
             button_removeaccommodation.Name = "button_removeaccommodation";
-            button_removeaccommodation.Size = new Size(300, 80);
+            button_removeaccommodation.Size = new Size(189, 80);
             button_removeaccommodation.TabIndex = 6;
             button_removeaccommodation.Text = "REMOVE ACCOMMODATION";
             button_removeaccommodation.UseVisualStyleBackColor = true;
@@ -60,9 +60,9 @@
             // 
             // button_editaccommodation
             // 
-            button_editaccommodation.Location = new Point(150, 174);
+            button_editaccommodation.Location = new Point(351, 159);
             button_editaccommodation.Name = "button_editaccommodation";
-            button_editaccommodation.Size = new Size(300, 80);
+            button_editaccommodation.Size = new Size(213, 80);
             button_editaccommodation.TabIndex = 5;
             button_editaccommodation.Text = "EDIT ACCOMMODATION";
             button_editaccommodation.UseVisualStyleBackColor = true;
@@ -70,9 +70,9 @@
             // 
             // button_addaccommodation
             // 
-            button_addaccommodation.Location = new Point(150, 79);
+            button_addaccommodation.Location = new Point(62, 159);
             button_addaccommodation.Name = "button_addaccommodation";
-            button_addaccommodation.Size = new Size(300, 80);
+            button_addaccommodation.Size = new Size(194, 80);
             button_addaccommodation.TabIndex = 4;
             button_addaccommodation.Text = "ADD ACCOMMODATION";
             button_addaccommodation.UseVisualStyleBackColor = true;
@@ -80,7 +80,7 @@
             // 
             // button_back
             // 
-            button_back.Location = new Point(516, 20);
+            button_back.Location = new Point(506, 80);
             button_back.Name = "button_back";
             button_back.Size = new Size(58, 40);
             button_back.TabIndex = 8;
@@ -91,7 +91,7 @@
             // button_filter
             // 
             button_filter.BackColor = SystemColors.ButtonShadow;
-            button_filter.Location = new Point(150, 465);
+            button_filter.Location = new Point(148, 412);
             button_filter.Name = "button_filter";
             button_filter.Size = new Size(300, 67);
             button_filter.TabIndex = 9;
@@ -105,7 +105,7 @@
             label_accommodationmenu.BackColor = SystemColors.ActiveCaptionText;
             label_accommodationmenu.Font = new Font("Segoe UI", 18F);
             label_accommodationmenu.ForeColor = SystemColors.ControlLightLight;
-            label_accommodationmenu.Location = new Point(122, 19);
+            label_accommodationmenu.Location = new Point(114, 79);
             label_accommodationmenu.Name = "label_accommodationmenu";
             label_accommodationmenu.Size = new Size(371, 41);
             label_accommodationmenu.TabIndex = 10;

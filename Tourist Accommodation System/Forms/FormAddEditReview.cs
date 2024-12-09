@@ -147,6 +147,13 @@ namespace Tourist_Accommodation_System.Forms
                 return;
             }
 
+            // Verificar se uma classificação foi selecionada
+            if (comboBox_rating.SelectedItem == null)
+            {
+                MessageBox.Show("Por favor, selecione uma classificação (rating).", "Erro de Validação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             // Obter os valores do formulário
             var selectedClient = checkBox_anonymous.Checked ? null : (Client?)comboBox_client.SelectedItem;
             var comment = textBox_comment.Text;

@@ -26,7 +26,6 @@ namespace Tourist_Accommodation_System.Forms
 
             // Preencher os campos com os dados da acomodação
             textBox_name.Text = accommodation.Name;
-            textBox_location.Text = accommodation.Location;
             textBox_roomnumber.Text = accommodation.RoomNumber.ToString();
             textBox_capacity.Text = accommodation.Capacity.ToString();
             textBox_price.Text = accommodation.PricePerNight.ToString("F2");
@@ -104,7 +103,6 @@ namespace Tourist_Accommodation_System.Forms
             {
                 RoomNumber = roomNumber,
                 Name = name,
-                Location = location,
                 Capacity = capacity,
                 PricePerNight = pricePerNight,
                 //IsAvailable = true // Ou ajuste conforme necessário

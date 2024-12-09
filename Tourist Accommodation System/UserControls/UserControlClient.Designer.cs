@@ -70,7 +70,7 @@
             // button_back
             // 
             button_back.BackColor = Color.Transparent;
-            button_back.Location = new Point(477, 15);
+            button_back.Location = new Point(477, 65);
             button_back.Name = "button_back";
             button_back.Size = new Size(51, 44);
             button_back.TabIndex = 9;
@@ -101,7 +101,7 @@
             label_clientmenu.BackColor = SystemColors.ActiveCaptionText;
             label_clientmenu.Font = new Font("Segoe UI", 18F);
             label_clientmenu.ForeColor = SystemColors.ButtonHighlight;
-            label_clientmenu.Location = new Point(216, 18);
+            label_clientmenu.Location = new Point(206, 65);
             label_clientmenu.Name = "label_clientmenu";
             label_clientmenu.Size = new Size(205, 41);
             label_clientmenu.TabIndex = 12;

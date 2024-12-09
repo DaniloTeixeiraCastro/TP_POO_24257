@@ -38,7 +38,7 @@
             // 
             // button_listreservation
             // 
-            button_listreservation.Location = new Point(150, 380);
+            button_listreservation.Location = new Point(336, 316);
             button_listreservation.Name = "button_listreservation";
             button_listreservation.Size = new Size(300, 80);
             button_listreservation.TabIndex = 7;
@@ -48,7 +48,7 @@
             // 
             // button_removereservation
             // 
-            button_removereservation.Location = new Point(150, 280);
+            button_removereservation.Location = new Point(30, 316);
             button_removereservation.Name = "button_removereservation";
             button_removereservation.Size = new Size(300, 80);
             button_removereservation.TabIndex = 6;
@@ -58,7 +58,7 @@
             // 
             // button_editreservation
             // 
-            button_editreservation.Location = new Point(150, 180);
+            button_editreservation.Location = new Point(336, 200);
             button_editreservation.Name = "button_editreservation";
             button_editreservation.Size = new Size(300, 80);
             button_editreservation.TabIndex = 5;
@@ -68,7 +68,7 @@
             // 
             // button_addreservation
             // 
-            button_addreservation.Location = new Point(150, 80);
+            button_addreservation.Location = new Point(30, 200);
             button_addreservation.Name = "button_addreservation";
             button_addreservation.Size = new Size(300, 80);
             button_addreservation.TabIndex = 4;
@@ -78,7 +78,7 @@
             // 
             // button_back
             // 
-            button_back.Location = new Point(498, 17);
+            button_back.Location = new Point(491, 99);
             button_back.Name = "button_back";
             button_back.Size = new Size(55, 41);
             button_back.TabIndex = 8;
@@ -92,7 +92,7 @@
             label_menu.BackColor = SystemColors.ActiveCaptionText;
             label_menu.Font = new Font("Segoe UI", 18F);
             label_menu.ForeColor = SystemColors.ControlLightLight;
-            label_menu.Location = new Point(150, 17);
+            label_menu.Location = new Point(162, 99);
             label_menu.Name = "label_menu";
             label_menu.Size = new Size(296, 41);
             label_menu.TabIndex = 9;

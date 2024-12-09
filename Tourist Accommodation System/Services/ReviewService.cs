@@ -10,7 +10,7 @@ namespace Tourist_Accommodation_System.Services
 {
     public static class ReviewService
     {
-        private static readonly string FilePath = @"C:\PROJETO\TP_POO_25457-main\reviews.json";
+        private static readonly string FilePath = @"C:\PROJETO\TP_POO_25457-main\Data\reviews.json";
         private static List<Review> reviewList = new List<Review>();
 
         static ReviewService()

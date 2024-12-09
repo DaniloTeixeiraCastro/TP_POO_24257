@@ -37,7 +37,7 @@
             // 
             // button_addpayment
             // 
-            button_addpayment.Location = new Point(150, 119);
+            button_addpayment.Location = new Point(150, 181);
             button_addpayment.Name = "button_addpayment";
             button_addpayment.Size = new Size(300, 80);
             button_addpayment.TabIndex = 0;
@@ -47,7 +47,7 @@
             // 
             // button_editpayment
             // 
-            button_editpayment.Location = new Point(150, 219);
+            button_editpayment.Location = new Point(150, 281);
             button_editpayment.Name = "button_editpayment";
             button_editpayment.Size = new Size(300, 80);
             button_editpayment.TabIndex = 1;
@@ -57,7 +57,7 @@
             // 
             // button_listpayment
             // 
-            button_listpayment.Location = new Point(150, 319);
+            button_listpayment.Location = new Point(150, 381);
             button_listpayment.Name = "button_listpayment";
             button_listpayment.Size = new Size(300, 80);
             button_listpayment.TabIndex = 2;
@@ -67,7 +67,7 @@
             // 
             // button_back
             // 
-            button_back.Location = new Point(494, 21);
+            button_back.Location = new Point(494, 83);
             button_back.Name = "button_back";
             button_back.Size = new Size(44, 41);
             button_back.TabIndex = 3;
@@ -81,7 +81,7 @@
             label_menu.BackColor = SystemColors.ActiveCaptionText;
             label_menu.Font = new Font("Segoe UI", 18F);
             label_menu.ForeColor = SystemColors.ButtonHighlight;
-            label_menu.Location = new Point(180, 21);
+            label_menu.Location = new Point(180, 83);
             label_menu.Name = "label_menu";
             label_menu.Size = new Size(240, 41);
             label_menu.TabIndex = 4;

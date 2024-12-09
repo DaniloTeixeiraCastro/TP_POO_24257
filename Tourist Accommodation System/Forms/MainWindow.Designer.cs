@@ -50,7 +50,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(150, 73);
+            label1.Location = new Point(484, 9);
             label1.Name = "label1";
             label1.Size = new Size(372, 31);
             label1.TabIndex = 0;
@@ -78,10 +78,10 @@
             // 
             // button_CLIENT
             // 
-            button_CLIENT.Location = new Point(45, 172);
+            button_CLIENT.Location = new Point(44, 110);
             button_CLIENT.Margin = new Padding(3, 4, 3, 4);
             button_CLIENT.Name = "button_CLIENT";
-            button_CLIENT.Size = new Size(240, 50);
+            button_CLIENT.Size = new Size(240, 62);
             button_CLIENT.TabIndex = 7;
             button_CLIENT.Text = "CLIENT";
             button_CLIENT.UseVisualStyleBackColor = true;
@@ -89,9 +89,9 @@
             // 
             // button_accommodation
             // 
-            button_accommodation.Location = new Point(45, 245);
+            button_accommodation.Location = new Point(44, 183);
             button_accommodation.Name = "button_accommodation";
-            button_accommodation.Size = new Size(240, 50);
+            button_accommodation.Size = new Size(240, 62);
             button_accommodation.TabIndex = 8;
             button_accommodation.Text = "ACCOMMODATION";
             button_accommodation.UseVisualStyleBackColor = true;
@@ -99,9 +99,9 @@
             // 
             // button_reservation
             // 
-            button_reservation.Location = new Point(45, 323);
+            button_reservation.Location = new Point(44, 261);
             button_reservation.Name = "button_reservation";
-            button_reservation.Size = new Size(240, 50);
+            button_reservation.Size = new Size(240, 62);
             button_reservation.TabIndex = 9;
             button_reservation.Text = "RESERVATION";
             button_reservation.UseVisualStyleBackColor = true;
@@ -109,9 +109,9 @@
             // 
             // button_reviews
             // 
-            button_reviews.Location = new Point(370, 172);
+            button_reviews.Location = new Point(369, 110);
             button_reviews.Name = "button_reviews";
-            button_reviews.Size = new Size(240, 50);
+            button_reviews.Size = new Size(240, 62);
             button_reviews.TabIndex = 10;
             button_reviews.Text = "REVIEWS";
             button_reviews.UseVisualStyleBackColor = true;
@@ -119,9 +119,9 @@
             // 
             // button_checkin
             // 
-            button_checkin.Location = new Point(370, 245);
+            button_checkin.Location = new Point(369, 183);
             button_checkin.Name = "button_checkin";
-            button_checkin.Size = new Size(240, 50);
+            button_checkin.Size = new Size(240, 62);
             button_checkin.TabIndex = 11;
             button_checkin.Text = "CHECK-IN";
             button_checkin.UseVisualStyleBackColor = true;
@@ -131,23 +131,22 @@
             // 
             MainPanel.BackColor = Color.Transparent;
             MainPanel.Controls.Add(button_payments);
-            MainPanel.Controls.Add(label1);
             MainPanel.Controls.Add(button_checkin);
             MainPanel.Controls.Add(button_reservation);
             MainPanel.Controls.Add(button_reviews);
             MainPanel.Controls.Add(button_CLIENT);
             MainPanel.Controls.Add(button_accommodation);
-            MainPanel.Location = new Point(334, 0);
+            MainPanel.Location = new Point(334, 36);
             MainPanel.Name = "MainPanel";
-            MainPanel.Size = new Size(650, 550);
+            MainPanel.Size = new Size(650, 514);
             MainPanel.TabIndex = 12;
             MainPanel.Paint += MainPanel_Paint;
             // 
             // button_payments
             // 
-            button_payments.Location = new Point(370, 323);
+            button_payments.Location = new Point(369, 261);
             button_payments.Name = "button_payments";
-            button_payments.Size = new Size(240, 50);
+            button_payments.Size = new Size(240, 62);
             button_payments.TabIndex = 12;
             button_payments.Text = "PAYMENTS";
             button_payments.UseVisualStyleBackColor = true;
@@ -159,6 +158,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(982, 543);
             Controls.Add(panel1);
+            Controls.Add(label1);
             Controls.Add(MainPanel);
             Name = "MainWindow";
             Text = "HOME";
@@ -166,8 +166,8 @@
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             MainPanel.ResumeLayout(false);
-            MainPanel.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
