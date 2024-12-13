@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Tourist_Accommodation_System.Forms;
 
 namespace Tourist_Accommodation_System.UserControls
 {
@@ -28,6 +29,11 @@ namespace Tourist_Accommodation_System.UserControls
 
         private void button_addpayment_Click(object sender, EventArgs e)
         {
+            // Cria uma instância do formulário AddEditPayment
+            var addEditPaymentForm = new AddEditPayment();
+
+            // Mostra o formulário como uma janela modal
+            addEditPaymentForm.ShowDialog();
 
         }
 

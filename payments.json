@@ -1,0 +1,10 @@
+[
+  {
+    "PaymentId": 1,
+    "Reservation": null,
+    "Amount": 1225.00,
+    "PaymentDate": "2024-12-13T23:16:13.8507088+00:00",
+    "Status": 1,
+    "Method": 2
+  }
+]

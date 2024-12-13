@@ -13,15 +13,18 @@ namespace Tourist_Accommodation_System.Models
         public decimal Amount { get; set; }  // Quantidade paga
         public DateTime PaymentDate { get; set; }  // Data do pagamento
         public PaymentStatus Status { get; set; }  // Estado do pagamento
+        public PaymentMethod Method { get; set; }  //método pagamento
 
         // Construtor para inicializar o pagamento
-        public Payment(int paymentId, Reservation reservation, decimal amount, DateTime paymentDate, PaymentStatus status)
+        public Payment(int paymentId, Reservation reservation, decimal amount, DateTime paymentDate, PaymentStatus status, PaymentMethod method)
         {
             PaymentId = paymentId;
             Reservation = reservation;
             Amount = amount;
             PaymentDate = paymentDate;
             Status = status;
+            Method = method;
+
         }
     }
 }
