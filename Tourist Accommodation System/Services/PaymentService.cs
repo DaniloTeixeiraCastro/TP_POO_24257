@@ -10,7 +10,7 @@ namespace Tourist_Accommodation_System.Services
 {
     internal class PaymentService
     {
-        private static readonly string FilePath = @"C:\PROJETO\TP_POO_25457-main\payments.json";
+        private static readonly string FilePath = @"C:\PROJETO\TP_POO_25457-main\Data\payments.json";
         private static List<Payment> paymentList = new List<Payment>();
 
         // Construtor estático para carregar pagamentos do JSON
