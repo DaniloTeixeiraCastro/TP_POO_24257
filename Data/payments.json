@@ -73,32 +73,133 @@
   },
   {
     "PaymentId": 10,
+    "Reservation": null,
+    "Amount": 350,
+    "PaymentDate": "2024-12-15T14:26:57.9552511+00:00",
+    "Status": 1,
+    "Method": 0
+  },
+  {
+    "PaymentId": 11,
     "Reservation": {
-      "Id": 2,
+      "Id": 1,
       "Client": {
-        "Name": "Teresa Ferreira",
-        "Email": "tetefr@gmail.com",
-        "Phone": "912231428",
-        "TIN": "123123123",
-        "BirthDate": "1960-12-15T12:39:53.134",
-        "Id": 5
+        "Name": "Danilo Castro",
+        "Email": "danilocastro7@hotmail.com",
+        "Phone": "912231427",
+        "TIN": "259486639",
+        "BirthDate": "1994-12-03T00:00:00",
+        "Id": 1
       },
       "Accommodation": {
-        "Name": "Quarto Duplo Vista Jardim 2",
+        "Name": "Quarto Triplo Vista Piscina 30",
         "Type": 0,
-        "RoomNumber": 2,
-        "Capacity": 2,
-        "PricePerNight": 50,
+        "RoomNumber": 30,
+        "Capacity": 3,
+        "PricePerNight": 87.50,
         "Status": 1,
         "Id": 0
       },
       "CheckInDate": "2024-12-15T00:00:00+00:00",
       "CheckOutDate": "2024-12-22T00:00:00",
-      "TotalPrice": 350,
+      "TotalPrice": 612.50,
       "Status": 0
     },
-    "Amount": 350,
-    "PaymentDate": "2024-12-15T14:26:57.9552511+00:00",
+    "Amount": 100,
+    "PaymentDate": "2024-12-15T15:19:29.9111321+00:00",
+    "Status": 0,
+    "Method": 1
+  },
+  {
+    "PaymentId": 12,
+    "Reservation": {
+      "Id": 1,
+      "Client": {
+        "Name": "Danilo Castro",
+        "Email": "danilocastro7@hotmail.com",
+        "Phone": "912231427",
+        "TIN": "259486639",
+        "BirthDate": "1994-12-03T00:00:00",
+        "Id": 1
+      },
+      "Accommodation": {
+        "Name": "Quarto Triplo Vista Piscina 30",
+        "Type": 0,
+        "RoomNumber": 30,
+        "Capacity": 3,
+        "PricePerNight": 87.50,
+        "Status": 1,
+        "Id": 0
+      },
+      "CheckInDate": "2024-12-15T00:00:00+00:00",
+      "CheckOutDate": "2024-12-22T00:00:00",
+      "TotalPrice": 612.50,
+      "Status": 0
+    },
+    "Amount": 100,
+    "PaymentDate": "2024-12-15T15:33:58.0117966+00:00",
+    "Status": 1,
+    "Method": 0
+  },
+  {
+    "PaymentId": 13,
+    "Reservation": {
+      "Id": 1,
+      "Client": {
+        "Name": "Danilo Castro",
+        "Email": "danilocastro7@hotmail.com",
+        "Phone": "912231427",
+        "TIN": "259486639",
+        "BirthDate": "1994-12-03T00:00:00",
+        "Id": 1
+      },
+      "Accommodation": {
+        "Name": "Quarto Triplo Vista Piscina 30",
+        "Type": 0,
+        "RoomNumber": 30,
+        "Capacity": 3,
+        "PricePerNight": 87.50,
+        "Status": 1,
+        "Id": 0
+      },
+      "CheckInDate": "2024-12-15T00:00:00+00:00",
+      "CheckOutDate": "2024-12-22T00:00:00",
+      "TotalPrice": 612.50,
+      "Status": 0
+    },
+    "Amount": 100,
+    "PaymentDate": "2024-12-15T15:42:25.157573+00:00",
+    "Status": 1,
+    "Method": 3
+  },
+  {
+    "PaymentId": 14,
+    "Reservation": {
+      "Id": 1,
+      "Client": {
+        "Name": "Danilo Castro",
+        "Email": "danilocastro7@hotmail.com",
+        "Phone": "912231427",
+        "TIN": "259486639",
+        "BirthDate": "1994-12-03T00:00:00",
+        "Id": 1
+      },
+      "Accommodation": {
+        "Name": "Quarto Triplo Vista Piscina 30",
+        "Type": 0,
+        "RoomNumber": 30,
+        "Capacity": 3,
+        "PricePerNight": 87.50,
+        "Status": 1,
+        "Id": 0
+      },
+      "CheckInDate": "2024-12-15T00:00:00+00:00",
+      "CheckOutDate": "2024-12-22T00:00:00",
+      "TotalPrice": 612.50,
+      "Status": 0
+    },
+    "Amount": 100,
+    "PaymentDate": "2024-12-15T16:28:56.5164664+00:00",
     "Status": 1,
     "Method": 0
   }

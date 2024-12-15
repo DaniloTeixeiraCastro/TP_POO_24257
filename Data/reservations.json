@@ -1,1 +1,26 @@
-[]
+[
+  {
+    "Id": 1,
+    "Client": {
+      "Name": "Danilo Castro",
+      "Email": "danilocastro7@hotmail.com",
+      "Phone": "912231427",
+      "TIN": "259486639",
+      "BirthDate": "1994-12-03T00:00:00",
+      "Id": 1
+    },
+    "Accommodation": {
+      "Name": "Quarto Duplo Vista Jardim 1",
+      "Type": 0,
+      "RoomNumber": 1,
+      "Capacity": 2,
+      "PricePerNight": 50,
+      "Status": 1,
+      "Id": 0
+    },
+    "CheckInDate": "2024-12-16T00:00:00",
+    "CheckOutDate": "2024-12-23T00:00:00",
+    "TotalPrice": 350,
+    "Status": 0
+  }
+]

@@ -68,20 +68,20 @@ namespace Tourist_Accommodation_System.Forms
         /// </summary>
         private void LoadReservationsFromJson()
         {
-            // Obtém todas as reservas do serviço
             var reservations = ReservationService.GetReservations();
 
-            // Formata apenas com o número do quarto
+            // Carrega as reservas formatadas com o número do quarto e o ID diretamente
             var formattedReservations = reservations.Select(r => new
             {
-                Display = $"Room {r.Accommodation.RoomNumber}", // Shows room number only
-                Reservation = r // Keeps the full reservation object
+                RoomNumber = $"Room {r.Accommodation.RoomNumber}", // Número do quarto
+                ReservationId = r.Id, // ID da reserva
+                Reservation = r // Objeto completo da reserva
             }).ToList();
 
             comboBox_reservation.DataSource = formattedReservations;
-            comboBox_reservation.DisplayMember = "Display"; // Display the room number
-            comboBox_reservation.ValueMember = "Reservation"; // Keeps the full reservation object
-            comboBox_reservation.SelectedIndex = -1; // No selection by default
+            comboBox_reservation.DisplayMember = "RoomNumber"; // Exibe o número do quarto
+            comboBox_reservation.ValueMember = "ReservationId"; // Armazena o ID da reserva
+            comboBox_reservation.SelectedIndex = -1; // Nenhuma seleção por padrão
         }
 
         /// <summary>
@@ -136,15 +136,14 @@ namespace Tourist_Accommodation_System.Forms
         /// </summary>
         private void comboBox_reservation_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox_reservation.SelectedItem != null)
+            if (comboBox_reservation.SelectedValue is Reservation selectedReservation)
             {
-                var selectedReservation = (comboBox_reservation.SelectedItem as dynamic)?.Reservation;
-
-                if (selectedReservation != null)
-                {
-                    // Sets the TotalPrice to numericUpDown, ensuring it stays within the valid range
-                    numericUpDown.Value = Math.Min((decimal)selectedReservation.TotalPrice, numericUpDown.Maximum);
-                }
+                // Define o TotalPrice no numericUpDown automaticamente
+                numericUpDown.Value = Math.Min((decimal)selectedReservation.TotalPrice, numericUpDown.Maximum);
+            }
+            else
+            {
+                numericUpDown.Value = 0; // Se não encontrar a reserva, define como 0
             }
         }
 
@@ -172,8 +171,7 @@ namespace Tourist_Accommodation_System.Forms
         /// </summary>
         private void button_save_Click(object sender, EventArgs e)
         {
-            // Validate required fields
-            if (comboBox_reservation.SelectedItem == null ||
+            if (comboBox_reservation.SelectedValue == null ||
                 comboBox_status.SelectedItem == null ||
                 comboBox_method.SelectedItem == null)
             {
@@ -181,37 +179,48 @@ namespace Tourist_Accommodation_System.Forms
                 return;
             }
 
-            // Retrieve values from the form
-            var selectedReservationId = (int)comboBox_reservation.SelectedValue;
-            var selectedReservation = ReservationService.GetReservations()
-                                        .FirstOrDefault(r => r.Id == selectedReservationId);
+            // Recupera o objeto completo Reservation diretamente
+            var selectedReservation = comboBox_reservation.SelectedValue as Reservation;
 
-            var amount = numericUpDown.Value;
-            var paymentDate = dateTimePicker1.Value;
-            var status = (PaymentStatus)comboBox_status.SelectedItem;
-            var method = (PaymentMethod)comboBox_method.SelectedItem;
-
-            if (_isEditMode)
+            if (selectedReservation != null)
             {
-                // Update existing payment
-                _currentPayment.Reservation = selectedReservation;
-                _currentPayment.Amount = amount;
-                _currentPayment.PaymentDate = paymentDate;
-                _currentPayment.Status = status;
-                _currentPayment.Method = method;
+                var amount = numericUpDown.Value;
+                var paymentDate = dateTimePicker1.Value;
+                var status = (PaymentStatus)comboBox_status.SelectedItem;
+                var method = (PaymentMethod)comboBox_method.SelectedItem;
 
-                PaymentService.UpdatePayment(_currentPayment);
-                MessageBox.Show("Pagamento atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (_isEditMode)
+                {
+                    // Atualiza o pagamento existente
+                    _currentPayment.Reservation = selectedReservation;
+                    _currentPayment.Amount = amount;
+                    _currentPayment.PaymentDate = paymentDate;
+                    _currentPayment.Status = status;
+                    _currentPayment.Method = method;
+
+                    PaymentService.UpdatePayment(_currentPayment);
+                    MessageBox.Show("Pagamento atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    // Cria um novo pagamento
+                    var newPayment = new Payment(0, selectedReservation, amount, paymentDate, status, method);
+                    PaymentService.AddPayment(newPayment);
+
+                    // Remove a reserva e torna o quarto disponível
+                    ReservationService.RemoveReservation(selectedReservation.Id);
+                    selectedReservation.Accommodation.Status = AccommodationStatus.Available;
+                    AccommodationService.AddOrUpdateAccommodation(selectedReservation.Accommodation);
+
+                    MessageBox.Show("Pagamento adicionado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+                Close();
             }
             else
             {
-                // Add new payment
-                var newPayment = new Payment(0, selectedReservation, amount, paymentDate, status, method);
-                PaymentService.AddPayment(newPayment);
-                MessageBox.Show("Pagamento adicionado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Erro ao obter a reserva selecionada.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            Close(); // Close the form
         }
         /// <summary>
         /// Handles the Cancel button click event to close the form without saving.

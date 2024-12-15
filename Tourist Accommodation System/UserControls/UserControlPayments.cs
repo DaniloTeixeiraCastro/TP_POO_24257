@@ -39,6 +39,8 @@ namespace Tourist_Accommodation_System.UserControls
 
         private void button_editpayment_Click(object sender, EventArgs e)
         {
+            var paymentListForm = new PaymentList();
+            paymentListForm.ShowDialog();
 
         }
 
