@@ -5,8 +5,6 @@
     "Phone": "912231427",
     "TIN": "259486639",
     "BirthDate": "1994-12-03T00:00:00",
-    "Reservations": null,
-    "IsReserved": false,
     "Id": 1
   },
   {
@@ -15,8 +13,6 @@
     "Phone": "25948663",
     "TIN": "528",
     "BirthDate": "1994-12-03T00:00:00",
-    "Reservations": null,
-    "IsReserved": false,
     "Id": 2
   },
   {
@@ -25,8 +21,6 @@
     "Phone": "91225487",
     "TIN": "78542",
     "BirthDate": "1995-12-03T20:14:43.238",
-    "Reservations": null,
-    "IsReserved": false,
     "Id": 3
   },
   {
@@ -35,8 +29,14 @@
     "Phone": "25480480",
     "TIN": "5689",
     "BirthDate": "1964-12-03T20:15:06.786",
-    "Reservations": null,
-    "IsReserved": false,
     "Id": 4
+  },
+  {
+    "Name": "Teresa Ferreira",
+    "Email": "tetefr@gmail.com",
+    "Phone": "912231428",
+    "TIN": "123123123",
+    "BirthDate": "1960-12-15T12:39:53.134",
+    "Id": 5
   }
 ]

@@ -2,16 +2,15 @@
   {
     "Id": 1,
     "Client": {
-      "Name": "Sergio Martins",
-      "Email": "sergio.martins@polopique.pt",
-      "Phone": "25480480",
-      "TIN": "5689",
-      "BirthDate": "1964-12-03T20:15:06.786",
-      "Id": 4
+      "Name": "Teresa Ferreira",
+      "Email": "tetefr@gmail.com",
+      "Phone": "912231428",
+      "TIN": "123123123",
+      "BirthDate": "1960-12-15T12:39:53.134",
+      "Id": 5
     },
     "Accommodation": {
       "Name": "Quarto Duplo Vista Jardim 1",
-      "Location": "Vista Jardim",
       "Type": 0,
       "RoomNumber": 1,
       "Capacity": 2,
@@ -21,32 +20,31 @@
     },
     "CheckInDate": "2024-12-16T00:00:00",
     "CheckOutDate": "2024-12-23T00:00:00",
-    "TotalPrice": 0,
+    "TotalPrice": 350,
     "Status": 0
   },
   {
     "Id": 2,
     "Client": {
-      "Name": "Jorge Pacheco",
-      "Email": "jorge@ipca.pt",
-      "Phone": "9125845698",
+      "Name": "Teresa Ferreira",
+      "Email": "tetefr@gmail.com",
+      "Phone": "912231428",
       "TIN": "123123123",
-      "BirthDate": "1984-06-12T17:50:23.984",
-      "Id": 10
+      "BirthDate": "1960-12-15T12:39:53.134",
+      "Id": 5
     },
     "Accommodation": {
-      "Name": "Quarto Triplo Vista Piscina 30",
-      "Location": "Vista Piscina",
+      "Name": "Quarto Duplo Vista Jardim 2",
       "Type": 0,
-      "RoomNumber": 30,
-      "Capacity": 3,
-      "PricePerNight": 87.50,
+      "RoomNumber": 2,
+      "Capacity": 2,
+      "PricePerNight": 50,
       "Status": 1,
       "Id": 0
     },
-    "CheckInDate": "2024-12-08T00:00:00+00:00",
+    "CheckInDate": "2024-12-15T00:00:00+00:00",
     "CheckOutDate": "2024-12-22T00:00:00",
-    "TotalPrice": 1225.00,
+    "TotalPrice": 350,
     "Status": 0
   }
 ]

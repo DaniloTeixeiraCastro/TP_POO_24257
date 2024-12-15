@@ -1,7 +1,6 @@
 [
   {
     "Name": "Quarto Duplo Vista Jardim 1",
-    "Location": "Vista Jardim",
     "Type": 0,
     "RoomNumber": 1,
     "Capacity": 2,
@@ -11,7 +10,6 @@
   },
   {
     "Name": "Quarto Duplo Vista Jardim 2",
-    "Location": "Vista Jardim",
     "Type": 0,
     "RoomNumber": 2,
     "Capacity": 2,
@@ -21,7 +19,6 @@
   },
   {
     "Name": "Quarto Duplo Vista Jardim 3",
-    "Location": "Vista Jardim",
     "Type": 0,
     "RoomNumber": 3,
     "Capacity": 2,
@@ -31,7 +28,6 @@
   },
   {
     "Name": "Quarto Duplo Vista Jardim 4",
-    "Location": "Vista Jardim",
     "Type": 0,
     "RoomNumber": 4,
     "Capacity": 2,
@@ -41,7 +37,6 @@
   },
   {
     "Name": "Quarto Duplo Vista Jardim 5",
-    "Location": "Vista Jardim",
     "Type": 0,
     "RoomNumber": 5,
     "Capacity": 2,
@@ -51,7 +46,6 @@
   },
   {
     "Name": "Quarto Duplo Vista Jardim 6",
-    "Location": "Vista Jardim",
     "Type": 0,
     "RoomNumber": 6,
     "Capacity": 2,
@@ -61,7 +55,6 @@
   },
   {
     "Name": "Quarto Duplo Vista Jardim 7",
-    "Location": "Vista Jardim",
     "Type": 0,
     "RoomNumber": 7,
     "Capacity": 2,
@@ -71,7 +64,6 @@
   },
   {
     "Name": "Quarto Duplo Vista Jardim 8",
-    "Location": "Vista Jardim",
     "Type": 0,
     "RoomNumber": 8,
     "Capacity": 2,
@@ -81,7 +73,6 @@
   },
   {
     "Name": "Quarto Duplo Vista Jardim 9",
-    "Location": "Vista Jardim",
     "Type": 0,
     "RoomNumber": 9,
     "Capacity": 2,
@@ -91,7 +82,6 @@
   },
   {
     "Name": "Quarto Duplo Vista Jardim 10",
-    "Location": "Vista Jardim",
     "Type": 0,
     "RoomNumber": 10,
     "Capacity": 2,
@@ -101,7 +91,6 @@
   },
   {
     "Name": "Quarto Duplo Vista Jardim 11",
-    "Location": "Vista Jardim",
     "Type": 0,
     "RoomNumber": 11,
     "Capacity": 2,
@@ -111,7 +100,6 @@
   },
   {
     "Name": "Quarto Duplo Vista Jardim 12",
-    "Location": "Vista Jardim",
     "Type": 0,
     "RoomNumber": 12,
     "Capacity": 2,
@@ -121,7 +109,6 @@
   },
   {
     "Name": "Quarto Duplo Vista Jardim 13",
-    "Location": "Vista Jardim",
     "Type": 0,
     "RoomNumber": 13,
     "Capacity": 2,
@@ -131,7 +118,6 @@
   },
   {
     "Name": "Quarto Duplo Vista Jardim 14",
-    "Location": "Vista Jardim",
     "Type": 0,
     "RoomNumber": 14,
     "Capacity": 2,
@@ -141,7 +127,6 @@
   },
   {
     "Name": "Quarto Duplo Vista Jardim 15",
-    "Location": "Vista Jardim",
     "Type": 0,
     "RoomNumber": 15,
     "Capacity": 2,
@@ -151,7 +136,6 @@
   },
   {
     "Name": "Quarto Duplo Vista Piscina 16",
-    "Location": "Vista Piscina",
     "Type": 0,
     "RoomNumber": 16,
     "Capacity": 2,
@@ -161,7 +145,6 @@
   },
   {
     "Name": "Quarto Duplo Vista Piscina 17",
-    "Location": "Vista Piscina",
     "Type": 0,
     "RoomNumber": 17,
     "Capacity": 2,
@@ -171,7 +154,6 @@
   },
   {
     "Name": "Quarto Duplo Vista Piscina 18",
-    "Location": "Vista Piscina",
     "Type": 0,
     "RoomNumber": 18,
     "Capacity": 2,
@@ -181,7 +163,6 @@
   },
   {
     "Name": "Quarto Duplo Vista Piscina 19",
-    "Location": "Vista Piscina",
     "Type": 0,
     "RoomNumber": 19,
     "Capacity": 2,
@@ -191,7 +172,6 @@
   },
   {
     "Name": "Quarto Duplo Vista Piscina 20",
-    "Location": "Vista Piscina",
     "Type": 0,
     "RoomNumber": 20,
     "Capacity": 2,
@@ -201,7 +181,6 @@
   },
   {
     "Name": "Quarto Duplo Vista Piscina 21",
-    "Location": "Vista Piscina",
     "Type": 0,
     "RoomNumber": 21,
     "Capacity": 2,
@@ -211,7 +190,6 @@
   },
   {
     "Name": "Quarto Duplo Vista Piscina 22",
-    "Location": "Vista Piscina",
     "Type": 0,
     "RoomNumber": 22,
     "Capacity": 2,
@@ -221,7 +199,6 @@
   },
   {
     "Name": "Quarto Duplo Vista Piscina 23",
-    "Location": "Vista Piscina",
     "Type": 0,
     "RoomNumber": 23,
     "Capacity": 2,
@@ -231,7 +208,6 @@
   },
   {
     "Name": "Quarto Duplo Vista Piscina 24",
-    "Location": "Vista Piscina",
     "Type": 0,
     "RoomNumber": 24,
     "Capacity": 2,
@@ -241,7 +217,6 @@
   },
   {
     "Name": "Quarto Duplo Vista Piscina 25",
-    "Location": "Vista Piscina",
     "Type": 0,
     "RoomNumber": 25,
     "Capacity": 2,
@@ -251,7 +226,6 @@
   },
   {
     "Name": "Quarto Triplo 26",
-    "Location": "Vista Jardim",
     "Type": 0,
     "RoomNumber": 26,
     "Capacity": 3,
@@ -261,7 +235,6 @@
   },
   {
     "Name": "Quarto Triplo 27",
-    "Location": "Vista Jardim",
     "Type": 0,
     "RoomNumber": 27,
     "Capacity": 3,
@@ -271,7 +244,6 @@
   },
   {
     "Name": "Quarto Triplo 28",
-    "Location": "Vista Jardim",
     "Type": 0,
     "RoomNumber": 28,
     "Capacity": 3,
@@ -281,7 +253,6 @@
   },
   {
     "Name": "Quarto Triplo 29",
-    "Location": "Vista Jardim",
     "Type": 0,
     "RoomNumber": 29,
     "Capacity": 3,
@@ -291,7 +262,6 @@
   },
   {
     "Name": "Quarto Triplo Vista Piscina 30",
-    "Location": "Vista Piscina",
     "Type": 0,
     "RoomNumber": 30,
     "Capacity": 3,

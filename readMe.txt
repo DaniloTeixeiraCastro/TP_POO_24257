@@ -70,21 +70,6 @@ TouristAccommodationSystem/
 ├── README.md
 └── .gitignore
 
-Como Executar
-Pré-requisitos
-IDE: Visual Studio (versão 2022 ou superior recomendada).
-.NET Framework (compatível com projetos Windows Forms).
-Passos
-Clone o repositório do GitHub:
-bash
-Copiar código
-git clone https://github.com/seu-usuario/tourist-accommodation-system.git
-Abra o projeto no Visual Studio.
-Compile o projeto para garantir que todas as dependências estão resolvidas.
-Execute a aplicação (Ctrl + F5).
-Armazenamento de Dados
-Os dados são persistidos em arquivos JSON localizados na pasta Data/. Esses arquivos contêm informações sobre clientes, reservas, acomodações e avaliações, permitindo que o sistema mantenha as informações entre sessões.
-
 Autor:
 Danilo Castro
 https://github.com/DaniloTeixeiraCastro/TP_POO_25457

@@ -31,6 +31,22 @@ namespace Tourist_Accommodation_System.Services
             paymentList.Add(payment);
             SavePaymentsToJson();
             return "Pagamento realizado com sucesso!";
+
+            // Remove a reserva associada
+            var reservationId = payment.Reservation.Id;
+            var removeReservationResult = ReservationService.RemoveReservation(reservationId);
+
+            if (removeReservationResult != "Reserva removida com sucesso!")
+            {
+                return "Erro ao remover a reserva associada.";
+            }
+
+            // Atualiza o estado da acomodação para "Disponível"
+            var accommodation = payment.Reservation.Accommodation;
+            accommodation.Status = AccommodationStatus.Available;
+            AccommodationService.AddOrUpdateAccommodation(accommodation);
+
+            return "Pagamento adicionado e reserva removida com sucesso!";
         }
 
         /// <summary>
@@ -78,15 +94,6 @@ namespace Tourist_Accommodation_System.Services
         }
 
         /// <summary>
-        /// Salva a lista de pagamentos no arquivo JSON.
-        /// </summary>
-        private static void SavePaymentsToJson()
-        {
-            var jsonData = JsonSerializer.Serialize(paymentList, new JsonSerializerOptions { WriteIndented = true });
-            File.WriteAllText(FilePath, jsonData);
-        }
-
-        /// <summary>
         /// Carrega a lista de pagamentos do arquivo JSON.
         /// </summary>
         private static List<Payment> LoadPaymentsFromJson()
@@ -101,6 +108,20 @@ namespace Tourist_Accommodation_System.Services
                 Console.WriteLine($"Erro ao carregar os pagamentos: {ex.Message}");
                 return new List<Payment>();
             }
+        }
+        /// <summary>
+        /// Salva a lista de pagamentos no arquivo JSON.
+        /// </summary>
+        private static void SavePaymentsToJson()
+        {
+            var directory = Path.GetDirectoryName(FilePath);
+            if (!string.IsNullOrEmpty(directory) && !Directory.Exists(directory))
+            {
+                Directory.CreateDirectory(directory);
+            }
+
+            var jsonData = JsonSerializer.Serialize(paymentList, new JsonSerializerOptions { WriteIndented = true });
+            File.WriteAllText(FilePath, jsonData);
         }
     }
 }
