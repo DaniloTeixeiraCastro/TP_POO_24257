@@ -1,41 +1,44 @@
 ﻿namespace Tourist_Accommodation_System.Models
 {
+    /// <summary>
+    /// Represents a reservation in the tourist accommodation system.
+    /// </summary>
     public class Reservation
     {
         #region Properties
 
         /// <summary>
-        /// Identificador único da reserva.
+        /// Unique identifier for the reservation.
         /// </summary>
         public int Id { get; set; }
 
         /// <summary>
-        /// Cliente que fez a reserva.
+        /// Client who made the reservation.
         /// </summary>
         public Client Client { get; set; }
 
         /// <summary>
-        /// Acomodação reservada.
+        /// Reserved accommodation.
         /// </summary>
         public Accommodation Accommodation { get; set; }
 
         /// <summary>
-        /// Data de check-in da reserva.
+        /// Check-in date for the reservation.
         /// </summary>
         public DateTime CheckInDate { get; set; }
 
         /// <summary>
-        /// Data de check-out da reserva.
+        /// Check-out date for the reservation.
         /// </summary>
         public DateTime CheckOutDate { get; set; }
 
         /// <summary>
-        /// Preço total da reserva (calculado automaticamente).
+        /// Total price of the reservation (calculated automatically).
         /// </summary>
         public decimal TotalPrice { get; set; }
 
         /// <summary>
-        /// Estado atual da reserva.
+        /// Current status of the reservation.
         /// </summary>
         public ReservationStatus Status { get; set; }
 
@@ -43,19 +46,21 @@
 
         #region Constructors
 
+        /// <summary>
+        /// Default constructor without parameters.
+        /// </summary>
         public Reservation()
-        { 
-        //Construtor padrão sem parâmetros
+        {
         }
 
         /// <summary>
-        /// Construtor para inicializar uma nova reserva.
+        /// Constructor to initialize a new reservation.
         /// </summary>
-        /// <param name="id">Identificador da reserva.</param>
-        /// <param name="client">Cliente que fez a reserva.</param>
-        /// <param name="accommodation">Acomodação reservada.</param>
-        /// <param name="checkInDate">Data de check-in.</param>
-        /// <param name="checkOutDate">Data de check-out.</param>
+        /// <param name="id">Unique identifier for the reservation.</param>
+        /// <param name="client">Client who made the reservation.</param>
+        /// <param name="accommodation">Reserved accommodation.</param>
+        /// <param name="checkInDate">Check-in date.</param>
+        /// <param name="checkOutDate">Check-out date.</param>
         public Reservation(int id, Client client, Accommodation accommodation, DateTime checkInDate, DateTime checkOutDate)
         {
             Id = id;
@@ -64,7 +69,7 @@
             CheckInDate = checkInDate;
             CheckOutDate = checkOutDate;
             TotalPrice = CalculateTotalPrice();
-            Status = ReservationStatus.Pending; // Inicializa o estado como "Pending"
+            Status = ReservationStatus.Pending; // Initializes the status as "Pending"
         }
 
         #endregion
@@ -72,19 +77,22 @@
         #region Methods
 
         /// <summary>
-        /// Calcula o preço total da estadia com base no número de noites e no preço por noite.
+        /// Calculates the total price of the stay based on the number of nights and the price per night.
         /// </summary>
-        /// <returns>O preço total da estadia.</returns>
+        /// <returns>The total price of the stay.</returns>
+        /// <exception cref="ArgumentException">
+        /// Thrown if the check-out date is earlier than or equal to the check-in date.
+        /// </exception>
         public decimal CalculateTotalPrice()
         {
-            // Calcula o número de noites
+            // Calculate the number of nights
             int numberOfNights = (CheckOutDate - CheckInDate).Days;
 
-            // Valida o cálculo para evitar valores negativos
+            // Validate the calculation to avoid negative or zero values
             if (numberOfNights <= 0)
-                throw new ArgumentException("A data de check-out deve ser posterior à data de check-in.");
+                throw new ArgumentException("Check-out date must be later than check-in date.");
 
-            // Calcula o preço total
+            // Calculate the total price
             return numberOfNights * Accommodation.PricePerNight;
         }
 

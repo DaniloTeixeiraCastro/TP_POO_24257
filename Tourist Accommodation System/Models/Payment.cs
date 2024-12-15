@@ -6,16 +6,50 @@ using System.Threading.Tasks;
 
 namespace Tourist_Accommodation_System.Models
 {
+    /// <summary>
+    /// Represents a payment associated with a reservation.
+    /// </summary>
     public class Payment
     {
-        public int PaymentId { get; set; }  // Identificador único do pagamento
-        public Reservation Reservation { get; set; }  // Reserva associada ao pagamento
-        public decimal Amount { get; set; }  // Quantidade paga
-        public DateTime PaymentDate { get; set; }  // Data do pagamento
-        public PaymentStatus Status { get; set; }  // Estado do pagamento
-        public PaymentMethod Method { get; set; }  //método pagamento
+        /// <summary>
+        /// Unique identifier for the payment.
+        /// </summary>
+        public int PaymentId { get; set; }
 
-        // Construtor para inicializar o pagamento
+        /// <summary>
+        /// The reservation associated with the payment.
+        /// </summary>
+        public Reservation Reservation { get; set; }
+
+        /// <summary>
+        /// The amount paid.
+        /// </summary>
+        public decimal Amount { get; set; }
+
+        /// <summary>
+        /// The date when the payment was made.
+        /// </summary>
+        public DateTime PaymentDate { get; set; }
+
+        /// <summary>
+        /// The status of the payment (e.g., Pending, Completed, etc.).
+        /// </summary>
+        public PaymentStatus Status { get; set; }
+
+        /// <summary>
+        /// The method used for the payment (e.g., Cash, CreditCard, etc.).
+        /// </summary>
+        public PaymentMethod Method { get; set; }
+
+        /// <summary>
+        /// Constructor to initialize a payment object.
+        /// </summary>
+        /// <param name="paymentId">Unique identifier for the payment.</param>
+        /// <param name="reservation">The reservation associated with the payment.</param>
+        /// <param name="amount">The amount paid.</param>
+        /// <param name="paymentDate">The date when the payment was made.</param>
+        /// <param name="status">The status of the payment.</param>
+        /// <param name="method">The method used for the payment.</param>
         public Payment(int paymentId, Reservation reservation, decimal amount, DateTime paymentDate, PaymentStatus status, PaymentMethod method)
         {
             PaymentId = paymentId;
@@ -24,7 +58,6 @@ namespace Tourist_Accommodation_System.Models
             PaymentDate = paymentDate;
             Status = status;
             Method = method;
-
         }
     }
 }

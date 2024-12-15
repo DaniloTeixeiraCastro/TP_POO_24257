@@ -8,157 +8,157 @@ using System.Threading.Tasks;
 namespace Tourist_Accommodation_System.Models
 {
     /// <summary>
-    /// Tipos de acomodações disponíveis.
+    /// Types of available accommodations.
     /// </summary>
     public enum AccommodationType
     {
         /// <summary>
-        /// Quarto duplo com vista para o jardim.
+        /// Double room with garden view.
         /// </summary>
         DoubleRoomGardenView,
 
         /// <summary>
-        /// Quarto duplo com vista para a piscina.
+        /// Double room with pool view.
         /// </summary>
         DoubleRoomPoolView,
 
         /// <summary>
-        /// Quarto triplo com vista para o jardim.
+        /// Triple room with garden view.
         /// </summary>
         TripleRoomGardenView,
 
         /// <summary>
-        /// Quarto triplo com vista para a piscina.
+        /// Triple room with pool view.
         /// </summary>
         TripleRoomPoolView
     }
 
     /// <summary>
-    /// Status de disponibilidade de acomodações.
+    /// Availability status of accommodations.
     /// </summary>
     public enum AccommodationStatus
     {
         /// <summary>
-        /// O quarto está disponível para reserva.
+        /// The room is available for booking.
         /// </summary>
         Available,
 
         /// <summary>
-        /// O quarto está atualmente ocupado.
+        /// The room is currently occupied.
         /// </summary>
         Occupied
     }
 
     /// <summary>
-    /// Status de um pagamento.
+    /// Status of a payment.
     /// </summary>
     public enum PaymentStatus
     {
         /// <summary>
-        /// Pagamento ainda não foi processado.
+        /// Payment has not been processed yet.
         /// </summary>
         Pending,
 
         /// <summary>
-        /// Pagamento foi concluído com sucesso.
+        /// Payment has been successfully completed.
         /// </summary>
         Completed,
 
         /// <summary>
-        /// O pagamento falhou.
+        /// Payment has failed.
         /// </summary>
         Failed,
 
         /// <summary>
-        /// O pagamento foi reembolsado.
+        /// Payment has been refunded.
         /// </summary>
         Refunded,
 
         /// <summary>
-        /// Pagamento foi parcialmente concluído.
+        /// Payment has been partially completed.
         /// </summary>
         PartiallyCompleted
     }
 
     /// <summary>
-    /// Status de uma reserva.
+    /// Status of a reservation.
     /// </summary>
     public enum ReservationStatus
     {
         /// <summary>
-        /// Reserva pendente de confirmação.
+        /// Reservation is pending confirmation.
         /// </summary>
         Pending,
 
         /// <summary>
-        /// Reserva confirmada e ativa.
+        /// Reservation has been confirmed and is active.
         /// </summary>
         Confirmed,
 
         /// <summary>
-        /// Reserva foi cancelada.
+        /// Reservation has been cancelled.
         /// </summary>
         Cancelled,
 
         /// <summary>
-        /// Reserva expirou e não é mais válida.
+        /// Reservation has expired and is no longer valid.
         /// </summary>
         Expired
     }
 
     /// <summary>
-    /// Classificação de avaliações (de 1 a 5 estrelas).
+    /// Rating for reviews (from 1 to 5 stars).
     /// </summary>
     public enum ReviewRating
     {
         /// <summary>
-        /// Uma estrela (classificação mais baixa).
+        /// One star (lowest rating).
         /// </summary>
         OneStar = 1,
 
         /// <summary>
-        /// Duas estrelas.
+        /// Two stars.
         /// </summary>
         TwoStars = 2,
 
         /// <summary>
-        /// Três estrelas (classificação média).
+        /// Three stars (average rating).
         /// </summary>
         ThreeStars = 3,
 
         /// <summary>
-        /// Quatro estrelas.
+        /// Four stars.
         /// </summary>
         FourStars = 4,
 
         /// <summary>
-        /// Cinco estrelas (classificação mais alta).
+        /// Five stars (highest rating).
         /// </summary>
         FiveStars = 5
     }
 
     /// <summary>
-    /// Métodos de pagamento disponíveis.
+    /// Available payment methods.
     /// </summary>
     public enum PaymentMethod
     {
         /// <summary>
-        /// Pagamento em dinheiro.
+        /// Payment in cash.
         /// </summary>
         Cash,
 
         /// <summary>
-        /// Pagamento com cartão de crédito.
+        /// Payment via credit card.
         /// </summary>
         CreditCard,
 
         /// <summary>
-        /// Pagamento com cartão de débito.
+        /// Payment via debit card.
         /// </summary>
         DebitCard,
 
         /// <summary>
-        /// Pagamento via transferência bancária.
+        /// Payment via bank transfer.
         /// </summary>
         BankTransfer
     }

@@ -4,22 +4,59 @@
     using System.Text.Json;
     namespace Tourist_Accommodation_System.Models
 {
+    /// <summary>
+    /// Represents an accommodation within the tourist system.
+    /// Inherits from the base class 'Entity'.
+    /// </summary>
     public class Accommodation : Entity
     {
-        // Propriedades da classe
-        public string? Name { get; set; } // Nome do alojamento
-        public AccommodationType? Type { get; set; } // Tipo de acomodação
-        public int RoomNumber { get; set; } // Número do quarto
-        public int Capacity { get; set; } // Capacidade máxima
-        public decimal PricePerNight { get; set; } // Preço por noite
-        public AccommodationStatus Status { get; set; } = AccommodationStatus.Available; // Status do quarto
+        /// <summary>
+        /// Name of the accommodation.
+        /// </summary>
+        public string? Name { get; set; }
 
-        // Construtor padrão
+        /// <summary>
+        /// Type of the accommodation (e.g., Hotel, Apartment, etc.).
+        /// </summary>
+        public AccommodationType? Type { get; set; }
+
+        /// <summary>
+        /// Room number associated with the accommodation.
+        /// </summary>
+        public int RoomNumber { get; set; }
+
+        /// <summary>
+        /// Maximum capacity of the accommodation (number of people).
+        /// </summary>
+        public int Capacity { get; set; }
+
+        /// <summary>
+        /// Price per night for the accommodation.
+        /// </summary>
+        public decimal PricePerNight { get; set; }
+
+        /// <summary>
+        /// Current status of the accommodation (e.g., Available, Reserved, etc.).
+        /// Default value is 'Available'.
+        /// </summary>
+        public AccommodationStatus Status { get; set; } = AccommodationStatus.Available;
+
+        /// <summary>
+        /// Default constructor.
+        /// </summary>
         public Accommodation() { }
 
-        // Construtor para inicializar a acomodação
-        public Accommodation(int id, string name, AccommodationType type, int roomNumber, int capacity, decimal pricePerNight, AccommodationStatus status): base()
-        
+        /// <summary>
+        /// Parameterized constructor to initialize an accommodation object.
+        /// </summary>
+        /// <param name="id">Unique identifier for the accommodation.</param>
+        /// <param name="name">Name of the accommodation.</param>
+        /// <param name="type">Type of accommodation.</param>
+        /// <param name="roomNumber">Room number associated with the accommodation.</param>
+        /// <param name="capacity">Maximum capacity of the accommodation.</param>
+        /// <param name="pricePerNight">Price per night for the accommodation.</param>
+        /// <param name="status">Status of the accommodation.</param>
+        public Accommodation(int id, string name, AccommodationType type, int roomNumber, int capacity, decimal pricePerNight, AccommodationStatus status) : base()
         {
             Id = id;
             Name = name;
@@ -30,7 +67,10 @@
             Status = status;
         }
 
-        // Método para descrição
+        /// <summary>
+        /// Returns a formatted string describing the accommodation.
+        /// </summary>
+        /// <returns>A string with details of the accommodation including room number, type, capacity, price, and status.</returns>
         public override string GetDescription()
         {
             return $"Room {RoomNumber}: , Type: {Type}, Capacity: {Capacity}, Price: {PricePerNight:C}, Status: {Status}";

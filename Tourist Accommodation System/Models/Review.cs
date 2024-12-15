@@ -1,68 +1,81 @@
 ﻿namespace Tourist_Accommodation_System.Models
 {
     /// <summary>
-    /// Representa uma avaliação feita por um cliente ou anonimamente.
+    /// Represents a review made by a client or anonymously.
     /// </summary>
     public class Review
     {
+        #region Properties
+
         /// <summary>
-        /// Identificador único da avaliação.
+        /// Unique identifier for the review.
         /// </summary>
         public int ReviewId { get; set; }
 
         /// <summary>
-        /// Cliente que fez a avaliação. 
-        /// Pode ser null se a avaliação for anônima.
+        /// The client who made the review. 
+        /// Can be null if the review is anonymous.
         /// </summary>
         public Client? Client { get; set; }
 
         /// <summary>
-        /// Comentário escrito na avaliação.
+        /// Comment provided in the review.
         /// </summary>
         public string Comment { get; set; } = string.Empty;
 
         /// <summary>
-        /// Classificação dada à avaliação.
+        /// Rating provided in the review (1 to 5 stars).
         /// </summary>
         public ReviewRating Rating { get; set; }
 
         /// <summary>
-        /// Indica se a avaliação foi feita de forma anônima.
+        /// Indicates whether the review was made anonymously.
         /// </summary>
         public bool IsAnonymous { get; set; }
 
+        #endregion
+
+        #region Constructors
+
         /// <summary>
-        /// Construtor padrão.
+        /// Default constructor.
         /// </summary>
         public Review() { }
 
         /// <summary>
-        /// Construtor para inicializar a avaliação.
+        /// Constructor to initialize a review object.
         /// </summary>
-        /// <param name="reviewId">Identificador único da avaliação.</param>
-        /// <param name="client">Cliente associado (opcional).</param>
-        /// <param name="comment">Comentário do cliente.</param>
-        /// <param name="rating">Classificação (1 a 5 estrelas).</param>
-        /// <param name="isAnonymous">Indica se a avaliação é anônima.</param>
+        /// <param name="reviewId">Unique identifier for the review.</param>
+        /// <param name="client">Associated client (optional).</param>
+        /// <param name="comment">Review comment.</param>
+        /// <param name="rating">Rating (1 to 5 stars).</param>
+        /// <param name="isAnonymous">Indicates if the review is anonymous.</param>
         public Review(int reviewId, Client? client, string comment, ReviewRating rating, bool isAnonymous)
         {
             ReviewId = reviewId;
-            Client = client; // Pode ser null se for anônimo
+            Client = client; // Can be null if anonymous
             Comment = comment;
             Rating = rating;
             IsAnonymous = isAnonymous;
         }
 
+        #endregion
+
+        #region Methods
+
         /// <summary>
-        /// Retorna uma descrição detalhada da avaliação.
+        /// Returns a detailed description of the review.
         /// </summary>
+        /// <returns>A string describing the review.</returns>
         public string GetDescription()
         {
             if (IsAnonymous)
             {
-                return $"[Anônimo] Avaliação: {Comment}, Classificação: {Rating} estrelas.";
+                return $"[Anonymous] Review: {Comment}, Rating: {Rating} stars.";
             }
-            return $"[Cliente: {Client?.Name ?? "Sem nome"}] Avaliação: {Comment}, Classificação: {Rating} estrelas.";
+            return $"[Client: {Client?.Name ?? "No name"}] Review: {Comment}, Rating: {Rating} stars.";
         }
+
+        #endregion
     }
 }

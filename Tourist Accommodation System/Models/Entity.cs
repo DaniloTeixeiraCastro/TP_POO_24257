@@ -1,32 +1,34 @@
 ﻿namespace Tourist_Accommodation_System.Models
 {
     /// <summary>
-    /// Classe base para entidades com identificador único.
+    /// Base class for entities with a unique identifier.
     /// </summary>
     public abstract class Entity
     {
-        // Propriedade de identificação única
+        /// <summary>
+        /// Unique identifier for the entity.
+        /// </summary>
         public int Id { get; set; }
 
         /// <summary>
-        /// Construtor padrão para inicializações padrão ou deserialização.
+        /// Default constructor for standard initialization or deserialization.
         /// </summary>
         public Entity() { }
 
         /// <summary>
-        /// Construtor que aceita um ID.
+        /// Constructor that accepts an ID.
         /// </summary>
-        /// <param name="id">Identificador único da entidade.</param>
+        /// <param name="id">Unique identifier for the entity.</param>
         public Entity(int id)
         {
             Id = id;
         }
 
         /// <summary>
-        /// Método abstrato para obter uma descrição textual da entidade.
-        /// Deve ser implementado pelas classes derivadas.
+        /// Abstract method to get a textual description of the entity.
+        /// Must be implemented by derived classes.
         /// </summary>
-        /// <returns>Descrição textual da entidade.</returns>
+        /// <returns>A string description of the entity.</returns>
         public abstract string GetDescription();
     }
 }
