@@ -44,7 +44,8 @@ namespace Tourist_Accommodation_System.UserControls
 
         private void button_listpayment_Click(object sender, EventArgs e)
         {
-
+            var paymentListForm = new PaymentList();
+            paymentListForm.ShowDialog();
         }
 
         private void button_back_Click(object sender, EventArgs e)

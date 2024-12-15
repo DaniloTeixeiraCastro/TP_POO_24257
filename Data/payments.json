@@ -38,5 +38,68 @@
     "PaymentDate": "2024-12-15T12:45:55.7613704+00:00",
     "Status": 0,
     "Method": 1
+  },
+  {
+    "PaymentId": 6,
+    "Reservation": null,
+    "Amount": 350,
+    "PaymentDate": "2024-12-15T13:06:39.9060477+00:00",
+    "Status": 0,
+    "Method": 0
+  },
+  {
+    "PaymentId": 7,
+    "Reservation": null,
+    "Amount": 350,
+    "PaymentDate": "2024-12-15T13:07:31.3312007+00:00",
+    "Status": 0,
+    "Method": 0
+  },
+  {
+    "PaymentId": 8,
+    "Reservation": null,
+    "Amount": 350,
+    "PaymentDate": "2024-12-23T13:10:37.152",
+    "Status": 1,
+    "Method": 0
+  },
+  {
+    "PaymentId": 9,
+    "Reservation": null,
+    "Amount": 350,
+    "PaymentDate": "2024-12-16T13:16:50.972",
+    "Status": 1,
+    "Method": 0
+  },
+  {
+    "PaymentId": 10,
+    "Reservation": {
+      "Id": 2,
+      "Client": {
+        "Name": "Teresa Ferreira",
+        "Email": "tetefr@gmail.com",
+        "Phone": "912231428",
+        "TIN": "123123123",
+        "BirthDate": "1960-12-15T12:39:53.134",
+        "Id": 5
+      },
+      "Accommodation": {
+        "Name": "Quarto Duplo Vista Jardim 2",
+        "Type": 0,
+        "RoomNumber": 2,
+        "Capacity": 2,
+        "PricePerNight": 50,
+        "Status": 1,
+        "Id": 0
+      },
+      "CheckInDate": "2024-12-15T00:00:00+00:00",
+      "CheckOutDate": "2024-12-22T00:00:00",
+      "TotalPrice": 350,
+      "Status": 0
+    },
+    "Amount": 350,
+    "PaymentDate": "2024-12-15T14:26:57.9552511+00:00",
+    "Status": 1,
+    "Method": 0
   }
 ]

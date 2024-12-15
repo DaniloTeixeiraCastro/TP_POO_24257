@@ -14,8 +14,57 @@ namespace Tourist_Accommodation_System.Forms
 {
     public partial class AddEditPayment : Form
     {
+        private Payment _currentPayment; // Reference to the payment being edited
+        private bool _isEditMode; // Flag to indicate edit mode
+
         /// <summary>
-        /// Carrega as reservas na ComboBox.
+        /// Default constructor for adding a new payment.
+        /// </summary>
+        public AddEditPayment()
+        {
+            InitializeComponent();
+            _isEditMode = false; // Indicates new payment
+        }
+
+        /// <summary>
+        /// Constructor for editing an existing payment.
+        /// </summary>
+        /// <param name="payment">The payment to be edited.</param>
+        public AddEditPayment(Payment payment) : this() // Calls the default constructor
+        {
+            _currentPayment = payment;
+            _isEditMode = true;
+        }
+
+        /// <summary>
+        /// Handles the form load event.
+        /// </summary>
+        private void AddEditPayment_Load(object sender, EventArgs e)
+        {
+            // Load dropdowns
+            LoadReservationsFromJson();
+            LoadPaymentStatus();
+            LoadPaymentMethods();
+
+            if (_isEditMode && _currentPayment != null)
+            {
+                PopulateFields(); // Pre-fill fields for editing
+            }
+        }
+
+        /// <summary>
+        /// Populates form fields with payment data for editing.
+        /// </summary>
+        private void PopulateFields()
+        {
+            comboBox_reservation.SelectedValue = _currentPayment.Reservation.Id;
+            numericUpDown.Value = _currentPayment.Amount;
+            dateTimePicker1.Value = _currentPayment.PaymentDate;
+            comboBox_status.SelectedItem = _currentPayment.Status;
+            comboBox_method.SelectedItem = _currentPayment.Method;
+        }
+        /// <summary>
+        /// Loads all reservations into the ComboBox, displaying only the room number.
         /// </summary>
         private void LoadReservationsFromJson()
         {
@@ -25,19 +74,18 @@ namespace Tourist_Accommodation_System.Forms
             // Formata apenas com o número do quarto
             var formattedReservations = reservations.Select(r => new
             {
-                RoomNumber = $"Room {r.Accommodation.RoomNumber}", // Apenas o número do quarto
-                r.Id,
-                r.TotalPrice
+                Display = $"Room {r.Accommodation.RoomNumber}", // Shows room number only
+                Reservation = r // Keeps the full reservation object
             }).ToList();
 
             comboBox_reservation.DataSource = formattedReservations;
-            comboBox_reservation.DisplayMember = "RoomNumber"; // Mostra apenas o número do quarto
-            comboBox_reservation.ValueMember = "Id"; // Usa o ID da reserva como valor
-            comboBox_reservation.SelectedIndex = -1; // Nenhuma reserva selecionada por padrão
+            comboBox_reservation.DisplayMember = "Display"; // Display the room number
+            comboBox_reservation.ValueMember = "Reservation"; // Keeps the full reservation object
+            comboBox_reservation.SelectedIndex = -1; // No selection by default
         }
 
         /// <summary>
-        /// Carrega os valores do enum PaymentStatus na ComboBox.
+        /// Loads the payment status options from the PaymentStatus enum.
         /// </summary>
         private void LoadPaymentStatus()
         {
@@ -47,7 +95,7 @@ namespace Tourist_Accommodation_System.Forms
         }
 
         /// <summary>
-        /// Carrega os valores do enum PaymentMethod na ComboBox.
+        /// Loads the payment method options from the PaymentMethod enum.
         /// </summary>
         private void LoadPaymentMethods()
         {
@@ -55,23 +103,8 @@ namespace Tourist_Accommodation_System.Forms
                                                     .Cast<PaymentMethod>()
                                                     .ToList();
         }
-        public AddEditPayment()
-        {
-            InitializeComponent();
 
-        }
 
-        private void AddEditPayment_Load(object sender, EventArgs e)
-        {
-            // Configura o limite máximo do NumericUpDown
-            numericUpDown.Maximum = 10000; // Ajuste para o valor máximo necessário (ex: 10.000)
-            numericUpDown.Minimum = 0;     // Limite mínimo (se necessário)
-
-            // Carrega os dados necessários
-            LoadReservationsFromJson();
-            LoadPaymentStatus();
-            LoadPaymentMethods();
-        }
 
         private void label_reservation_Click(object sender, EventArgs e)
         {
@@ -98,18 +131,20 @@ namespace Tourist_Accommodation_System.Forms
 
         }
 
+        /// <summary>
+        /// Updates the payment amount (TotalPrice) when a reservation is selected.
+        /// </summary>
         private void comboBox_reservation_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox_reservation.SelectedItem != null)
             {
-                // Faz o cast para o tipo anônimo usado no DataSource
-                var selectedReservation = comboBox_reservation.SelectedItem;
+                var selectedReservation = (comboBox_reservation.SelectedItem as dynamic)?.Reservation;
 
-                // Usa reflection para acessar o TotalPrice
-                var totalPrice = (decimal)selectedReservation.GetType().GetProperty("TotalPrice")?.GetValue(selectedReservation, null);
-
-                // Define o TotalPrice no numericUpDown
-                numericUpDown.Value = Math.Min(totalPrice, numericUpDown.Maximum); // Garante que não ultrapassa o limite
+                if (selectedReservation != null)
+                {
+                    // Sets the TotalPrice to numericUpDown, ensuring it stays within the valid range
+                    numericUpDown.Value = Math.Min((decimal)selectedReservation.TotalPrice, numericUpDown.Maximum);
+                }
             }
         }
 
@@ -132,55 +167,58 @@ namespace Tourist_Accommodation_System.Forms
         {
 
         }
-
+        /// <summary>
+        /// Handles the Save button click event to save the payment details.
+        /// </summary>
         private void button_save_Click(object sender, EventArgs e)
         {
-            // Valida se todos os campos obrigatórios foram preenchidos
-            if (comboBox_reservation.SelectedItem == null)
+            // Validate required fields
+            if (comboBox_reservation.SelectedItem == null ||
+                comboBox_status.SelectedItem == null ||
+                comboBox_method.SelectedItem == null)
             {
-                MessageBox.Show("Por favor, selecione uma reserva.", "Erro de Validação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor, preencha todos os campos obrigatórios.", "Erro de Validação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            if (comboBox_status.SelectedItem == null)
-            {
-                MessageBox.Show("Por favor, selecione um status de pagamento.", "Erro de Validação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            // Retrieve values from the form
+            var selectedReservationId = (int)comboBox_reservation.SelectedValue;
+            var selectedReservation = ReservationService.GetReservations()
+                                        .FirstOrDefault(r => r.Id == selectedReservationId);
 
-            if (comboBox_method.SelectedItem == null)
-            {
-                MessageBox.Show("Por favor, selecione um método de pagamento.", "Erro de Validação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            // Captura os valores preenchidos no formulário
-            var selectedReservation = comboBox_reservation.SelectedItem as Reservation;
             var amount = numericUpDown.Value;
             var paymentDate = dateTimePicker1.Value;
             var status = (PaymentStatus)comboBox_status.SelectedItem;
             var method = (PaymentMethod)comboBox_method.SelectedItem;
 
-            // Cria um novo objeto Payment
-            var newPayment = new Payment(0, selectedReservation, amount, paymentDate, status, method)
+            if (_isEditMode)
             {
-                Method = method // Adicione o método ao pagamento
-            };
+                // Update existing payment
+                _currentPayment.Reservation = selectedReservation;
+                _currentPayment.Amount = amount;
+                _currentPayment.PaymentDate = paymentDate;
+                _currentPayment.Status = status;
+                _currentPayment.Method = method;
 
-            // Salva o pagamento usando o serviço
-            string result = PaymentService.AddPayment(newPayment);
+                PaymentService.UpdatePayment(_currentPayment);
+                MessageBox.Show("Pagamento atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                // Add new payment
+                var newPayment = new Payment(0, selectedReservation, amount, paymentDate, status, method);
+                PaymentService.AddPayment(newPayment);
+                MessageBox.Show("Pagamento adicionado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
 
-            // Exibe mensagem de sucesso ou erro
-            MessageBox.Show(result, "Pagamento", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            // Fecha o formulário após salvar
-            Close();
-
+            Close(); // Close the form
         }
-
+        /// <summary>
+        /// Handles the Cancel button click event to close the form without saving.
+        /// </summary>
         private void button_cancel_Click(object sender, EventArgs e)
         {
-
+            Close();
         }
     }
 }
