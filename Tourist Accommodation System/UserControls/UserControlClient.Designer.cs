@@ -41,7 +41,7 @@
             // 
             button_removeclient.Location = new Point(94, 285);
             button_removeclient.Name = "button_removeclient";
-            button_removeclient.Size = new Size(178, 80);
+            button_removeclient.Size = new Size(250, 80);
             button_removeclient.TabIndex = 7;
             button_removeclient.Text = "REMOVE CLIENT";
             button_removeclient.UseVisualStyleBackColor = true;
@@ -51,7 +51,7 @@
             // 
             button_editclient.Location = new Point(358, 186);
             button_editclient.Name = "button_editclient";
-            button_editclient.Size = new Size(170, 80);
+            button_editclient.Size = new Size(250, 80);
             button_editclient.TabIndex = 6;
             button_editclient.Text = "EDIT CLIENT";
             button_editclient.UseVisualStyleBackColor = true;
@@ -61,7 +61,7 @@
             // 
             button_addclient.Location = new Point(94, 186);
             button_addclient.Name = "button_addclient";
-            button_addclient.Size = new Size(178, 80);
+            button_addclient.Size = new Size(250, 80);
             button_addclient.TabIndex = 5;
             button_addclient.Text = "ADD CLIENT";
             button_addclient.UseVisualStyleBackColor = true;
@@ -82,7 +82,7 @@
             // 
             button_listclient.Location = new Point(358, 285);
             button_listclient.Name = "button_listclient";
-            button_listclient.Size = new Size(170, 80);
+            button_listclient.Size = new Size(250, 80);
             button_listclient.TabIndex = 10;
             button_listclient.Text = "LIST CLIENT";
             button_listclient.UseVisualStyleBackColor = true;

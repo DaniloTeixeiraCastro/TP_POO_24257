@@ -42,7 +42,7 @@
             button_listaccommodation.BackColor = SystemColors.ButtonHighlight;
             button_listaccommodation.Location = new Point(351, 279);
             button_listaccommodation.Name = "button_listaccommodation";
-            button_listaccommodation.Size = new Size(213, 80);
+            button_listaccommodation.Size = new Size(250, 80);
             button_listaccommodation.TabIndex = 7;
             button_listaccommodation.Text = "LIST ACCOMMODATION";
             button_listaccommodation.UseVisualStyleBackColor = false;
@@ -52,7 +52,7 @@
             // 
             button_removeaccommodation.Location = new Point(62, 279);
             button_removeaccommodation.Name = "button_removeaccommodation";
-            button_removeaccommodation.Size = new Size(189, 80);
+            button_removeaccommodation.Size = new Size(250, 80);
             button_removeaccommodation.TabIndex = 6;
             button_removeaccommodation.Text = "REMOVE ACCOMMODATION";
             button_removeaccommodation.UseVisualStyleBackColor = true;
@@ -62,7 +62,7 @@
             // 
             button_editaccommodation.Location = new Point(351, 159);
             button_editaccommodation.Name = "button_editaccommodation";
-            button_editaccommodation.Size = new Size(213, 80);
+            button_editaccommodation.Size = new Size(250, 80);
             button_editaccommodation.TabIndex = 5;
             button_editaccommodation.Text = "EDIT ACCOMMODATION";
             button_editaccommodation.UseVisualStyleBackColor = true;
@@ -70,9 +70,9 @@
             // 
             // button_addaccommodation
             // 
-            button_addaccommodation.Location = new Point(62, 159);
+            button_addaccommodation.Location = new Point(57, 159);
             button_addaccommodation.Name = "button_addaccommodation";
-            button_addaccommodation.Size = new Size(194, 80);
+            button_addaccommodation.Size = new Size(250, 80);
             button_addaccommodation.TabIndex = 4;
             button_addaccommodation.Text = "ADD ACCOMMODATION";
             button_addaccommodation.UseVisualStyleBackColor = true;

@@ -56,7 +56,7 @@
             // label_amount
             // 
             label_amount.AutoSize = true;
-            label_amount.Location = new Point(105, 134);
+            label_amount.Location = new Point(105, 132);
             label_amount.Name = "label_amount";
             label_amount.Size = new Size(72, 20);
             label_amount.TabIndex = 1;
@@ -76,7 +76,7 @@
             // label_paymentmethod
             // 
             label_paymentmethod.AutoSize = true;
-            label_paymentmethod.Location = new Point(105, 259);
+            label_paymentmethod.Location = new Point(105, 270);
             label_paymentmethod.Name = "label_paymentmethod";
             label_paymentmethod.Size = new Size(139, 20);
             label_paymentmethod.TabIndex = 3;
@@ -114,7 +114,7 @@
             // 
             // numericUpDown
             // 
-            numericUpDown.Location = new Point(471, 127);
+            numericUpDown.Location = new Point(471, 125);
             numericUpDown.Name = "numericUpDown";
             numericUpDown.Size = new Size(150, 27);
             numericUpDown.TabIndex = 7;
@@ -131,7 +131,7 @@
             // label_status
             // 
             label_status.AutoSize = true;
-            label_status.Location = new Point(105, 221);
+            label_status.Location = new Point(105, 223);
             label_status.Name = "label_status";
             label_status.Size = new Size(127, 20);
             label_status.TabIndex = 9;
@@ -141,7 +141,7 @@
             // comboBox_status
             // 
             comboBox_status.FormattingEnabled = true;
-            comboBox_status.Location = new Point(471, 221);
+            comboBox_status.Location = new Point(471, 223);
             comboBox_status.Name = "comboBox_status";
             comboBox_status.Size = new Size(151, 28);
             comboBox_status.TabIndex = 10;
@@ -150,7 +150,7 @@
             // comboBox_method
             // 
             comboBox_method.FormattingEnabled = true;
-            comboBox_method.Location = new Point(471, 259);
+            comboBox_method.Location = new Point(471, 270);
             comboBox_method.Name = "comboBox_method";
             comboBox_method.Size = new Size(151, 28);
             comboBox_method.TabIndex = 11;

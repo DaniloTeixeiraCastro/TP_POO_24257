@@ -40,7 +40,7 @@
             // 
             button_listreservation.Location = new Point(336, 316);
             button_listreservation.Name = "button_listreservation";
-            button_listreservation.Size = new Size(300, 80);
+            button_listreservation.Size = new Size(250, 80);
             button_listreservation.TabIndex = 7;
             button_listreservation.Text = "LIST RESERVATION";
             button_listreservation.UseVisualStyleBackColor = true;
@@ -48,9 +48,9 @@
             // 
             // button_removereservation
             // 
-            button_removereservation.Location = new Point(30, 316);
+            button_removereservation.Location = new Point(18, 316);
             button_removereservation.Name = "button_removereservation";
-            button_removereservation.Size = new Size(300, 80);
+            button_removereservation.Size = new Size(250, 80);
             button_removereservation.TabIndex = 6;
             button_removereservation.Text = "REMOVE RESERVATION";
             button_removereservation.UseVisualStyleBackColor = true;
@@ -60,7 +60,7 @@
             // 
             button_editreservation.Location = new Point(336, 200);
             button_editreservation.Name = "button_editreservation";
-            button_editreservation.Size = new Size(300, 80);
+            button_editreservation.Size = new Size(250, 80);
             button_editreservation.TabIndex = 5;
             button_editreservation.Text = "EDIT RESERVATION";
             button_editreservation.UseVisualStyleBackColor = true;
@@ -68,9 +68,9 @@
             // 
             // button_addreservation
             // 
-            button_addreservation.Location = new Point(30, 200);
+            button_addreservation.Location = new Point(18, 200);
             button_addreservation.Name = "button_addreservation";
-            button_addreservation.Size = new Size(300, 80);
+            button_addreservation.Size = new Size(250, 80);
             button_addreservation.TabIndex = 4;
             button_addreservation.Text = "ADD RESERVATION";
             button_addreservation.UseVisualStyleBackColor = true;

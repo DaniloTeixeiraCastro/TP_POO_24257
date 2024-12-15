@@ -39,7 +39,7 @@
             // 
             button_addpayment.Location = new Point(150, 181);
             button_addpayment.Name = "button_addpayment";
-            button_addpayment.Size = new Size(300, 80);
+            button_addpayment.Size = new Size(250, 80);
             button_addpayment.TabIndex = 0;
             button_addpayment.Text = "ADD PAYMENT";
             button_addpayment.UseVisualStyleBackColor = true;
@@ -49,7 +49,7 @@
             // 
             button_editpayment.Location = new Point(150, 281);
             button_editpayment.Name = "button_editpayment";
-            button_editpayment.Size = new Size(300, 80);
+            button_editpayment.Size = new Size(250, 80);
             button_editpayment.TabIndex = 1;
             button_editpayment.Text = "EDIT PAYMENT";
             button_editpayment.UseVisualStyleBackColor = true;
@@ -59,7 +59,7 @@
             // 
             button_listpayment.Location = new Point(150, 381);
             button_listpayment.Name = "button_listpayment";
-            button_listpayment.Size = new Size(300, 80);
+            button_listpayment.Size = new Size(250, 80);
             button_listpayment.TabIndex = 2;
             button_listpayment.Text = "LIST PAYMENT";
             button_listpayment.UseVisualStyleBackColor = true;

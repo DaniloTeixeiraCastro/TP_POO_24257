@@ -40,7 +40,7 @@
             // 
             button_listcheckin.Location = new Point(365, 310);
             button_listcheckin.Name = "button_listcheckin";
-            button_listcheckin.Size = new Size(186, 80);
+            button_listcheckin.Size = new Size(250, 80);
             button_listcheckin.TabIndex = 7;
             button_listcheckin.Text = "LIST CHECK-IN";
             button_listcheckin.UseVisualStyleBackColor = true;
@@ -50,7 +50,7 @@
             // 
             button_removecheckin.Location = new Point(76, 310);
             button_removecheckin.Name = "button_removecheckin";
-            button_removecheckin.Size = new Size(187, 80);
+            button_removecheckin.Size = new Size(250, 80);
             button_removecheckin.TabIndex = 6;
             button_removecheckin.Text = "REMOVE CHECK-IN";
             button_removecheckin.UseVisualStyleBackColor = true;
@@ -60,7 +60,7 @@
             // 
             button_editcheckin.Location = new Point(365, 191);
             button_editcheckin.Name = "button_editcheckin";
-            button_editcheckin.Size = new Size(186, 80);
+            button_editcheckin.Size = new Size(250, 80);
             button_editcheckin.TabIndex = 5;
             button_editcheckin.Text = "EDIT CHECK-IN";
             button_editcheckin.UseVisualStyleBackColor = true;
@@ -68,9 +68,9 @@
             // 
             // button_addcheckin
             // 
-            button_addcheckin.Location = new Point(76, 191);
+            button_addcheckin.Location = new Point(75, 190);
             button_addcheckin.Name = "button_addcheckin";
-            button_addcheckin.Size = new Size(187, 80);
+            button_addcheckin.Size = new Size(250, 80);
             button_addcheckin.TabIndex = 4;
             button_addcheckin.Text = "ADD CHECK-IN";
             button_addcheckin.UseVisualStyleBackColor = true;

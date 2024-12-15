@@ -40,7 +40,7 @@
             // 
             button_listreview.Location = new Point(331, 273);
             button_listreview.Name = "button_listreview";
-            button_listreview.Size = new Size(300, 80);
+            button_listreview.Size = new Size(250, 80);
             button_listreview.TabIndex = 7;
             button_listreview.Text = "LIST REVIEW";
             button_listreview.UseVisualStyleBackColor = true;
@@ -50,7 +50,7 @@
             // 
             button_removereview.Location = new Point(25, 273);
             button_removereview.Name = "button_removereview";
-            button_removereview.Size = new Size(300, 80);
+            button_removereview.Size = new Size(250, 80);
             button_removereview.TabIndex = 6;
             button_removereview.Text = "REMOVE REVIEW";
             button_removereview.UseVisualStyleBackColor = true;
@@ -60,7 +60,7 @@
             // 
             button_editreview.Location = new Point(331, 155);
             button_editreview.Name = "button_editreview";
-            button_editreview.Size = new Size(300, 80);
+            button_editreview.Size = new Size(250, 80);
             button_editreview.TabIndex = 5;
             button_editreview.Text = "EDIT REVIEW";
             button_editreview.UseVisualStyleBackColor = true;
@@ -70,7 +70,7 @@
             // 
             button_addreview.Location = new Point(25, 155);
             button_addreview.Name = "button_addreview";
-            button_addreview.Size = new Size(300, 80);
+            button_addreview.Size = new Size(250, 80);
             button_addreview.TabIndex = 4;
             button_addreview.Text = "ADD REVIEW";
             button_addreview.UseVisualStyleBackColor = true;
