@@ -28,7 +28,20 @@ namespace Tourist_Accommodation_System.Services
         /// <summary>
         /// Obtém a lista completa de acomodações.
         /// </summary>
-        public static List<Accommodation> GetAccommodations() => accommodationList;
+        public static List<Accommodation> GetAccommodations()
+        {
+         var today = DateTime.Today;
+
+         // Atualiza dinamicamente o status de cada quarto
+             foreach (var accommodation in accommodationList)
+         {
+        accommodation.Status = IsRoomOccupied(accommodation, today)
+            ? AccommodationStatus.Occupied
+            : AccommodationStatus.Available;
+         }
+
+         return accommodationList;
+}
 
         /// <summary>
         /// Adiciona ou atualiza uma acomodação existente.
@@ -60,11 +73,6 @@ namespace Tourist_Accommodation_System.Services
                 // Atualiza apenas as propriedades modificadas da acomodação
                 UpdateAccommodationProperties(accommodation, existingAccommodation);
 
-                // Verifica se houve mudança no status
-                if (existingAccommodation.Status != accommodation.Status)
-                {
-                    existingAccommodation.Status = accommodation.Status;
-                }
             }
             else
             {
@@ -75,6 +83,17 @@ namespace Tourist_Accommodation_System.Services
             // Salva a lista de acomodações no JSON
             SaveAccommodationsToJson();
             return "Acomodação salva com sucesso!";
+        }
+
+        /// <summary>
+        /// Verifica se um quarto está ocupado na data atual
+        /// </summary>
+        public static bool IsRoomOccupied(Accommodation accommodation, DateTime date)
+        {
+            var reservations = ReservationService.GetReservations();
+            return reservations.Any(r => r.Accommodation.RoomNumber == accommodation.RoomNumber &&
+                                          r.CheckInDate <= date &&
+                                          r.CheckOutDate > date); // Verifica se a data está no intervalo
         }
 
         /// <summary>

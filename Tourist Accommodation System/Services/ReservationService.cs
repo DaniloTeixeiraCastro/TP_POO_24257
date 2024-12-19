@@ -47,14 +47,11 @@ namespace Tourist_Accommodation_System.Services
             // Adiciona a reserva à lista
             reservationList.Add(reservation);
 
-            // Atualiza o status da acomodação para "Occupied"
-            reservation.Accommodation.Status = AccommodationStatus.Occupied;
-            AccommodationService.AddOrUpdateAccommodation(reservation.Accommodation);
-
             // Salva a lista de reservas no JSON
             SaveReservationsToJson();
             return "Reserva adicionada com sucesso!";
         }
+
 
         /// <summary>
         /// Remove uma reserva pelo ID e salva no JSON.

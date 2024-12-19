@@ -14,7 +14,7 @@
     "RoomNumber": 2,
     "Capacity": 2,
     "PricePerNight": 50,
-    "Status": 1,
+    "Status": 0,
     "Id": 0
   },
   {

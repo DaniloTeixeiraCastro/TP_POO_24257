@@ -179,47 +179,54 @@ namespace Tourist_Accommodation_System.Forms
                 return;
             }
 
-            // Recupera o objeto completo Reservation diretamente
-            var selectedReservation = comboBox_reservation.SelectedValue as Reservation;
-
-            if (selectedReservation != null)
+            if (comboBox_reservation.SelectedValue is int selectedReservationId)
             {
-                var amount = numericUpDown.Value;
-                var paymentDate = dateTimePicker1.Value;
-                var status = (PaymentStatus)comboBox_status.SelectedItem;
-                var method = (PaymentMethod)comboBox_method.SelectedItem;
+                var selectedReservation = ReservationService.GetReservations()
+                                          .FirstOrDefault(r => r.Id == selectedReservationId);
 
-                if (_isEditMode)
+                if (selectedReservation != null)
                 {
-                    // Atualiza o pagamento existente
-                    _currentPayment.Reservation = selectedReservation;
-                    _currentPayment.Amount = amount;
-                    _currentPayment.PaymentDate = paymentDate;
-                    _currentPayment.Status = status;
-                    _currentPayment.Method = method;
+                    var amount = numericUpDown.Value;
+                    var paymentDate = dateTimePicker1.Value;
+                    var status = (PaymentStatus)comboBox_status.SelectedItem;
+                    var method = (PaymentMethod)comboBox_method.SelectedItem;
 
-                    PaymentService.UpdatePayment(_currentPayment);
-                    MessageBox.Show("Pagamento atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (_isEditMode)
+                    {
+                        // Atualiza o pagamento existente
+                        _currentPayment.Reservation = selectedReservation;
+                        _currentPayment.Amount = amount;
+                        _currentPayment.PaymentDate = paymentDate;
+                        _currentPayment.Status = status;
+                        _currentPayment.Method = method;
+
+                        PaymentService.UpdatePayment(_currentPayment);
+                        MessageBox.Show("Pagamento atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        // Cria um novo pagamento
+                        var newPayment = new Payment(0, selectedReservation, amount, paymentDate, status, method);
+                        PaymentService.AddPayment(newPayment);
+
+                        // Remove a reserva e atualiza o status do quarto
+                        ReservationService.RemoveReservation(selectedReservation.Id);
+                        selectedReservation.Accommodation.Status = AccommodationStatus.Available;
+                        AccommodationService.AddOrUpdateAccommodation(selectedReservation.Accommodation);
+
+                        MessageBox.Show("Pagamento adicionado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
+                    Close();
                 }
                 else
                 {
-                    // Cria um novo pagamento
-                    var newPayment = new Payment(0, selectedReservation, amount, paymentDate, status, method);
-                    PaymentService.AddPayment(newPayment);
-
-                    // Remove a reserva e torna o quarto disponível
-                    ReservationService.RemoveReservation(selectedReservation.Id);
-                    selectedReservation.Accommodation.Status = AccommodationStatus.Available;
-                    AccommodationService.AddOrUpdateAccommodation(selectedReservation.Accommodation);
-
-                    MessageBox.Show("Pagamento adicionado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Erro ao obter a reserva selecionada.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
-                Close();
             }
             else
             {
-                MessageBox.Show("Erro ao obter a reserva selecionada.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Por favor, selecione uma reserva válida.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         /// <summary>

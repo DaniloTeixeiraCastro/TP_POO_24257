@@ -1,42 +1,10 @@
 [
   {
     "Name": "Danilo Castro",
-    "Email": "danilocastro7@hotmail.com",
-    "Phone": "912231427",
+    "Email": "a25457@alunos.ipca.pt",
+    "Phone": "919999999",
     "TIN": "259486639",
-    "BirthDate": "1994-12-03T00:00:00",
+    "BirthDate": "1994-02-14T23:07:13.529",
     "Id": 1
-  },
-  {
-    "Name": "Catia Martins",
-    "Email": "danilocastro@hotmail.com",
-    "Phone": "25948663",
-    "TIN": "528",
-    "BirthDate": "1994-12-03T00:00:00",
-    "Id": 2
-  },
-  {
-    "Name": "Frederico Dias",
-    "Email": "fdias@polopique.pt",
-    "Phone": "91225487",
-    "TIN": "78542",
-    "BirthDate": "1995-12-03T20:14:43.238",
-    "Id": 3
-  },
-  {
-    "Name": "Sergio Martins",
-    "Email": "sergio.martins@polopique.pt",
-    "Phone": "25480480",
-    "TIN": "5689",
-    "BirthDate": "1964-12-03T20:15:06.786",
-    "Id": 4
-  },
-  {
-    "Name": "Teresa Ferreira",
-    "Email": "tetefr@gmail.com",
-    "Phone": "912231428",
-    "TIN": "123123123",
-    "BirthDate": "1960-12-15T12:39:53.134",
-    "Id": 5
   }
 ]

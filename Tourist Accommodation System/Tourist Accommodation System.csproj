@@ -21,12 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="TourismUtilities">
-      <HintPath>..\TourismUtilities\TourismUtilities\bin\Debug\net8.0\TourismUtilities.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
-  <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

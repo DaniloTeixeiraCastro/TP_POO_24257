@@ -32,8 +32,12 @@ namespace Tourist_Accommodation_System.Services
             paymentList.Add(payment);
             SavePaymentsToJson();
 
-            // Atualiza o status da reserva e do quarto
-            UpdateReservationAndAccommodation(payment.Reservation);
+            // Atualiza a reserva e a acomodação
+            var reservation = ReservationService.GetReservations().FirstOrDefault(r => r.Id == payment.Reservation.Id);
+            if (reservation != null)
+            {
+                UpdateReservationAndAccommodation(reservation);
+            }
 
             return "Payment added successfully!";
         }
@@ -43,12 +47,19 @@ namespace Tourist_Accommodation_System.Services
         /// </summary>
         private static void UpdateReservationAndAccommodation(Reservation reservation)
         {
-            // Remove a reserva
-            ReservationService.RemoveReservation(reservation.Id);
+            if (reservation != null && reservation.Accommodation != null)
+            {
+                // Remove a reserva
+                ReservationService.RemoveReservation(reservation.Id);
 
-            // Atualiza o status do quarto para "Available"
-            reservation.Accommodation.Status = AccommodationStatus.Available;
-            AccommodationService.AddOrUpdateAccommodation(reservation.Accommodation);
+                // Atualiza o status do quarto para "Available"
+                reservation.Accommodation.Status = AccommodationStatus.Available;
+                AccommodationService.AddOrUpdateAccommodation(reservation.Accommodation);
+            }
+            else
+            {
+                Console.WriteLine("Erro: Reserva ou acomodação nula ao tentar atualizar.");
+            }
         }
 
         /// <summary>
@@ -64,13 +75,17 @@ namespace Tourist_Accommodation_System.Services
                     PropertyNameCaseInsensitive = true
                 }) ?? new List<Payment>();
 
-                // Re-associa as reservas às suas referências
+                // Re-associa as reservas às suas referências, se disponíveis
                 var reservations = ReservationService.GetReservations();
                 foreach (var payment in payments)
                 {
                     if (payment.Reservation != null)
                     {
                         payment.Reservation = reservations.FirstOrDefault(r => r.Id == payment.Reservation.Id);
+                        if (payment.Reservation == null)
+                        {
+                            Console.WriteLine($"Aviso: Reserva com ID {payment.Reservation.Id} não encontrada.");
+                        }
                     }
                 }
 
@@ -78,7 +93,7 @@ namespace Tourist_Accommodation_System.Services
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error loading payments: {ex.Message}");
+                Console.WriteLine($"Erro ao carregar pagamentos: {ex.Message}");
                 return new List<Payment>();
             }
         }
@@ -92,6 +107,13 @@ namespace Tourist_Accommodation_System.Services
             if (payment == null)
             {
                 return "Pagamento não encontrado.";
+            }
+
+            if (payment.Reservation != null && payment.Reservation.Accommodation != null)
+            {
+                // Atualiza o status do quarto para "Available"
+                payment.Reservation.Accommodation.Status = AccommodationStatus.Available;
+                AccommodationService.AddOrUpdateAccommodation(payment.Reservation.Accommodation);
             }
 
             paymentList.Remove(payment);
@@ -159,11 +181,11 @@ namespace Tourist_Accommodation_System.Services
         public static List<Payment> GetPayments()
         {
             // Verifica se a lista está vazia e carrega do JSON, se necessário
-            if (paymentList == null || paymentList.Count == 0)
+            if (paymentList == null || !paymentList.Any())
             {
                 paymentList = LoadPaymentsFromJson();
             }
-            return paymentList;
+            return paymentList ?? new List<Payment>();
         }
     }
 }
