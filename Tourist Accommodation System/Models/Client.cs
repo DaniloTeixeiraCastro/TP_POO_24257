@@ -1,4 +1,5 @@
 ﻿using Tourist_Accommodation_System.Interfaces;
+using Tourist_Accommodation_System.Models;
 
 namespace Tourist_Accommodation_System.Models
 {
