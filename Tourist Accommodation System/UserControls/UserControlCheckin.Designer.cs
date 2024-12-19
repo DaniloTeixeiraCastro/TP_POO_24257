@@ -34,6 +34,7 @@
             button_addcheckin = new Button();
             button_back = new Button();
             label_menu = new Label();
+            label1 = new Label();
             SuspendLayout();
             // 
             // button_listcheckin
@@ -99,10 +100,22 @@
             label_menu.Text = "CHECK-IN MENU";
             label_menu.Click += label_menu_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 18F);
+            label1.Location = new Point(178, 274);
+            label1.Name = "label1";
+            label1.Size = new Size(295, 41);
+            label1.TabIndex = 10;
+            label1.Text = "FUNCTIONS TO ADD";
+            label1.Click += label1_Click;
+            // 
             // UserControlCheckin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(label1);
             Controls.Add(label_menu);
             Controls.Add(button_back);
             Controls.Add(button_listcheckin);
@@ -123,5 +136,6 @@
         private Button button_addcheckin;
         private Button button_back;
         private Label label_menu;
+        private Label label1;
     }
 }

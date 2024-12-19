@@ -31,7 +31,6 @@
             comboBox1 = new ComboBox();
             button_edit = new Button();
             button_remove = new Button();
-            button_list = new Button();
             SuspendLayout();
             // 
             // comboBox1
@@ -45,7 +44,7 @@
             // 
             // button_edit
             // 
-            button_edit.Location = new Point(115, 272);
+            button_edit.Location = new Point(241, 272);
             button_edit.Name = "button_edit";
             button_edit.Size = new Size(94, 29);
             button_edit.TabIndex = 1;
@@ -55,7 +54,7 @@
             // 
             // button_remove
             // 
-            button_remove.Location = new Point(337, 272);
+            button_remove.Location = new Point(463, 272);
             button_remove.Name = "button_remove";
             button_remove.Size = new Size(94, 29);
             button_remove.TabIndex = 2;
@@ -63,22 +62,11 @@
             button_remove.UseVisualStyleBackColor = true;
             button_remove.Click += button_remove_Click;
             // 
-            // button_list
-            // 
-            button_list.Location = new Point(561, 272);
-            button_list.Name = "button_list";
-            button_list.Size = new Size(94, 29);
-            button_list.TabIndex = 3;
-            button_list.Text = "LIST";
-            button_list.UseVisualStyleBackColor = true;
-            button_list.Click += button_list_Click;
-            // 
             // ClientManagementForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(button_list);
             Controls.Add(button_remove);
             Controls.Add(button_edit);
             Controls.Add(comboBox1);
@@ -93,7 +81,6 @@
         private ComboBox comboBox1;
         private Button button_edit;
         private Button button_remove;
-        private Button button_list;
 
 
     }

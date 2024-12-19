@@ -90,7 +90,7 @@
             // 
             // button_filter
             // 
-            button_filter.BackColor = SystemColors.ButtonShadow;
+            button_filter.BackColor = SystemColors.ButtonHighlight;
             button_filter.Location = new Point(148, 412);
             button_filter.Name = "button_filter";
             button_filter.Size = new Size(300, 67);

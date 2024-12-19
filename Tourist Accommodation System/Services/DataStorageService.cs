@@ -8,9 +8,9 @@ using System.IO;
 
 public static class DataStorageService
 {
+
     private static readonly string BaseDirectory = @"C:\PROJETO\TP_POO_25457-main";
 
-    // Método para guardar dados em JSON
     public static void SaveToJson<T>(T data, string fileName)
     {
         // Garante que o diretório existe
@@ -28,7 +28,6 @@ public static class DataStorageService
         File.WriteAllText(filePath, jsonData);
     }
 
-    // Método para carregar dados de JSON
     public static T LoadFromJson<T>(string fileName)
     {
         string filePath = Path.Combine(BaseDirectory, fileName);

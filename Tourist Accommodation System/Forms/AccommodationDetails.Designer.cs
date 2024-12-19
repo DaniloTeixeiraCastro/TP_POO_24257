@@ -30,11 +30,9 @@
         {
             comboBox_type = new ComboBox();
             comboBox_status = new ComboBox();
-            comboBox_view = new ComboBox();
             comboBox_price = new ComboBox();
             label_type = new Label();
             label_status = new Label();
-            label_view = new Label();
             label_price = new Label();
             listBox_details = new ListBox();
             button_apply = new Button();
@@ -44,7 +42,7 @@
             // comboBox_type
             // 
             comboBox_type.FormattingEnabled = true;
-            comboBox_type.Location = new Point(31, 65);
+            comboBox_type.Location = new Point(60, 65);
             comboBox_type.Name = "comboBox_type";
             comboBox_type.Size = new Size(151, 28);
             comboBox_type.TabIndex = 0;
@@ -53,25 +51,16 @@
             // comboBox_status
             // 
             comboBox_status.FormattingEnabled = true;
-            comboBox_status.Location = new Point(204, 65);
+            comboBox_status.Location = new Point(301, 65);
             comboBox_status.Name = "comboBox_status";
             comboBox_status.Size = new Size(151, 28);
             comboBox_status.TabIndex = 1;
             comboBox_status.SelectedIndexChanged += comboBox_status_SelectedIndexChanged;
             // 
-            // comboBox_view
-            // 
-            comboBox_view.FormattingEnabled = true;
-            comboBox_view.Location = new Point(389, 65);
-            comboBox_view.Name = "comboBox_view";
-            comboBox_view.Size = new Size(151, 28);
-            comboBox_view.TabIndex = 2;
-            comboBox_view.SelectedIndexChanged += comboBox_view_SelectedIndexChanged;
-            // 
             // comboBox_price
             // 
             comboBox_price.FormattingEnabled = true;
-            comboBox_price.Location = new Point(569, 65);
+            comboBox_price.Location = new Point(542, 65);
             comboBox_price.Name = "comboBox_price";
             comboBox_price.Size = new Size(151, 28);
             comboBox_price.TabIndex = 3;
@@ -80,7 +69,7 @@
             // label_type
             // 
             label_type.AutoSize = true;
-            label_type.Location = new Point(62, 22);
+            label_type.Location = new Point(91, 22);
             label_type.Name = "label_type";
             label_type.Size = new Size(41, 20);
             label_type.TabIndex = 4;
@@ -90,27 +79,17 @@
             // label_status
             // 
             label_status.AutoSize = true;
-            label_status.Location = new Point(234, 19);
+            label_status.Location = new Point(331, 19);
             label_status.Name = "label_status";
             label_status.Size = new Size(59, 20);
             label_status.TabIndex = 5;
             label_status.Text = "STATUS";
             label_status.Click += label_status_Click;
             // 
-            // label_view
-            // 
-            label_view.AutoSize = true;
-            label_view.Location = new Point(434, 21);
-            label_view.Name = "label_view";
-            label_view.Size = new Size(44, 20);
-            label_view.TabIndex = 6;
-            label_view.Text = "VIEW";
-            label_view.Click += label_view_Click;
-            // 
             // label_price
             // 
             label_price.AutoSize = true;
-            label_price.Location = new Point(625, 19);
+            label_price.Location = new Point(598, 19);
             label_price.Name = "label_price";
             label_price.Size = new Size(47, 20);
             label_price.TabIndex = 7;
@@ -155,11 +134,9 @@
             Controls.Add(button_apply);
             Controls.Add(listBox_details);
             Controls.Add(label_price);
-            Controls.Add(label_view);
             Controls.Add(label_status);
             Controls.Add(label_type);
             Controls.Add(comboBox_price);
-            Controls.Add(comboBox_view);
             Controls.Add(comboBox_status);
             Controls.Add(comboBox_type);
             Name = "AccommodationDetails";
@@ -173,11 +150,9 @@
 
         private ComboBox comboBox_type;
         private ComboBox comboBox_status;
-        private ComboBox comboBox_view;
         private ComboBox comboBox_price;
         private Label label_type;
         private Label label_status;
-        private Label label_view;
         private Label label_price;
         private ListBox listBox_details;
         private Button button_apply;

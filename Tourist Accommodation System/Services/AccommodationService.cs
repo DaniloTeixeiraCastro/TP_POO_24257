@@ -118,6 +118,10 @@ namespace Tourist_Accommodation_System.Services
             decimal? minPrice = null,
             decimal? maxPrice = null)
         {
+            foreach (var accommodation in accommodationList)
+            {
+                Console.WriteLine($"Room: {accommodation.RoomNumber}, Type: {accommodation.Type}, Status: {accommodation.Status}");
+            }
             return accommodationList.Where(a =>
                 (type == null || a.Type == type) &&
                 (status == null || a.Status == status) &&

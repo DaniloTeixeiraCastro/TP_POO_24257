@@ -72,11 +72,6 @@ namespace Tourist_Accommodation_System.Forms
             }
         }
 
-        private void button_list_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
