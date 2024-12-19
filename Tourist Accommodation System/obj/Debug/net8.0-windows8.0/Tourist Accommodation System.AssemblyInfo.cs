@@ -14,10 +14,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Tourist Accommodation System")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c494a0fd5f71d6b4c1c34aa9a2c23164af13e087")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+79ead3678052e23c0d7b16152715785fa5c04603")]
 [assembly: System.Reflection.AssemblyProductAttribute("Tourist Accommodation System")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Tourist Accommodation System")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyMetadata("Microsoft.Testing.Platform.Application", "True")]
 [assembly: System.Runtime.Versioning.TargetPlatformAttribute("Windows8.0")]
 [assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("Windows8.0")]
 

@@ -13,4 +13,15 @@
     <SourceRoot Include="C:\Users\danil\.nuget\packages\" />
     <SourceRoot Include="C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages\" />
   </ItemGroup>
+  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)xunit.runner.visualstudio\3.0.0\build\net6.0\xunit.runner.visualstudio.props" Condition="Exists('$(NuGetPackageRoot)xunit.runner.visualstudio\3.0.0\build\net6.0\xunit.runner.visualstudio.props')" />
+    <Import Project="$(NuGetPackageRoot)xunit.core\2.9.2\build\xunit.core.props" Condition="Exists('$(NuGetPackageRoot)xunit.core\2.9.2\build\xunit.core.props')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.testing.platform\1.4.1\buildTransitive\net8.0\Microsoft.Testing.Platform.props" Condition="Exists('$(NuGetPackageRoot)microsoft.testing.platform\1.4.1\buildTransitive\net8.0\Microsoft.Testing.Platform.props')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.testing.platform.msbuild\1.4.1\buildTransitive\net8.0\Microsoft.Testing.Platform.MSBuild.props" Condition="Exists('$(NuGetPackageRoot)microsoft.testing.platform.msbuild\1.4.1\buildTransitive\net8.0\Microsoft.Testing.Platform.MSBuild.props')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.testing.extensions.telemetry\1.4.1\buildTransitive\net8.0\Microsoft.Testing.Extensions.Telemetry.props" Condition="Exists('$(NuGetPackageRoot)microsoft.testing.extensions.telemetry\1.4.1\buildTransitive\net8.0\Microsoft.Testing.Extensions.Telemetry.props')" />
+  </ImportGroup>
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Pkgxunit_analyzers Condition=" '$(Pkgxunit_analyzers)' == '' ">C:\Users\danil\.nuget\packages\xunit.analyzers\1.16.0</Pkgxunit_analyzers>
+    <PkgMSTest_Analyzers Condition=" '$(PkgMSTest_Analyzers)' == '' ">C:\Users\danil\.nuget\packages\mstest.analyzers\3.6.1</PkgMSTest_Analyzers>
+  </PropertyGroup>
 </Project>
