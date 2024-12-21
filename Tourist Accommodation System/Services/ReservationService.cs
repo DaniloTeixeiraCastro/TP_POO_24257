@@ -8,12 +8,27 @@ using Tourist_Accommodation_System.Models;
 
 namespace Tourist_Accommodation_System.Services
 {
+    /// <summary>
+    /// Manages operations related to reservations, including adding, updating, and removing reservations.
+    /// </summary>
     public static class ReservationService
     {
+        #region Fields
+        /// <summary>
+        /// Path to the JSON file where reservation data is stored.
+        /// </summary>
         private static readonly string FilePath = @"C:\PROJETO\TP_POO_25457-main\Data\reservations.json";
-        private static List<Reservation> reservationList = new List<Reservation>();
 
-        // Construtor estático para carregar reservas do JSON, se existir
+        /// <summary>
+        /// List containing all the reservations.
+        /// </summary>
+        private static List<Reservation> reservationList = new List<Reservation>();
+        #endregion
+
+        #region Constructor
+        /// <summary>
+        /// Static constructor to load reservations from the JSON file, if it exists.
+        /// </summary>
         static ReservationService()
         {
             if (File.Exists(FilePath))
@@ -21,71 +36,66 @@ namespace Tourist_Accommodation_System.Services
                 reservationList = LoadReservationsFromJson();
             }
         }
+        #endregion
 
+        #region Methods
         /// <summary>
-        /// Obtém a lista de todas as reservas.
+        /// Retrieves the list of all reservations.
         /// </summary>
+        /// <returns>A list of reservations.</returns>
         public static List<Reservation> GetReservations() => reservationList;
 
         /// <summary>
-        /// Adiciona uma nova reserva à lista e salva no JSON.
+        /// Adds a new reservation to the list and saves it to the JSON file.
         /// </summary>
+        /// <param name="reservation">The reservation to add.</param>
+        /// <returns>A message indicating the success or failure of the operation.</returns>
         public static string AddReservation(Reservation reservation)
         {
-            // Valida se a acomodação está disponível para as datas especificadas
             if (!ValidateAvailability(reservation.Accommodation, reservation.CheckInDate, reservation.CheckOutDate))
             {
-                return "O alojamento não está disponível para as datas selecionadas.";
+                return "The accommodation is not available for the selected dates.";
             }
 
-            // Calcula o preço total da reserva
             reservation.TotalPrice = reservation.CalculateTotalPrice();
-
-            // Define um novo ID para a reserva
             reservation.Id = reservationList.Count > 0 ? reservationList.Max(r => r.Id) + 1 : 1;
 
-            // Adiciona a reserva à lista
             reservationList.Add(reservation);
-
-            // Salva a lista de reservas no JSON
             SaveReservationsToJson();
-            return "Reserva adicionada com sucesso!";
+            return "Reservation added successfully!";
         }
 
-
         /// <summary>
-        /// Remove uma reserva pelo ID e salva no JSON.
+        /// Removes a reservation by its ID and saves the changes to the JSON file.
         /// </summary>
+        /// <param name="reservationId">The ID of the reservation to remove.</param>
+        /// <returns>A message indicating the success or failure of the operation.</returns>
         public static string RemoveReservation(int reservationId)
         {
-            // Localiza a reserva pelo ID
             var reservation = reservationList.FirstOrDefault(r => r.Id == reservationId);
-            if (reservation == null) return "Reserva não encontrada.";
+            if (reservation == null) return "Reservation not found.";
 
-            // Remove a reserva da lista
             reservationList.Remove(reservation);
-
-            // Atualiza o status da acomodação para "Available" após a remoção
             reservation.Accommodation.Status = AccommodationStatus.Available;
             AccommodationService.AddOrUpdateAccommodation(reservation.Accommodation);
 
-            // Salva a lista de reservas no JSON
             SaveReservationsToJson();
-            return "Reserva removida com sucesso!";
+            return "Reservation removed successfully!";
         }
 
-
         /// <summary>
-        /// Atualiza os dados de uma reserva existente.
+        /// Updates an existing reservation's details.
         /// </summary>
+        /// <param name="updatedReservation">The reservation object with updated details.</param>
+        /// <returns>A message indicating the success or failure of the operation.</returns>
         public static string UpdateReservation(Reservation updatedReservation)
         {
             var reservation = reservationList.FirstOrDefault(r => r.Id == updatedReservation.Id);
-            if (reservation == null) return "Reserva não encontrada.";
+            if (reservation == null) return "Reservation not found.";
 
             if (!ValidateAvailability(updatedReservation.Accommodation, updatedReservation.CheckInDate, updatedReservation.CheckOutDate, updatedReservation.Id))
             {
-                return "O alojamento não está disponível para as novas datas.";
+                return "The accommodation is not available for the new dates.";
             }
 
             reservation.Client = updatedReservation.Client;
@@ -95,12 +105,17 @@ namespace Tourist_Accommodation_System.Services
             reservation.Status = updatedReservation.Status;
 
             SaveReservationsToJson();
-            return "Reserva atualizada com sucesso!";
+            return "Reservation updated successfully!";
         }
 
         /// <summary>
-        /// Valida se o alojamento está disponível nas datas fornecidas, exceto uma reserva existente (para edição).
+        /// Validates if the accommodation is available for the given dates, excluding a specific reservation ID.
         /// </summary>
+        /// <param name="accommodation">The accommodation to validate.</param>
+        /// <param name="checkIn">The check-in date.</param>
+        /// <param name="checkOut">The check-out date.</param>
+        /// <param name="excludeReservationId">An optional reservation ID to exclude from the validation.</param>
+        /// <returns>True if the accommodation is available, otherwise false.</returns>
         public static bool ValidateAvailability(Accommodation accommodation, DateTime checkIn, DateTime checkOut, int? excludeReservationId = null)
         {
             return !reservationList.Any(r =>
@@ -111,8 +126,9 @@ namespace Tourist_Accommodation_System.Services
         }
 
         /// <summary>
-        /// Carrega reservas do arquivo JSON.
+        /// Loads reservations from the JSON file.
         /// </summary>
+        /// <returns>A list of reservations loaded from the file.</returns>
         private static List<Reservation> LoadReservationsFromJson()
         {
             try
@@ -122,13 +138,13 @@ namespace Tourist_Accommodation_System.Services
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Erro ao carregar reservas: {ex.Message}");
+                Console.WriteLine($"Error loading reservations: {ex.Message}");
                 return new List<Reservation>();
             }
         }
 
         /// <summary>
-        /// Salva a lista de reservas no arquivo JSON.
+        /// Saves the reservation list to the JSON file.
         /// </summary>
         private static void SaveReservationsToJson()
         {
@@ -141,5 +157,6 @@ namespace Tourist_Accommodation_System.Services
             var jsonData = JsonSerializer.Serialize(reservationList, new JsonSerializerOptions { WriteIndented = true });
             File.WriteAllText(FilePath, jsonData);
         }
+        #endregion
     }
 }

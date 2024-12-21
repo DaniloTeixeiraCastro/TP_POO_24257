@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.Json;
@@ -8,11 +8,29 @@ using Tourist_Accommodation_System.Models;
 
 namespace Tourist_Accommodation_System.Services
 {
+    /// <summary>
+    /// Provides services for client validation and management.
+    /// </summary>
     public static class ClientService
     {
+        #region Fields
+        /// <summary>
+        /// Path to the JSON file where client data is stored.
+        /// </summary>
         private static readonly string FilePath = @"C:\PROJETO\TP_POO_25457-main\Data\clients.json";
-        private static List<Client> clientList = new List<Client>();
 
+        /// <summary>
+        /// List containing all the clients.
+        /// </summary>
+        private static List<Client> clientList = new List<Client>();
+        #endregion
+
+        #region Methods for Validation
+        /// <summary>
+        /// Checks if a given birth date corresponds to an adult (18 years or older).
+        /// </summary>
+        /// <param name="birthDate">The birth date of the client.</param>
+        /// <returns>True if the client is an adult, otherwise false.</returns>
         public static bool IsAdult(DateTime birthDate)
         {
             int age = DateTime.Now.Year - birthDate.Year;
@@ -20,7 +38,12 @@ namespace Tourist_Accommodation_System.Services
             return age >= 18;
         }
 
-        public static bool IsValidEmail(string email) //metodo para verificar e-mail
+        /// <summary>
+        /// Validates if the provided email address has a correct format.
+        /// </summary>
+        /// <param name="email">The email address to validate.</param>
+        /// <returns>True if the email is valid, otherwise false.</returns>
+        public static bool IsValidEmail(string email)
         {
             try
             {
@@ -33,11 +56,21 @@ namespace Tourist_Accommodation_System.Services
             }
         }
 
-        public static bool IsValidName(string name) //metodo para verificar nome
+        /// <summary>
+        /// Checks if a provided name is valid (contains no numeric characters).
+        /// </summary>
+        /// <param name="name">The name to validate.</param>
+        /// <returns>True if the name is valid, otherwise false.</returns>
+        public static bool IsValidName(string name)
         {
             return !Regex.IsMatch(name, @"\d");
         }
 
+        /// <summary>
+        /// Verifies if all required fields in the client object are filled.
+        /// </summary>
+        /// <param name="client">The client to validate.</param>
+        /// <returns>True if all fields are valid, otherwise false.</returns>
         public static bool AreFieldsValid(Client client)
         {
             return !string.IsNullOrWhiteSpace(client.Name) &&
@@ -47,46 +80,61 @@ namespace Tourist_Accommodation_System.Services
                    client.BirthDate != default;
         }
 
-        // Método para validar todos os campos de um cliente
+        /// <summary>
+        /// Validates all fields of a client object and returns an error message if any field is invalid.
+        /// </summary>
+        /// <param name="client">The client to validate.</param>
+        /// <returns>An error message if validation fails, otherwise an empty string.</returns>
         public static string ValidateClient(Client client)
         {
             if (!IsAdult(client.BirthDate))
-                return "O cliente deve ter pelo menos 18 anos.";
+                return "The client must be at least 18 years old.";
 
             if (!IsValidEmail(client.Email))
-                return "O e-mail fornecido é inválido.";
+                return "The provided email is invalid.";
 
             if (!IsValidName(client.Name))
-                return "O nome do cliente não pode conter números.";
+                return "The client's name cannot contain numbers.";
 
             if (!AreFieldsValid(client))
-                return "Todos os campos do cliente devem estar preenchidos.";
+                return "All client fields must be filled.";
 
-            return string.Empty; // Sem erros
+            return string.Empty; // No errors
         }
+        #endregion
 
-        public static string AddClient(Client client) //regras para validação de todos os campos
+        #region CRUD Operations
+        /// <summary>
+        /// Adds a new client to the system after validation.
+        /// </summary>
+        /// <param name="client">The client to add.</param>
+        /// <returns>A success message or an error message if validation fails.</returns>
+        public static string AddClient(Client client)
         {
-            // Validação do cliente
+            // Validate the client
             string validationResult = ValidateClient(client);
             if (!string.IsNullOrEmpty(validationResult))
                 return validationResult;
 
-            // Garante que a lista esteja atualizada antes de adicionar
+            // Ensure the list is updated before adding
             clientList = GetClients();
 
             if (clientList.Any(c => c.Email == client.Email || c.TIN == client.TIN))
-                return "Já existe um cliente com este e-mail ou TIN.";
+                return "A client with this email or TIN already exists.";
 
-            // Gera o próximo ID automaticamente
+            // Automatically generate the next ID
             client.Id = clientList.Count > 0 ? clientList.Max(c => c.Id) + 1 : 1;
 
-            // Adiciona o cliente à lista e salva no JSON
+            // Add the client to the list and save to JSON
             clientList.Add(client);
             SaveClientsToJson();
-            return "Cliente adicionado com sucesso!";
+            return "Client successfully added!";
         }
 
+        /// <summary>
+        /// Updates an existing client's information.
+        /// </summary>
+        /// <param name="updatedClient">The updated client object.</param>
         public static void UpdateClient(Client updatedClient)
         {
             var client = clientList.FirstOrDefault(c => c.Id == updatedClient.Id);
@@ -98,25 +146,32 @@ namespace Tourist_Accommodation_System.Services
                 client.TIN = updatedClient.TIN;
                 client.BirthDate = updatedClient.BirthDate;
 
-                SaveClientsToJson(); // Atualize os dados no JSON
+                SaveClientsToJson(); // Update the JSON data
             }
         }
 
-        #region
-        public static string RemoveClient(int clientId) //metodo para remover cliente
+        /// <summary>
+        /// Removes a client from the system by their ID.
+        /// </summary>
+        /// <param name="clientId">The ID of the client to remove.</param>
+        /// <returns>A message indicating success or failure.</returns>
+        public static string RemoveClient(int clientId)
         {
             var client = clientList.FirstOrDefault(c => c.Id == clientId);
             if (client == null)
             {
-                return "Cliente não encontrado.";
+                return "Client not found.";
             }
 
             clientList.Remove(client);
-            SaveClientsToJson(); // Atualiza o ficheiro JSON
-            return "Cliente removido com sucesso.";
+            SaveClientsToJson(); // Update the JSON file
+            return "Client successfully removed.";
         }
-        #endregion
 
+        /// <summary>
+        /// Retrieves a list of all clients.
+        /// </summary>
+        /// <returns>A list of all clients.</returns>
         public static List<Client> GetClients()
         {
             if (clientList.Count == 0)
@@ -125,30 +180,36 @@ namespace Tourist_Accommodation_System.Services
             }
             return clientList;
         }
-        #region
+        #endregion
 
-        private static void SaveClientsToJson() //metodo para guardar os clientes na lsita
+        #region JSON Handling
+        /// <summary>
+        /// Saves the client list to a JSON file.
+        /// </summary>
+        private static void SaveClientsToJson()
         {
             var directory = Path.GetDirectoryName(FilePath);
-            if (!string.IsNullOrEmpty(directory)) // Verifica se o diretório não é nulo ou vazio
+            if (!string.IsNullOrEmpty(directory))
             {
                 if (!Directory.Exists(directory))
                 {
-                    Directory.CreateDirectory(directory); // Cria o diretório se não existir
+                    Directory.CreateDirectory(directory); // Create the directory if it doesn't exist
                 }
             }
 
             var jsonData = JsonSerializer.Serialize(clientList, new JsonSerializerOptions { WriteIndented = true });
-            File.WriteAllText(FilePath, jsonData); // Escreve os dados no arquivo JSON
+            File.WriteAllText(FilePath, jsonData); // Write data to the JSON file
         }
-        #endregion 
 
-        #region
-        private static List<Client> LoadClientsFromJson() //metodo para carregar os clientes
+        /// <summary>
+        /// Loads the client list from a JSON file.
+        /// </summary>
+        /// <returns>A list of clients loaded from the file.</returns>
+        private static List<Client> LoadClientsFromJson()
         {
             if (!File.Exists(FilePath))
             {
-                Console.WriteLine("Ficheiro de clientes não encontrado. Criando um novo.");
+                Console.WriteLine("Client file not found. Creating a new one.");
                 return new List<Client>();
             }
 
@@ -159,12 +220,10 @@ namespace Tourist_Accommodation_System.Services
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Erro ao carregar os clientes do JSON: {ex.Message}");
+                Console.WriteLine($"Error loading clients from JSON: {ex.Message}");
                 return new List<Client>();
             }
         }
         #endregion
-
     }
 }
-

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,12 +8,27 @@ using Tourist_Accommodation_System.Models;
 
 namespace Tourist_Accommodation_System.Services
 {
+    /// <summary>
+    /// Handles payment processing and related operations.
+    /// </summary>
     internal class PaymentService
     {
+        #region Fields
+        /// <summary>
+        /// Path to the JSON file where payment data is stored.
+        /// </summary>
         private static readonly string FilePath = @"C:\PROJETO\TP_POO_25457-main\Data\payments.json";
-        private static List<Payment> paymentList = new List<Payment>();
 
-        // Construtor estático para carregar pagamentos do JSON
+        /// <summary>
+        /// List containing all the payments.
+        /// </summary>
+        private static List<Payment> paymentList = new List<Payment>();
+        #endregion
+
+        #region Constructor
+        /// <summary>
+        /// Static constructor to initialize the payment list from the JSON file.
+        /// </summary>
         static PaymentService()
         {
             if (File.Exists(FilePath))
@@ -21,18 +36,22 @@ namespace Tourist_Accommodation_System.Services
                 paymentList = LoadPaymentsFromJson();
             }
         }
+        #endregion
 
+        #region Methods
         /// <summary>
-        /// Adiciona um novo pagamento.
+        /// Adds a new payment to the system.
         /// </summary>
+        /// <param name="payment">The payment object to add.</param>
+        /// <returns>A success message indicating the payment was added.</returns>
         public static string AddPayment(Payment payment)
         {
-            // Adiciona o pagamento
+            // Assign a new PaymentId
             payment.PaymentId = paymentList.Count > 0 ? paymentList.Max(p => p.PaymentId) + 1 : 1;
             paymentList.Add(payment);
             SavePaymentsToJson();
 
-            // Atualiza a reserva e a acomodação
+            // Update related reservation and accommodation
             var reservation = ReservationService.GetReservations().FirstOrDefault(r => r.Id == payment.Reservation.Id);
             if (reservation != null)
             {
@@ -43,28 +62,30 @@ namespace Tourist_Accommodation_System.Services
         }
 
         /// <summary>
-        /// Atualiza a reserva e marca o quarto como disponível.
+        /// Updates a reservation and marks the associated accommodation as available.
         /// </summary>
+        /// <param name="reservation">The reservation object to update.</param>
         private static void UpdateReservationAndAccommodation(Reservation reservation)
         {
             if (reservation != null && reservation.Accommodation != null)
             {
-                // Remove a reserva
+                // Remove the reservation
                 ReservationService.RemoveReservation(reservation.Id);
 
-                // Atualiza o status do quarto para "Available"
+                // Update the accommodation status to "Available"
                 reservation.Accommodation.Status = AccommodationStatus.Available;
                 AccommodationService.AddOrUpdateAccommodation(reservation.Accommodation);
             }
             else
             {
-                Console.WriteLine("Erro: Reserva ou acomodação nula ao tentar atualizar.");
+                Console.WriteLine("Error: Reservation or accommodation is null during update.");
             }
         }
 
         /// <summary>
-        /// Carrega os pagamentos do arquivo JSON.
+        /// Loads payments from the JSON file.
         /// </summary>
+        /// <returns>A list of payments loaded from the JSON file.</returns>
         private static List<Payment> LoadPaymentsFromJson()
         {
             try
@@ -75,7 +96,7 @@ namespace Tourist_Accommodation_System.Services
                     PropertyNameCaseInsensitive = true
                 }) ?? new List<Payment>();
 
-                // Re-associa as reservas às suas referências, se disponíveis
+                // Re-associate reservations with their references, if available
                 var reservations = ReservationService.GetReservations();
                 foreach (var payment in payments)
                 {
@@ -84,7 +105,7 @@ namespace Tourist_Accommodation_System.Services
                         payment.Reservation = reservations.FirstOrDefault(r => r.Id == payment.Reservation.Id);
                         if (payment.Reservation == null)
                         {
-                            Console.WriteLine($"Aviso: Reserva com ID {payment.Reservation.Id} não encontrada.");
+                            Console.WriteLine($"Warning: Reservation with ID {payment.Reservation.Id} not found.");
                         }
                     }
                 }
@@ -93,43 +114,47 @@ namespace Tourist_Accommodation_System.Services
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Erro ao carregar pagamentos: {ex.Message}");
+                Console.WriteLine($"Error loading payments: {ex.Message}");
                 return new List<Payment>();
             }
         }
 
         /// <summary>
-        /// Remove um pagamento pelo ID.
+        /// Removes a payment by its ID.
         /// </summary>
+        /// <param name="paymentId">The ID of the payment to remove.</param>
+        /// <returns>A message indicating success or failure.</returns>
         public static string RemovePayment(int paymentId)
         {
             var payment = paymentList.FirstOrDefault(p => p.PaymentId == paymentId);
             if (payment == null)
             {
-                return "Pagamento não encontrado.";
+                return "Payment not found.";
             }
 
             if (payment.Reservation != null && payment.Reservation.Accommodation != null)
             {
-                // Atualiza o status do quarto para "Available"
+                // Update the accommodation status to "Available"
                 payment.Reservation.Accommodation.Status = AccommodationStatus.Available;
                 AccommodationService.AddOrUpdateAccommodation(payment.Reservation.Accommodation);
             }
 
             paymentList.Remove(payment);
             SavePaymentsToJson();
-            return "Pagamento removido com sucesso!";
+            return "Payment removed successfully!";
         }
 
         /// <summary>
-        /// Edita os detalhes de um pagamento.
+        /// Edits the details of an existing payment.
         /// </summary>
+        /// <param name="updatedPayment">The updated payment object.</param>
+        /// <returns>A message indicating success or failure.</returns>
         public static string EditPayment(Payment updatedPayment)
         {
             var payment = paymentList.FirstOrDefault(p => p.PaymentId == updatedPayment.PaymentId);
             if (payment == null)
             {
-                return "Pagamento não encontrado.";
+                return "Payment not found.";
             }
 
             payment.Reservation = updatedPayment.Reservation;
@@ -138,8 +163,9 @@ namespace Tourist_Accommodation_System.Services
             payment.Status = updatedPayment.Status;
 
             SavePaymentsToJson();
-            return "Pagamento editado com sucesso!";
+            return "Payment edited successfully!";
         }
+
         /// <summary>
         /// Updates an existing payment in the list and saves it to the JSON file.
         /// </summary>
@@ -162,30 +188,32 @@ namespace Tourist_Accommodation_System.Services
             }
             else
             {
-                throw new Exception("Pagamento não encontrado.");
+                throw new Exception("Payment not found.");
             }
         }
 
         /// <summary>
-        /// Saves the updated payment list to the JSON file.
-        /// </summary>
-
-        /// <summary>
-        /// Salva a lista de pagamentos no arquivo JSON.
+        /// Saves the payment list to the JSON file.
         /// </summary>
         private static void SavePaymentsToJson()
         {
             var jsonData = JsonSerializer.Serialize(paymentList, new JsonSerializerOptions { WriteIndented = true });
             File.WriteAllText(FilePath, jsonData);
         }
+
+        /// <summary>
+        /// Retrieves all payments from the system.
+        /// </summary>
+        /// <returns>A list of all payments.</returns>
         public static List<Payment> GetPayments()
         {
-            // Verifica se a lista está vazia e carrega do JSON, se necessário
+            // Check if the list is empty and load from JSON if necessary
             if (paymentList == null || !paymentList.Any())
             {
                 paymentList = LoadPaymentsFromJson();
             }
             return paymentList ?? new List<Payment>();
         }
+        #endregion
     }
 }

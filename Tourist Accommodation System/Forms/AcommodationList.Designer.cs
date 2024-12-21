@@ -51,6 +51,7 @@
             Controls.Add(dataGridView_Accommodations);
             Name = "AcommodationList";
             Text = "AcommodationList";
+            Load += AcommodationList_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView_Accommodations).EndInit();
             ResumeLayout(false);
         }

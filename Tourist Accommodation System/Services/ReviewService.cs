@@ -8,11 +8,27 @@ using Tourist_Accommodation_System.Models;
 
 namespace Tourist_Accommodation_System.Services
 {
+    /// <summary>
+    /// Provides functionality for managing reviews, including adding, retrieving, filtering, and removing reviews.
+    /// </summary>
     public static class ReviewService
     {
+        #region Fields
+        /// <summary>
+        /// Path to the JSON file where review data is stored.
+        /// </summary>
         private static readonly string FilePath = @"C:\PROJETO\TP_POO_25457-main\Data\reviews.json";
-        private static List<Review> reviewList = new List<Review>();
 
+        /// <summary>
+        /// List containing all the reviews.
+        /// </summary>
+        private static List<Review> reviewList = new List<Review>();
+        #endregion
+
+        #region Constructor
+        /// <summary>
+        /// Static constructor to load reviews from the JSON file, if it exists.
+        /// </summary>
         static ReviewService()
         {
             if (File.Exists(FilePath))
@@ -20,79 +36,86 @@ namespace Tourist_Accommodation_System.Services
                 reviewList = LoadReviewsFromJson();
             }
         }
+        #endregion
 
+        #region Methods
         /// <summary>
-        /// Adiciona uma nova avaliação e salva no JSON.
+        /// Adds a new review and saves it to the JSON file.
         /// </summary>
-        /// <param name="review">Objeto Review a ser adicionado.</param>
-        /// <returns>Mensagem de sucesso ou erro.</returns>
+        /// <param name="review">The review object to add.</param>
+        /// <returns>A message indicating the success or failure of the operation.</returns>
         public static string AddReview(Review review)
         {
-            // Valida os dados da avaliação
             if (string.IsNullOrWhiteSpace(review.Comment))
-                return "O comentário da avaliação não pode estar vazio.";
+                return "The review comment cannot be empty.";
 
             if (!Enum.IsDefined(typeof(ReviewRating), review.Rating))
-                return "A classificação fornecida é inválida.";
+                return "The provided rating is invalid.";
 
             review.ReviewId = reviewList.Count > 0 ? reviewList.Max(r => r.ReviewId) + 1 : 1;
             reviewList.Add(review);
             SaveReviewsToJson();
-            return "Avaliação adicionada com sucesso!";
+            return "Review added successfully!";
         }
 
         /// <summary>
-        /// Retorna todas as avaliações.
+        /// Retrieves all reviews.
         /// </summary>
+        /// <returns>A list of all reviews.</returns>
         public static List<Review> GetReviews() => reviewList;
 
         /// <summary>
-        /// Filtra avaliações por cliente.
+        /// Filters reviews by client ID.
         /// </summary>
-        /// <param name="clientId">ID do cliente.</param>
+        /// <param name="clientId">The ID of the client whose reviews are to be retrieved.</param>
+        /// <returns>A list of reviews associated with the specified client.</returns>
         public static List<Review> GetReviewsByClient(int clientId)
         {
             return reviewList.Where(r => r.Client != null && r.Client.Id == clientId).ToList();
         }
 
         /// <summary>
-        /// Filtra avaliações por classificação.
+        /// Filters reviews by rating.
         /// </summary>
-        /// <param name="rating">Classificação desejada.</param>
+        /// <param name="rating">The desired rating.</param>
+        /// <returns>A list of reviews matching the specified rating.</returns>
         public static List<Review> GetReviewsByRating(ReviewRating rating)
         {
             return reviewList.Where(r => r.Rating == rating).ToList();
         }
 
         /// <summary>
-        /// Filtra avaliações anônimas ou não anônimas.
+        /// Filters reviews by anonymity status.
         /// </summary>
-        /// <param name="isAnonymous">Se verdadeiro, retorna apenas avaliações anônimas.</param>
+        /// <param name="isAnonymous">True to retrieve anonymous reviews, false for non-anonymous reviews.</param>
+        /// <returns>A list of reviews filtered by anonymity status.</returns>
         public static List<Review> GetAnonymousReviews(bool isAnonymous)
         {
             return reviewList.Where(r => r.IsAnonymous == isAnonymous).ToList();
         }
 
         /// <summary>
-        /// Remove uma avaliação pelo ID.
+        /// Removes a review by its ID.
         /// </summary>
-        /// <param name="reviewId">ID da avaliação.</param>
+        /// <param name="reviewId">The ID of the review to remove.</param>
+        /// <returns>A message indicating the success or failure of the operation.</returns>
         public static string RemoveReview(int reviewId)
         {
             var review = reviewList.FirstOrDefault(r => r.ReviewId == reviewId);
             if (review == null)
             {
-                return "Avaliação não encontrada.";
+                return "Review not found.";
             }
 
             reviewList.Remove(review);
             SaveReviewsToJson();
-            return "Avaliação removida com sucesso!";
+            return "Review removed successfully!";
         }
 
         /// <summary>
-        /// Carrega as avaliações do arquivo JSON.
+        /// Loads reviews from the JSON file.
         /// </summary>
+        /// <returns>A list of reviews loaded from the file.</returns>
         private static List<Review> LoadReviewsFromJson()
         {
             try
@@ -102,18 +125,19 @@ namespace Tourist_Accommodation_System.Services
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Erro ao carregar avaliações: {ex.Message}");
+                Console.WriteLine($"Error loading reviews: {ex.Message}");
                 return new List<Review>();
             }
         }
 
         /// <summary>
-        /// Salva as avaliações no arquivo JSON.
+        /// Saves the review list to the JSON file.
         /// </summary>
         private static void SaveReviewsToJson()
         {
             var jsonData = JsonSerializer.Serialize(reviewList, new JsonSerializerOptions { WriteIndented = true });
             File.WriteAllText(FilePath, jsonData);
         }
+        #endregion
     }
 }

@@ -11,125 +11,133 @@ using Tourist_Accommodation_System.Services;
 
 namespace Tourist_Accommodation_System.Forms
 {
+    /// <summary>
+    /// Form to display, edit, and remove reviews.
+    /// </summary>
     public partial class ReviewList : Form
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReviewList"/> class.
+        /// </summary>
         public ReviewList()
         {
             InitializeComponent();
             LoadReviewsToGrid();
         }
 
+        /// <summary>
+        /// Handles the load event for the ReviewList form.
+        /// </summary>
         private void ReviewList_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void dataGridView_reviews_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            // Placeholder for logic when the form loads
         }
 
         /// <summary>
-        /// Carrega as avaliações no DataGridView.
+        /// Handles cell content click events in the DataGridView.
+        /// </summary>
+        private void dataGridView_reviews_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Placeholder for future logic when a cell is clicked
+        }
+
+        /// <summary>
+        /// Loads reviews from the ReviewService into the DataGridView.
         /// </summary>
         private void LoadReviewsToGrid()
         {
-            // Obter todas as avaliações
+            // Get all reviews
             var reviews = ReviewService.GetReviews();
 
-            // Configurar o DataGridView
+            // Configure the DataGridView
             dataGridView_reviews.Columns.Clear();
             dataGridView_reviews.Rows.Clear();
 
-            // Adicionar colunas
+            // Add columns
             dataGridView_reviews.Columns.Add("ReviewId", "ID");
-            dataGridView_reviews.Columns.Add("ClientName", "Cliente");
-            dataGridView_reviews.Columns.Add("Comment", "Comentário");
-            dataGridView_reviews.Columns.Add("Rating", "Classificação");
-            dataGridView_reviews.Columns.Add("IsAnonymous", "Anônimo");
+            dataGridView_reviews.Columns.Add("ClientName", "Client");
+            dataGridView_reviews.Columns.Add("Comment", "Comment");
+            dataGridView_reviews.Columns.Add("Rating", "Rating");
+            dataGridView_reviews.Columns.Add("IsAnonymous", "Anonymous");
 
-            // Preencher o DataGridView
+            // Populate the DataGridView
             foreach (var review in reviews)
             {
                 dataGridView_reviews.Rows.Add(
                     review.ReviewId,
-                    review.IsAnonymous ? "Anônimo" : review.Client?.Name ?? "Não informado",
+                    review.IsAnonymous ? "Anonymous" : review.Client?.Name ?? "Not Provided",
                     review.Comment,
                     review.Rating,
-                    review.IsAnonymous ? "Sim" : "Não"
+                    review.IsAnonymous ? "Yes" : "No"
                 );
             }
 
-            // Configurações adicionais
+            // Additional settings
             dataGridView_reviews.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
+        /// <summary>
+        /// Handles the click event for the remove button.
+        /// </summary>
         private void button_remove_Click(object sender, EventArgs e)
         {
-            // Verifica se uma linha está selecionada no DataGridView
             if (dataGridView_reviews.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Por favor, selecione uma avaliação para remover.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please select a review to remove.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Obtém o ID da avaliação selecionada
             var selectedRow = dataGridView_reviews.SelectedRows[0];
             if (selectedRow.Cells["ReviewId"].Value == null)
             {
-                MessageBox.Show("Erro ao obter o ID da avaliação.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error retrieving the review ID.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             int reviewId = Convert.ToInt32(selectedRow.Cells["ReviewId"].Value);
 
-            // Confirmação antes de remover
-            var confirmResult = MessageBox.Show($"Tem certeza de que deseja remover a avaliação com ID {reviewId}?", "Confirmar Remoção", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            var confirmResult = MessageBox.Show($"Are you sure you want to remove the review with ID {reviewId}?", "Confirm Removal", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (confirmResult == DialogResult.Yes)
             {
-                // Remove a avaliação usando o ReviewService
                 string result = ReviewService.RemoveReview(reviewId);
-                MessageBox.Show(result, "Remover Avaliação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(result, "Remove Review", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                // Atualiza o DataGridView
                 LoadReviewsToGrid();
             }
         }
 
+        /// <summary>
+        /// Handles the click event for the edit button.
+        /// </summary>
         private void button_edit_Click(object sender, EventArgs e)
         {
-            // Verifica se uma linha está selecionada no DataGridView
             if (dataGridView_reviews.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Por favor, selecione uma avaliação para editar.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please select a review to edit.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Obtém o ID da avaliação selecionada
             var selectedRow = dataGridView_reviews.SelectedRows[0];
             if (selectedRow.Cells["ReviewId"].Value == null)
             {
-                MessageBox.Show("Erro ao obter o ID da avaliação.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error retrieving the review ID.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             int reviewId = Convert.ToInt32(selectedRow.Cells["ReviewId"].Value);
 
-            // Busca a avaliação do ReviewService
             var reviewToEdit = ReviewService.GetReviews().FirstOrDefault(r => r.ReviewId == reviewId);
             if (reviewToEdit == null)
             {
-                MessageBox.Show("Avaliação não encontrada.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Review not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            // Abre o FormAddEditReview no modo de edição
             using (var formAddEditReview = new FormAddEditReview(reviewToEdit))
             {
                 if (formAddEditReview.ShowDialog() == DialogResult.OK)
                 {
-                    // Atualiza o DataGridView após salvar as alterações
                     LoadReviewsToGrid();
                 }
             }

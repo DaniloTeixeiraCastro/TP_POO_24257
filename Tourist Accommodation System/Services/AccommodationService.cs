@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
@@ -6,12 +6,15 @@ using Tourist_Accommodation_System.Models;
 
 namespace Tourist_Accommodation_System.Services
 {
+    /// <summary>
+    /// Manages accommodation data and operations.
+    /// </summary>
     public static class AccommodationService
     {
         private static readonly string FilePath = @"C:\PROJETO\TP_POO_25457-main\Data\accommodations.json";
         private static List<Accommodation> accommodationList = new List<Accommodation>();
 
-        // Inicialização da classe estática
+        
         static AccommodationService()
         {
             if (!File.Exists(FilePath))
@@ -26,16 +29,16 @@ namespace Tourist_Accommodation_System.Services
         }
 
         /// <summary>
-        /// Obtém a lista completa de acomodações.
+        /// Get the accommodations list
         /// </summary>
         public static List<Accommodation> GetAccommodations()
         {
          var today = DateTime.Today;
 
-         // Atualiza dinamicamente o status de cada quarto
+         // Updating status from each room
              foreach (var accommodation in accommodationList)
          {
-        accommodation.Status = IsRoomOccupied(accommodation, today)
+              accommodation.Status = IsRoomOccupied(accommodation, today)
             ? AccommodationStatus.Occupied
             : AccommodationStatus.Available;
          }
@@ -44,13 +47,13 @@ namespace Tourist_Accommodation_System.Services
 }
 
         /// <summary>
-        /// Adiciona ou atualiza uma acomodação existente.
+        /// Add and update an existent accommodation.
         /// </summary>
-        /// <param name="accommodation">Acomodação a ser adicionada ou atualizada.</param>
-        /// <returns>Mensagem de sucesso ou erro.</returns>
+        /// <param name="accommodation">Accommodation to be updated.</param>
+        /// <returns>Success or error message</returns>
         public static string AddOrUpdateAccommodation(Accommodation accommodation)
         {
-            // Validação dos dados
+            
             string validation = ValidateAccommodationData(
                 accommodation.Name,
                 accommodation.Type.ToString(),
@@ -67,26 +70,25 @@ namespace Tourist_Accommodation_System.Services
                 return $"O quarto número {accommodation.RoomNumber} já existe.";
             }
 
-            // Atualiza ou adiciona a acomodação
+            // Add or update an accommodation
             if (existingAccommodation != null)
             {
-                // Atualiza apenas as propriedades modificadas da acomodação
+                
                 UpdateAccommodationProperties(accommodation, existingAccommodation);
 
             }
             else
             {
-                // Adiciona uma nova acomodação
+                
                 accommodationList.Add(accommodation);
             }
 
-            // Salva a lista de acomodações no JSON
             SaveAccommodationsToJson();
             return "Acomodação salva com sucesso!";
         }
 
         /// <summary>
-        /// Verifica se um quarto está ocupado na data atual
+        /// Verify if room is occupied
         /// </summary>
         public static bool IsRoomOccupied(Accommodation accommodation, DateTime date)
         {
@@ -97,7 +99,7 @@ namespace Tourist_Accommodation_System.Services
         }
 
         /// <summary>
-        /// Remove uma acomodação da lista pelo número do quarto.
+        /// Remove an accommodation by the RoomNumber
         /// </summary>
         public static string RemoveAccommodation(int roomNumber)
         {
@@ -110,7 +112,7 @@ namespace Tourist_Accommodation_System.Services
         }
 
         /// <summary>
-        /// Filtra acomodações com base nos critérios fornecidos.
+        /// Filter accommodations basing on criteria.
         /// </summary>
         public static List<Accommodation> FilterAccommodations(
             AccommodationType? type = null,
@@ -131,7 +133,7 @@ namespace Tourist_Accommodation_System.Services
         }
 
         /// <summary>
-        /// Valida os dados da acomodação.
+        /// Validate data
         /// </summary>
         private static string ValidateAccommodationData(string name, string type, string roomNumberText, string capacityText, string priceText)
         {
@@ -145,7 +147,7 @@ namespace Tourist_Accommodation_System.Services
         }
 
         /// <summary>
-        /// Copia as propriedades de uma acomodação para outra.
+        /// Copy proprieties from one accommodation to another
         /// </summary>
         private static void UpdateAccommodationProperties(Accommodation source, Accommodation target)
         {
@@ -157,7 +159,7 @@ namespace Tourist_Accommodation_System.Services
         }
 
         /// <summary>
-        /// Carrega a lista de acomodações a partir do JSON.
+        /// Load accommodaions list from JSON
         /// </summary>
         private static List<Accommodation> LoadAccommodationsFromJson()
         {
@@ -177,7 +179,7 @@ namespace Tourist_Accommodation_System.Services
         }
 
         /// <summary>
-        /// Salva a lista de acomodações no JSON.
+        /// Save accommodations list to JSON
         /// </summary>
         private static void SaveAccommodationsToJson()
         {
@@ -240,8 +242,5 @@ namespace Tourist_Accommodation_System.Services
 
             return accommodations;
         }
-
-
-
     }
 }

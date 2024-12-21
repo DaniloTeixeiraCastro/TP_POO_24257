@@ -11,19 +11,28 @@ using Tourist_Accommodation_System.Services;
 
 namespace Tourist_Accommodation_System.Forms
 {
+    /// <summary>
+    /// Form to manage reservations, including viewing, editing, and removing reservations.
+    /// </summary>
     public partial class ReservationManagementForm : Form
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReservationManagementForm"/> class.
+        /// </summary>
         public ReservationManagementForm()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Initializes the reservation DataGridView with the necessary columns.
+        /// </summary>
         private void InitializeReservationGrid()
         {
-            // Limpa as colunas existentes, se houver
+            // Clears existing columns if any
             dataGridView_reservation.Columns.Clear();
 
-            // Adiciona as colunas necessárias
+            // Adds the required columns
             dataGridView_reservation.Columns.Add("Id", "Reservation ID");
             dataGridView_reservation.Columns.Add("Client", "Client");
             dataGridView_reservation.Columns.Add("Accommodation", "Accommodation");
@@ -33,15 +42,18 @@ namespace Tourist_Accommodation_System.Forms
             dataGridView_reservation.Columns.Add("Status", "Status");
         }
 
+        /// <summary>
+        /// Loads reservations into the DataGridView from the ReservationService.
+        /// </summary>
         private void LoadReservationsToGrid()
         {
-            // Inicializa as colunas (se necessário)
+            // Initialize the columns if necessary
             InitializeReservationGrid();
 
-            // Limpa as linhas existentes
+            // Clears existing rows
             dataGridView_reservation.Rows.Clear();
 
-            // Carrega as reservas
+            // Loads reservations
             foreach (var reservation in ReservationService.GetReservations())
             {
                 dataGridView_reservation.Rows.Add(
@@ -56,16 +68,22 @@ namespace Tourist_Accommodation_System.Forms
             }
         }
 
+        /// <summary>
+        /// Handles cell content click events in the DataGridView.
+        /// </summary>
         private void dataGridView_reservation_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            // Placeholder for future logic when a cell is clicked
         }
 
+        /// <summary>
+        /// Handles the click event for the edit button.
+        /// </summary>
         private void button_edit_Click(object sender, EventArgs e)
         {
             if (dataGridView_reservation.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Por favor, selecione uma reserva para editar.");
+                MessageBox.Show("Please select a reservation to edit.");
                 return;
             }
 
@@ -79,44 +97,44 @@ namespace Tourist_Accommodation_System.Forms
                 var formAddEditReservation = new FormAddEditReservation(reservation);
                 formAddEditReservation.ShowDialog();
 
-                // Atualiza a DataGridView após edição
+                // Updates the DataGridView after editing
                 LoadReservationsToGrid();
             }
         }
 
+        /// <summary>
+        /// Handles the click event for the remove button.
+        /// </summary>
         private void button_remove_Click(object sender, EventArgs e)
         {
-            // Verifica se há uma linha selecionada
             if (dataGridView_reservation.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Por favor, selecione uma reserva para remover.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please select a reservation to remove.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Obtém o ID da reserva a partir da célula selecionada
             int selectedReservationId = Convert.ToInt32(dataGridView_reservation.SelectedRows[0].Cells["Id"].Value);
 
-            // Confirmação do usuário antes de remover
             var confirmation = MessageBox.Show(
-                "Tem certeza de que deseja remover esta reserva?",
-                "Confirmação",
+                "Are you sure you want to remove this reservation?",
+                "Confirmation",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question
             );
 
             if (confirmation == DialogResult.Yes)
             {
-                // Remove a reserva usando o serviço
                 var result = ReservationService.RemoveReservation(selectedReservationId);
 
-                // Exibe mensagem de sucesso ou erro
-                MessageBox.Show(result, "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(result, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                // Atualiza a grade de reservas
                 LoadReservationsToGrid();
             }
         }
 
+        /// <summary>
+        /// Handles the load event for the ReservationManagementForm.
+        /// </summary>
         private void ReservationManagementForm_Load(object sender, EventArgs e)
         {
             LoadReservationsToGrid();

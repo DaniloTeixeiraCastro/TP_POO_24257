@@ -11,19 +11,29 @@ using Tourist_Accommodation_System.Services;
 
 namespace Tourist_Accommodation_System.Forms
 {
+    /// <summary>
+    /// Form to display and manage the list of reservations.
+    /// </summary>
     public partial class ReservationList : Form
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReservationList"/> class.
+        /// </summary>
         public ReservationList()
         {
             InitializeComponent();
             LoadReservationsToGrid();
         }
+
+        /// <summary>
+        /// Loads reservations from the ReservationService into the DataGridView.
+        /// </summary>
         private void LoadReservationsToGrid()
         {
-            // Obtém a lista de reservas do serviço
+            // Get the list of reservations from the service
             var reservations = ReservationService.GetReservations();
 
-            // Adiciona as colunas ao DataGridView, se necessário
+            // Add columns to the DataGridView if they don't already exist
             if (dataGridView_reservations.Columns.Count == 0)
             {
                 dataGridView_reservations.Columns.Add("Id", "Reservation ID");
@@ -35,10 +45,10 @@ namespace Tourist_Accommodation_System.Forms
                 dataGridView_reservations.Columns.Add("Status", "Status");
             }
 
-            // Limpa as linhas existentes
+            // Clear any existing rows
             dataGridView_reservations.Rows.Clear();
 
-            // Adiciona as reservas ao DataGridView
+            // Add reservations to the DataGridView
             foreach (var reservation in reservations)
             {
                 dataGridView_reservations.Rows.Add(
@@ -53,11 +63,13 @@ namespace Tourist_Accommodation_System.Forms
             }
         }
 
+        /// <summary>
+        /// Handles cell content click events in the DataGridView.
+        /// </summary>
         private void dataGridView_reservations_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            // Placeholder for future logic when a cell is clicked
         }
-
-
     }
 }
+

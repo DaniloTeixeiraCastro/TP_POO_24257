@@ -49,7 +49,7 @@ namespace Tourist_Accommodation_System.Forms
                     accommodation.Name,
                     accommodation.Type.ToString(),
                     accommodation.Capacity,
-                    accommodation.PricePerNight.ToString("C"), // Formatação de preço
+                    accommodation.PricePerNight.ToString("C"), 
                     accommodation.Status.ToString()
                 );
             }
@@ -58,6 +58,11 @@ namespace Tourist_Accommodation_System.Forms
             dataGridView_Accommodations.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView_Accommodations.ReadOnly = true;
             dataGridView_Accommodations.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        }
+
+        private void AcommodationList_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
